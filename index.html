@@ -21,7 +21,7 @@
   --wrap:1180px; --r:14px;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:150px;background:var(--bg-deep)}
+html{scroll-behavior:smooth;scroll-padding-top:100px;background:var(--bg-deep)}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--f-body)}
 body.lang-ta{font-family:var(--f-tamil);font-size:16px}
@@ -49,10 +49,13 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:rg
 .brand b{font:900 30px/1 var(--f-display);letter-spacing:.06em;display:block}
 .brand small{font:700 13px/1 var(--f-display);color:var(--cyan);letter-spacing:.24em;text-transform:uppercase;display:block;margin-top:7px}
 @media (max-width:560px){.bar{min-height:96px;gap:12px}.brand{gap:10px}.brand img{width:62px;height:62px}.brand b{font-size:22px}.brand small{font-size:9.5px;letter-spacing:.14em;margin-top:5px}.brand .b-tag{font-size:10.5px;margin-top:6px}.brand .b-slogan{font-size:10.5px;gap:6px;margin-top:4px}.brand .b-slogan::before,.brand .b-slogan::after{width:12px}}
-nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0}
-nav a{text-decoration:none;font:600 17px/1 var(--f-display);color:var(--muted)}
-body.lang-ta nav a{font-family:var(--f-tamil)}
+nav{background:var(--bg-deep);border-top:1px solid var(--line)}
+nav ul{display:flex;justify-content:center;gap:8px;list-style:none;margin:0 auto;padding-block:0}
+nav a{display:block;position:relative;padding:17px 22px;text-decoration:none;font:600 16px/1 var(--f-display);letter-spacing:.04em;color:var(--muted)}
+body.lang-ta nav a{font-family:var(--f-tamil);letter-spacing:0}
+nav a::after{content:"";position:absolute;left:22px;right:22px;bottom:0;height:3px;border-radius:3px 3px 0 0;background:var(--cyan);transform:scaleX(0);transition:transform .2s}
 nav a:hover{color:var(--ink)}
+nav a:hover::after,nav a:focus-visible::after{transform:scaleX(1)}
 .lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--bg-deep)}
 .lang button{border:0;background:transparent;color:var(--muted);font:700 14px/1 var(--f-display);padding:10px 15px;border-radius:999px;cursor:pointer}
 .lang button[aria-pressed="true"]{background:var(--cyan);color:var(--bg-deep)}
@@ -66,11 +69,39 @@ nav a:hover{color:var(--ink)}
   .menu-btn{display:inline-flex}
   nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--bg-deep);border-bottom:1px solid var(--line);box-shadow:0 20px 40px -20px rgba(0,0,0,.6)}
   nav.open{display:block}
-  nav ul{flex-direction:column;gap:0;max-width:var(--wrap);margin:0 auto;padding:6px 20px 14px}
+  nav ul{flex-direction:column;gap:0;padding-block:6px 14px}
   nav a{display:block;padding:16px 0;font-size:18px;border-bottom:1px solid var(--line)}
+  nav a::after{display:none}
   nav li:last-child a{border-bottom:0}
+  html{scroll-padding-top:120px}
+  .svc{scroll-margin-top:120px}
 }
-@media (prefers-reduced-motion: reduce){.menu-btn span{transition:none}}
+/* compact header after scrolling (desktop only) */
+.brand img{transition:width .25s,height .25s}
+@media (min-width:861px){
+  header.compact{display:grid;grid-template-columns:max(20px,calc((100% - var(--wrap))/2 + 20px)) auto 1fr auto max(20px,calc((100% - var(--wrap))/2 + 20px));align-items:center;column-gap:16px;min-height:72px}
+  header.compact .bar{display:contents}
+  header.compact .brand{grid-column:2;grid-row:1;margin-right:0;gap:12px;padding-block:8px}
+  header.compact .brand img{width:52px;height:52px}
+  header.compact .brand b{font-size:22px}
+  header.compact .brand small{font-size:10px;margin-top:5px}
+  header.compact .b-tag,header.compact .b-slogan{display:none}
+  header.compact nav{grid-column:3;grid-row:1;background:transparent;border-top:0}
+  header.compact nav ul{max-width:none;padding-inline:0;gap:0}
+  header.compact nav a{padding:27px 14px}
+  header.compact nav a::after{left:14px;right:14px}
+  header.compact .lang{grid-column:4;grid-row:1}
+}
+@media (min-width:861px) and (max-width:1020px){header.compact .brand small{display:none}}
+@media (max-width:860px){
+  header.compact .bar{min-height:64px;padding-block:6px}
+  header.compact .brand{gap:10px}
+  header.compact .brand img{width:44px;height:44px}
+  header.compact .brand b{font-size:20px}
+  header.compact .brand small{font-size:9.5px;letter-spacing:.14em;margin-top:4px}
+  header.compact .b-tag,header.compact .b-slogan{display:none}
+}
+@media (prefers-reduced-motion: reduce){.menu-btn span,nav a::after,.brand img{transition:none}}
 
 /* buttons */
 .btns{display:flex;flex-wrap:wrap;gap:12px}
@@ -125,7 +156,7 @@ body.lang-ta .head h2{font-size:clamp(23px,2.8vw,32px)}
 
 /* services */
 .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.svc{background:linear-gradient(180deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-radius:var(--r);padding:22px 24px 26px;display:grid;grid-template-columns:84px 1fr;gap:6px 18px;align-content:start;scroll-margin-top:150px}
+.svc{background:linear-gradient(180deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-radius:var(--r);padding:22px 24px 26px;display:grid;grid-template-columns:84px 1fr;gap:6px 18px;align-content:start;scroll-margin-top:100px}
 .svc img{width:84px;height:84px;object-fit:cover;border-radius:12px;grid-row:span 3}
 .svc .tag{font:700 11px/1 var(--f-display);text-transform:uppercase;letter-spacing:.16em;color:var(--cyan);align-self:end;padding-top:4px}
 body.lang-ta .svc .tag{font-family:var(--f-tamil);letter-spacing:0;text-transform:none;font-size:12px}
@@ -176,20 +207,20 @@ footer i{font-family:var(--f-display);font-weight:600;color:var(--ink)}
       <img src="img/logo.jpg" alt="" width="96" height="96">
       <span class="b-text"><b>NETHRA</b><small>Strategic Solutions</small><span class="b-tag">Think AI. Build Smarter. <em>Grow Faster.</em></span><span class="b-slogan">Success Made Simple</span></span>
     </a>
-    <nav aria-label="Main" id="main-nav">
-      <ul>
-        <li><a href="#home"><span class="en">Home</span><span class="ta">முகப்பு</span></a></li>
-        <li><a href="#about"><span class="en">About us</span><span class="ta">எங்களைப் பற்றி</span></a></li>
-        <li><a href="#services"><span class="en">Services</span><span class="ta">சேவைகள்</span></a></li>
-        <li><a href="#contact"><span class="en">Contact</span><span class="ta">தொடர்பு</span></a></li>
-      </ul>
-    </nav>
     <div class="lang" role="group" aria-label="Language">
       <button type="button" id="btn-en" data-lang="en" aria-pressed="true">EN</button>
       <button type="button" id="btn-ta" data-lang="ta" aria-pressed="false">தமிழ்</button>
     </div>
     <button class="menu-btn" type="button" id="menu-btn" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
+  <nav aria-label="Main" id="main-nav">
+    <ul class="wrap">
+        <li><a href="#home"><span class="en">Home</span><span class="ta">முகப்பு</span></a></li>
+        <li><a href="#about"><span class="en">About us</span><span class="ta">எங்களைப் பற்றி</span></a></li>
+        <li><a href="#services"><span class="en">Services</span><span class="ta">சேவைகள்</span></a></li>
+        <li><a href="#contact"><span class="en">Contact</span><span class="ta">தொடர்பு</span></a></li>
+    </ul>
+  </nav>
 </header>
 
 <main>
@@ -401,6 +432,15 @@ footer i{font-family:var(--f-display);font-weight:600;color:var(--ink)}
   buttons.forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); }); });
   var saved='en'; try{ saved = localStorage.getItem('nethra-lang') || 'en'; }catch(e){}
   setLang(saved);
+
+  var header=document.querySelector('header'), compact=false;
+  function onScroll(){
+    var y=window.scrollY||0;
+    if(!compact && y>120){ compact=true; header.classList.add('compact'); }
+    else if(compact && y<20){ compact=false; header.classList.remove('compact'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
 
   var menuBtn=document.getElementById('menu-btn'), nav=document.getElementById('main-nav');
   function setMenu(open){ nav.classList.toggle('open',open); menuBtn.setAttribute('aria-expanded',String(open)); menuBtn.setAttribute('aria-label', open?'Close menu':'Open menu'); }
