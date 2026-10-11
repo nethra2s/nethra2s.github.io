@@ -1,10 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Nethra Strategic Solutions - AI transformation partner. Think AI. Build Smarter. Grow Faster.">
-<link rel="icon" href="img/logo.jpg">
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Nethra Strategic Solutions</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +17,7 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;background:var(--bg-deep)}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--f-body)}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--f-body)}
 body.lang-ta{font-family:var(--f-tamil);font-size:16px}
 body:not(.lang-ta) .ta, body.lang-ta .en{display:none}
 .wrap{max-width:var(--wrap);margin:0 auto;padding-inline:20px}
@@ -38,17 +32,18 @@ body.lang-ta .eyebrow{font-family:var(--f-tamil);letter-spacing:.02em;text-trans
 
 /* header */
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:rgba(1,20,55,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.bar{display:flex;align-items:center;gap:24px;min-height:72px}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;margin-right:auto}
-.brand img{width:46px;height:46px;border-radius:50%}
-.brand b{font:900 20px/1 var(--f-display);letter-spacing:.06em;display:block}
-.brand small{font:700 10.5px/1 var(--f-display);color:var(--cyan);letter-spacing:.22em;text-transform:uppercase;display:block;margin-top:5px}
-nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
-nav a{text-decoration:none;font:600 15px/1 var(--f-display);color:var(--muted)}
+.bar{display:flex;align-items:center;gap:28px;min-height:96px}
+.brand{display:flex;align-items:center;gap:16px;text-decoration:none;margin-right:auto}
+.brand img{width:68px;height:68px;border-radius:50%}
+.brand b{font:900 30px/1 var(--f-display);letter-spacing:.06em;display:block}
+.brand small{font:700 13px/1 var(--f-display);color:var(--cyan);letter-spacing:.24em;text-transform:uppercase;display:block;margin-top:7px}
+@media (max-width:560px){.bar{min-height:76px;gap:14px}.brand img{width:50px;height:50px}.brand b{font-size:22px}.brand small{font-size:10px;letter-spacing:.16em}}
+nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0}
+nav a{text-decoration:none;font:600 17px/1 var(--f-display);color:var(--muted)}
 body.lang-ta nav a{font-family:var(--f-tamil)}
 nav a:hover{color:var(--ink)}
 .lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--bg-deep)}
-.lang button{border:0;background:transparent;color:var(--muted);font:700 13px/1 var(--f-display);padding:8px 13px;border-radius:999px;cursor:pointer}
+.lang button{border:0;background:transparent;color:var(--muted);font:700 14px/1 var(--f-display);padding:10px 15px;border-radius:999px;cursor:pointer}
 .lang button[aria-pressed="true"]{background:var(--cyan);color:var(--bg-deep)}
 .lang button:last-child{font-family:var(--f-tamil)}
 @media (max-width:860px){nav{display:none}}
@@ -116,7 +111,7 @@ body.lang-ta .head h2{font-size:clamp(23px,2.8vw,32px)}
 
 /* services */
 .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.svc{background:linear-gradient(180deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-radius:var(--r);padding:22px 24px 26px;display:grid;grid-template-columns:84px 1fr;gap:6px 18px;align-content:start;scroll-margin-top:96px}
+.svc{background:linear-gradient(180deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-radius:var(--r);padding:22px 24px 26px;display:grid;grid-template-columns:84px 1fr;gap:6px 18px;align-content:start;scroll-margin-top:116px}
 .svc img{width:84px;height:84px;object-fit:cover;border-radius:12px;grid-row:span 3}
 .svc .tag{font:700 11px/1 var(--f-display);text-transform:uppercase;letter-spacing:.16em;color:var(--cyan);align-self:end;padding-top:4px}
 body.lang-ta .svc .tag{font-family:var(--f-tamil);letter-spacing:0;text-transform:none;font-size:12px}
@@ -159,12 +154,10 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-bet
 footer i{font-family:var(--f-display);font-weight:600;color:var(--ink)}
 </style>
 
-</head>
-<body>
 <header>
   <div class="wrap bar">
     <a class="brand" href="#home" aria-label="Nethra Strategic Solutions home">
-      <img src="img/logo.jpg" alt="" width="46" height="46">
+      <img src="img/logo.jpg" alt="" width="68" height="68">
       <span><b>NETHRA</b><small>Strategic Solutions</small></span>
     </a>
     <nav aria-label="Main">
@@ -413,5 +406,4 @@ footer i{font-family:var(--f-display);font-weight:600;color:var(--ink)}
 })();
 </script>
 
-</body>
-</html>
+</body></html>
