@@ -21,7 +21,7 @@
   --wrap:1180px; --r:14px;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;background:var(--bg-deep)}
+html{scroll-behavior:smooth;scroll-padding-top:150px;background:var(--bg-deep)}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--f-body)}
 body.lang-ta{font-family:var(--f-tamil);font-size:16px}
@@ -38,12 +38,17 @@ body.lang-ta .eyebrow{font-family:var(--f-tamil);letter-spacing:.02em;text-trans
 
 /* header */
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:rgba(1,20,55,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.bar{display:flex;align-items:center;gap:28px;min-height:96px}
+.brand .b-text{display:flex;flex-direction:column;align-items:center;text-align:center}
+.brand .b-tag{display:block;margin-top:9px;font:800 14px/1.2 var(--f-display);color:var(--ink);letter-spacing:.01em}
+.brand .b-tag em{font-style:normal;color:var(--cyan)}
+.brand .b-slogan{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:5px;font:italic 600 13px/1.2 var(--f-display);color:var(--ink)}
+.brand .b-slogan::before,.brand .b-slogan::after{content:"";width:18px;height:2px;border-radius:2px;background:var(--red);flex:none}
+.bar{display:flex;align-items:center;gap:28px;min-height:128px;padding-block:12px}
 .brand{display:flex;align-items:center;gap:16px;text-decoration:none;margin-right:auto}
-.brand img{width:68px;height:68px;border-radius:50%}
+.brand img{width:96px;height:96px;border-radius:50%}
 .brand b{font:900 30px/1 var(--f-display);letter-spacing:.06em;display:block}
 .brand small{font:700 13px/1 var(--f-display);color:var(--cyan);letter-spacing:.24em;text-transform:uppercase;display:block;margin-top:7px}
-@media (max-width:560px){.bar{min-height:76px;gap:14px}.brand img{width:50px;height:50px}.brand b{font-size:22px}.brand small{font-size:10px;letter-spacing:.16em}}
+@media (max-width:560px){.bar{min-height:96px;gap:12px}.brand{gap:10px}.brand img{width:62px;height:62px}.brand b{font-size:22px}.brand small{font-size:9.5px;letter-spacing:.14em;margin-top:5px}.brand .b-tag{font-size:10.5px;margin-top:6px}.brand .b-slogan{font-size:10.5px;gap:6px;margin-top:4px}.brand .b-slogan::before,.brand .b-slogan::after{width:12px}}
 nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0}
 nav a{text-decoration:none;font:600 17px/1 var(--f-display);color:var(--muted)}
 body.lang-ta nav a{font-family:var(--f-tamil)}
@@ -77,37 +82,27 @@ body.lang-ta .btn{font-family:var(--f-tamil)}
 .btn.ghost:hover{background:var(--cyan-soft)}
 
 /* hero */
-.hero{position:relative;overflow:hidden;padding-block:72px 40px;
+.hero{position:relative;overflow:hidden;padding-block:72px 64px;
   background:
     radial-gradient(600px 380px at 82% 40%, rgba(34,169,236,.22), transparent 70%),
     radial-gradient(rgba(120,170,240,.16) 1px, transparent 1.4px) 0 0/14px 14px,
     var(--bg)}
 .hero::after{content:"";position:absolute;inset:auto 0 0 0;height:120px;background:linear-gradient(transparent,var(--bg));pointer-events:none}
-.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
 .hero .wrap > *{min-width:0}
-.hero h1{font-size:clamp(36px,5.6vw,68px);font-weight:900;margin-top:18px;letter-spacing:-.01em}
+.hero h1{font-size:clamp(28px,3.6vw,46px);font-weight:800;margin-top:18px;letter-spacing:-.01em}
 .hero h1 .c{color:var(--cyan)}
-body.lang-ta .hero h1{font-size:clamp(28px,4vw,46px);font-weight:800}
-.motto{display:flex;align-items:center;gap:14px;margin-top:20px;font:italic 600 20px/1.2 var(--f-display)}
-.motto::before,.motto::after{content:"";width:44px;height:3px;border-radius:2px;background:var(--red);flex:none}
-body.lang-ta .motto{font-family:var(--f-tamil);font-style:normal;font-size:18px}
+body.lang-ta .hero h1{font-size:clamp(23px,2.8vw,36px);font-weight:800}
 .hero .lead{font-size:19px;color:var(--muted);max-width:56ch;margin-block:24px 32px}
-.orb{justify-self:center;position:relative;width:min(100%,360px);aspect-ratio:1}
-.orb img{width:100%;height:100%;border-radius:50%;box-shadow:0 0 0 1px var(--line),0 30px 80px -20px rgba(34,169,236,.55)}
-.orb::before{content:"";position:absolute;inset:-18px;border-radius:50%;border:1px dashed rgba(34,169,236,.35)}
-@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.orb{width:220px;grid-row:1}}
+.hero-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;width:100%;max-width:440px;justify-self:end}
+.hero-grid a{display:flex;flex-direction:column;align-items:center;gap:8px;padding:10px 8px 12px;border:1px solid var(--line);border-radius:14px;background:var(--bg-deep);text-decoration:none;text-align:center;font:700 12.5px/1.25 var(--f-display);color:var(--muted);transition:border-color .2s,transform .2s,color .2s}
+body.lang-ta .hero-grid a{font-family:var(--f-tamil);font-size:12px}
+.hero-grid img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:10px}
+.hero-grid a:hover{border-color:var(--cyan);color:var(--ink);transform:translateY(-3px)}
+@media (prefers-reduced-motion: reduce){.hero-grid a{transition:none}.hero-grid a:hover{transform:none}}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero-grid{justify-self:center;max-width:520px}}
+@media (max-width:420px){.hero-grid{gap:8px}.hero-grid a{padding:6px 4px 8px;font-size:11px}}
 
-/* icon index */
-.index{padding-block:8px 56px}
-.index ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:16px 14px}
-.index li{width:96px}
-.index a{display:flex;flex-direction:column;align-items:center;gap:8px;text-decoration:none;text-align:center;font:700 12px/1.25 var(--f-display);color:var(--muted)}
-body.lang-ta .index a{font-family:var(--f-tamil);font-size:12px}
-.index img{width:84px;height:84px;object-fit:cover;border-radius:14px;transition:transform .25s}
-.index a:hover img{transform:translateY(-4px)}
-.index a:hover{color:var(--ink)}
-@media (max-width:520px){.index li{width:84px}.index img{width:68px;height:68px}}
-@media (prefers-reduced-motion: reduce){.index img{transition:none}}
 
 /* sections */
 section{padding-block:84px}
@@ -130,7 +125,7 @@ body.lang-ta .head h2{font-size:clamp(23px,2.8vw,32px)}
 
 /* services */
 .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.svc{background:linear-gradient(180deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-radius:var(--r);padding:22px 24px 26px;display:grid;grid-template-columns:84px 1fr;gap:6px 18px;align-content:start;scroll-margin-top:116px}
+.svc{background:linear-gradient(180deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-radius:var(--r);padding:22px 24px 26px;display:grid;grid-template-columns:84px 1fr;gap:6px 18px;align-content:start;scroll-margin-top:150px}
 .svc img{width:84px;height:84px;object-fit:cover;border-radius:12px;grid-row:span 3}
 .svc .tag{font:700 11px/1 var(--f-display);text-transform:uppercase;letter-spacing:.16em;color:var(--cyan);align-self:end;padding-top:4px}
 body.lang-ta .svc .tag{font-family:var(--f-tamil);letter-spacing:0;text-transform:none;font-size:12px}
@@ -178,8 +173,8 @@ footer i{font-family:var(--f-display);font-weight:600;color:var(--ink)}
 <header>
   <div class="wrap bar">
     <a class="brand" href="#home" aria-label="Nethra Strategic Solutions home">
-      <img src="img/logo.jpg" alt="" width="68" height="68">
-      <span><b>NETHRA</b><small>Strategic Solutions</small></span>
+      <img src="img/logo.jpg" alt="" width="96" height="96">
+      <span class="b-text"><b>NETHRA</b><small>Strategic Solutions</small><span class="b-tag">Think AI. Build Smarter. <em>Grow Faster.</em></span><span class="b-slogan">Success Made Simple</span></span>
     </a>
     <nav aria-label="Main" id="main-nav">
       <ul>
@@ -203,10 +198,9 @@ footer i{font-family:var(--f-display);font-weight:600;color:var(--ink)}
     <div>
       <p class="eyebrow"><span class="en">AI transformation partner</span><span class="ta">உங்கள் AI மாற்றக் கூட்டாளி</span></p>
       <h1>
-        <span class="en">Think AI.<br>Build Smarter.<br><span class="c">Grow Faster.</span></span>
-        <span class="ta">AI-ஆல் சிந்தியுங்கள்.<br>புத்திசாலித்தனமாக உருவாக்குங்கள்.<br><span class="c">வேகமாக வளருங்கள்.</span></span>
+        <span class="en">AI transformation for <span class="c">growing businesses</span></span>
+        <span class="ta">வளரும் நிறுவனங்களுக்கான <span class="c">AI மாற்றம்</span></span>
       </h1>
-      <p class="motto"><span class="en">Success Made Simple</span><span class="ta">வெற்றி, எளிதாக</span></p>
       <p class="lead">
         <span class="en">Nethra Strategic Solutions brings AI into every part of your business: strategy, operations, sales, and the content your customers see. We plan it, build it and train your team to use it.</span>
         <span class="ta">நேத்ரா ஸ்ட்ராடஜிக் சொல்யூஷன்ஸ் உங்கள் தொழிலின் ஒவ்வொரு பகுதியிலும் AI-ஐக் கொண்டு வருகிறது: உத்தி, செயல்பாடு, விற்பனை, வாடிக்கையாளர்கள் காணும் உள்ளடக்கம். நாங்கள் திட்டமிட்டு, உருவாக்கி, உங்கள் குழுவுக்கு பயிற்சியும் அளிக்கிறோம்.</span>
@@ -216,13 +210,7 @@ footer i{font-family:var(--f-display);font-weight:600;color:var(--ink)}
         <a class="btn ghost" href="#services"><span class="en">Explore services</span><span class="ta">சேவைகளைப் பாருங்கள்</span></a>
       </div>
     </div>
-    <div class="orb"><img src="img/logo.jpg" alt="Nethra Strategic Solutions logo" width="360" height="360"></div>
-  </div>
-</section>
-
-<div class="index" aria-label="Service index">
-  <div class="wrap">
-    <ul>
+    <ul class="hero-grid" aria-label="Our services">
       <li><a href="#svc-strategy"><img src="img/strategy.jpg" alt="" width="240" height="240"><span class="en">AI Strategy</span><span class="ta">AI உத்தி</span></a></li>
       <li><a href="#svc-growth"><img src="img/growth.jpg" alt="" width="240" height="240"><span class="en">Sales Growth</span><span class="ta">விற்பனை வளர்ச்சி</span></a></li>
       <li><a href="#svc-analytics"><img src="img/analytics.jpg" alt="" width="240" height="240"><span class="en">Analytics</span><span class="ta">பகுப்பாய்வு</span></a></li>
@@ -234,7 +222,7 @@ footer i{font-family:var(--f-display);font-weight:600;color:var(--ink)}
       <li><a href="#svc-content"><img src="img/content.jpg" alt="" width="240" height="240"><span class="en">YouTube</span><span class="ta">யூடியூப்</span></a></li>
     </ul>
   </div>
-</div>
+</section>
 
 <section class="deep" id="about">
   <div class="wrap">
@@ -373,16 +361,16 @@ footer i{font-family:var(--f-display);font-weight:600;color:var(--ink)}
       <div class="field"><label for="f-email"><span class="en">Email</span><span class="ta">மின்னஞ்சல்</span></label><input id="f-email" name="email" type="email" autocomplete="email"></div>
       <div class="field full"><label for="f-topic"><span class="en">What would you like AI to help with?</span><span class="ta">எதற்கு AI உதவி தேவை?</span></label>
         <select id="f-topic" name="topic">
-          <option>AI Strategy &amp; Roadmap / AI உத்தி</option>
-          <option>AI for Sales &amp; Marketing / விற்பனை & மார்க்கெட்டிங்</option>
-          <option>Data Analytics &amp; Dashboards / தரவு பகுப்பாய்வு</option>
-          <option>Custom AI Solutions / தனிப்பயன் AI</option>
-          <option>Workflow Automation / தானியக்கம்</option>
-          <option>AI Design &amp; Branding / வடிவமைப்பு</option>
-          <option>AI Voice &amp; Music / குரல் & இசை</option>
-          <option>AI Video Production / வீடியோ</option>
-          <option>YouTube &amp; Digital Content / யூடியூப்</option>
-          <option>Not sure yet / இன்னும் உறுதியில்லை</option>
+          <option value="AI Strategy &amp; Roadmap" data-en="AI Strategy &amp; Roadmap" data-ta="AI Strategy &amp; Roadmap / AI உத்தி">AI Strategy &amp; Roadmap</option>
+          <option value="AI for Sales &amp; Marketing" data-en="AI for Sales &amp; Marketing" data-ta="AI for Sales &amp; Marketing / விற்பனை & மார்க்கெட்டிங்">AI for Sales &amp; Marketing</option>
+          <option value="Data Analytics &amp; Dashboards" data-en="Data Analytics &amp; Dashboards" data-ta="Data Analytics &amp; Dashboards / தரவு பகுப்பாய்வு">Data Analytics &amp; Dashboards</option>
+          <option value="Custom AI Solutions" data-en="Custom AI Solutions" data-ta="Custom AI Solutions / தனிப்பயன் AI">Custom AI Solutions</option>
+          <option value="Workflow Automation" data-en="Workflow Automation" data-ta="Workflow Automation / தானியக்கம்">Workflow Automation</option>
+          <option value="AI Design &amp; Branding" data-en="AI Design &amp; Branding" data-ta="AI Design &amp; Branding / வடிவமைப்பு">AI Design &amp; Branding</option>
+          <option value="AI Voice &amp; Music" data-en="AI Voice &amp; Music" data-ta="AI Voice &amp; Music / குரல் & இசை">AI Voice &amp; Music</option>
+          <option value="AI Video Production" data-en="AI Video Production" data-ta="AI Video Production / வீடியோ">AI Video Production</option>
+          <option value="YouTube &amp; Digital Content" data-en="YouTube &amp; Digital Content" data-ta="YouTube &amp; Digital Content / யூடியூப்">YouTube &amp; Digital Content</option>
+          <option value="Not sure yet" data-en="Not sure yet" data-ta="Not sure yet / இன்னும் உறுதியில்லை">Not sure yet</option>
         </select>
       </div>
       <div class="field full"><label for="f-msg"><span class="en">Message</span><span class="ta">செய்தி</span></label><textarea id="f-msg" name="message"></textarea></div>
@@ -407,6 +395,7 @@ footer i{font-family:var(--f-display);font-weight:600;color:var(--ink)}
     body.classList.toggle('lang-ta', l==='ta');
     document.documentElement.lang = l;
     buttons.forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.lang===l)); });
+    document.querySelectorAll('option[data-en]').forEach(function(o){ o.textContent = l==='ta' ? o.dataset.ta : o.dataset.en; });
     try{ localStorage.setItem('nethra-lang', l); }catch(e){}
   }
   buttons.forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); }); });
