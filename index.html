@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Nethra Strategic Solutions - AI transformation partner. Think AI. Build Smarter. Grow Faster.">
+<link rel="icon" href="img/logo.jpg">
+<title>Nethra Strategic Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;0,800;0,900;1,600&family=Source+Sans+3:wght@400;600&family=Noto+Sans+Tamil:wght@400;600;700;800&display=swap">
+<style>
+/* Layout: brand-navy single theme (from the NSS banner). Sticky bar, hero with logo orb, icon index strip, 3x3 service grid, process, contact. Cyan carries links/accents, red is reserved for the one primary action and the "Success Made Simple" rule. */
+:root{
+  color-scheme:dark;
+  --bg:#011B47; --bg-deep:#00112F; --surface:#062658; --surface-2:#0A3070; --line:#17407F;
+  --ink:#FFFFFF; --muted:#AFC2E4; --cyan:#22A9EC; --cyan-soft:rgba(34,169,236,.14); --red:#E3232F;
+  --f-display:"Montserrat","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Source Sans 3","Segoe UI",Roboto,Arial,sans-serif;
+  --f-tamil:"Noto Sans Tamil","Latha","Nirmala UI",sans-serif;
+  --wrap:1180px; --r:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--bg-deep)}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--f-body)}
+body.lang-ta{font-family:var(--f-tamil);font-size:16px}
+body:not(.lang-ta) .ta, body.lang-ta .en{display:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.12}
+body.lang-ta h1,body.lang-ta h2,body.lang-ta h3{font-family:var(--f-tamil);line-height:1.4}
+p{margin:0}
+a{color:inherit}
+img{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+.eyebrow{font:700 13px/1 var(--f-display);text-transform:uppercase;letter-spacing:.24em;color:var(--cyan)}
+body.lang-ta .eyebrow{font-family:var(--f-tamil);letter-spacing:.02em;text-transform:none;font-size:14px}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:rgba(1,20,55,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:24px;min-height:72px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;margin-right:auto}
+.brand img{width:46px;height:46px;border-radius:50%}
+.brand b{font:900 20px/1 var(--f-display);letter-spacing:.06em;display:block}
+.brand small{font:700 10.5px/1 var(--f-display);color:var(--cyan);letter-spacing:.22em;text-transform:uppercase;display:block;margin-top:5px}
+nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+nav a{text-decoration:none;font:600 15px/1 var(--f-display);color:var(--muted)}
+body.lang-ta nav a{font-family:var(--f-tamil)}
+nav a:hover{color:var(--ink)}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--bg-deep)}
+.lang button{border:0;background:transparent;color:var(--muted);font:700 13px/1 var(--f-display);padding:8px 13px;border-radius:999px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--cyan);color:var(--bg-deep)}
+.lang button:last-child{font-family:var(--f-tamil)}
+@media (max-width:860px){nav{display:none}}
+
+/* buttons */
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;text-decoration:none;font:700 15.5px/1 var(--f-display);padding:15px 24px;border-radius:999px;border:1.5px solid transparent;cursor:pointer}
+body.lang-ta .btn{font-family:var(--f-tamil)}
+.btn.primary{background:var(--red);color:#fff;box-shadow:0 8px 24px -10px rgba(227,35,47,.8)}
+.btn.primary:hover{filter:brightness(1.1)}
+.btn.ghost{border-color:var(--cyan);color:var(--ink)}
+.btn.ghost:hover{background:var(--cyan-soft)}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding-block:72px 40px;
+  background:
+    radial-gradient(600px 380px at 82% 40%, rgba(34,169,236,.22), transparent 70%),
+    radial-gradient(rgba(120,170,240,.16) 1px, transparent 1.4px) 0 0/14px 14px,
+    var(--bg)}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:120px;background:linear-gradient(transparent,var(--bg));pointer-events:none}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}
+.hero .wrap > *{min-width:0}
+.hero h1{font-size:clamp(36px,5.6vw,68px);font-weight:900;margin-top:18px;letter-spacing:-.01em}
+.hero h1 .c{color:var(--cyan)}
+body.lang-ta .hero h1{font-size:clamp(28px,4vw,46px);font-weight:800}
+.motto{display:flex;align-items:center;gap:14px;margin-top:20px;font:italic 600 20px/1.2 var(--f-display)}
+.motto::before,.motto::after{content:"";width:44px;height:3px;border-radius:2px;background:var(--red);flex:none}
+body.lang-ta .motto{font-family:var(--f-tamil);font-style:normal;font-size:18px}
+.hero .lead{font-size:19px;color:var(--muted);max-width:56ch;margin-block:24px 32px}
+.orb{justify-self:center;position:relative;width:min(100%,360px);aspect-ratio:1}
+.orb img{width:100%;height:100%;border-radius:50%;box-shadow:0 0 0 1px var(--line),0 30px 80px -20px rgba(34,169,236,.55)}
+.orb::before{content:"";position:absolute;inset:-18px;border-radius:50%;border:1px dashed rgba(34,169,236,.35)}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.orb{width:220px;grid-row:1}}
+
+/* icon index */
+.index{padding-block:8px 56px}
+.index ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:16px 14px}
+.index li{width:96px}
+.index a{display:flex;flex-direction:column;align-items:center;gap:8px;text-decoration:none;text-align:center;font:700 12px/1.25 var(--f-display);color:var(--muted)}
+body.lang-ta .index a{font-family:var(--f-tamil);font-size:12px}
+.index img{width:84px;height:84px;object-fit:cover;border-radius:14px;transition:transform .25s}
+.index a:hover img{transform:translateY(-4px)}
+.index a:hover{color:var(--ink)}
+@media (max-width:520px){.index li{width:84px}.index img{width:68px;height:68px}}
+@media (prefers-reduced-motion: reduce){.index img{transition:none}}
+
+/* sections */
+section{padding-block:84px}
+.head{display:grid;gap:14px;max-width:700px;margin-bottom:46px}
+.head h2{font-size:clamp(28px,3.6vw,44px);font-weight:800}
+body.lang-ta .head h2{font-size:clamp(23px,2.8vw,32px)}
+.head p{color:var(--muted);font-size:18px}
+.deep{background:var(--bg-deep);border-block:1px solid var(--line)}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px}
+.about-grid > *{min-width:0}
+.story p{font-size:18px}
+.story p+p{margin-top:18px;color:var(--muted)}
+.values{display:grid;gap:14px}
+.value{padding:22px 24px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);display:grid;gap:6px}
+.value h3{font-size:18px;color:var(--cyan)}
+.value p{color:var(--muted);font-size:16px}
+@media (max-width:860px){.about-grid{grid-template-columns:1fr}}
+
+/* services */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.svc{background:linear-gradient(180deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-radius:var(--r);padding:22px 24px 26px;display:grid;grid-template-columns:84px 1fr;gap:6px 18px;align-content:start;scroll-margin-top:96px}
+.svc img{width:84px;height:84px;object-fit:cover;border-radius:12px;grid-row:span 3}
+.svc .tag{font:700 11px/1 var(--f-display);text-transform:uppercase;letter-spacing:.16em;color:var(--cyan);align-self:end;padding-top:4px}
+body.lang-ta .svc .tag{font-family:var(--f-tamil);letter-spacing:0;text-transform:none;font-size:12px}
+.svc h3{font-size:19px;font-weight:700}
+.svc p{color:var(--muted);font-size:15.5px}
+.svc:target{border-color:var(--cyan);box-shadow:0 0 0 3px var(--cyan-soft)}
+@media (max-width:980px){.services{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.services{grid-template-columns:1fr}}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{counter-increment:s;padding:26px 22px;border-radius:var(--r);border:1px solid var(--line);background:var(--surface);display:grid;gap:10px;align-content:start;position:relative}
+.steps li::before{content:counter(s,decimal-leading-zero);font:900 34px/1 var(--f-display);color:transparent;-webkit-text-stroke:1.5px var(--cyan);font-variant-numeric:tabular-nums}
+.steps h3{font-size:19px}
+.steps p{font-size:15.5px;color:var(--muted)}
+@media (max-width:900px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:start}
+.contact-grid > *{min-width:0}
+.details{display:grid;gap:22px;margin:0}
+.details dt{font:700 12px/1 var(--f-display);text-transform:uppercase;letter-spacing:.16em;color:var(--cyan)}
+body.lang-ta .details dt{font-family:var(--f-tamil);letter-spacing:0;text-transform:none;font-size:13px}
+.details dd{margin:8px 0 0;font-size:18px}
+.todo{display:inline-block;border:1px dashed var(--line);color:var(--muted);padding:3px 12px;border-radius:6px;font-size:15px}
+form{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{display:grid;gap:7px}
+.field.full{grid-column:1/-1}
+label{font-weight:600;font-size:14.5px}
+input,textarea,select{font:inherit;font-size:16px;color:var(--ink);background:var(--bg-deep);border:1px solid var(--line);border-radius:10px;padding:12px 13px;width:100%}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--cyan);outline-offset:0;border-color:transparent}
+textarea{min-height:120px;resize:vertical}
+.form-note{grid-column:1/-1;font-size:15px;color:var(--cyan);font-weight:600}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr}}
+@media (max-width:560px){form{grid-template-columns:1fr;padding:20px}}
+
+footer{padding-block:30px;border-top:1px solid var(--line);background:var(--bg-deep);color:var(--muted);font-size:14.5px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:center}
+footer i{font-family:var(--f-display);font-weight:600;color:var(--ink)}
+</style>
+
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#home" aria-label="Nethra Strategic Solutions home">
+      <img src="img/logo.jpg" alt="" width="46" height="46">
+      <span><b>NETHRA</b><small>Strategic Solutions</small></span>
+    </a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#home"><span class="en">Home</span><span class="ta">முகப்பு</span></a></li>
+        <li><a href="#about"><span class="en">About us</span><span class="ta">எங்களைப் பற்றி</span></a></li>
+        <li><a href="#services"><span class="en">Services</span><span class="ta">சேவைகள்</span></a></li>
+        <li><a href="#contact"><span class="en">Contact</span><span class="ta">தொடர்பு</span></a></li>
+      </ul>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" id="btn-en" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" id="btn-ta" data-lang="ta" aria-pressed="false">தமிழ்</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow"><span class="en">AI transformation partner</span><span class="ta">உங்கள் AI மாற்றக் கூட்டாளி</span></p>
+      <h1>
+        <span class="en">Think AI.<br>Build Smarter.<br><span class="c">Grow Faster.</span></span>
+        <span class="ta">AI-ஆல் சிந்தியுங்கள்.<br>புத்திசாலித்தனமாக உருவாக்குங்கள்.<br><span class="c">வேகமாக வளருங்கள்.</span></span>
+      </h1>
+      <p class="motto"><span class="en">Success Made Simple</span><span class="ta">வெற்றி, எளிதாக</span></p>
+      <p class="lead">
+        <span class="en">Nethra Strategic Solutions brings AI into every part of your business: strategy, operations, sales, and the content your customers see. We plan it, build it and train your team to use it.</span>
+        <span class="ta">நேத்ரா ஸ்ட்ராடஜிக் சொல்யூஷன்ஸ் உங்கள் தொழிலின் ஒவ்வொரு பகுதியிலும் AI-ஐக் கொண்டு வருகிறது: உத்தி, செயல்பாடு, விற்பனை, வாடிக்கையாளர்கள் காணும் உள்ளடக்கம். நாங்கள் திட்டமிட்டு, உருவாக்கி, உங்கள் குழுவுக்கு பயிற்சியும் அளிக்கிறோம்.</span>
+      </p>
+      <div class="btns">
+        <a class="btn primary" href="#contact"><span class="en">Book a free AI consultation</span><span class="ta">இலவச AI ஆலோசனை பெறுங்கள்</span></a>
+        <a class="btn ghost" href="#services"><span class="en">Explore services</span><span class="ta">சேவைகளைப் பாருங்கள்</span></a>
+      </div>
+    </div>
+    <div class="orb"><img src="img/logo.jpg" alt="Nethra Strategic Solutions logo" width="360" height="360"></div>
+  </div>
+</section>
+
+<div class="index" aria-label="Service index">
+  <div class="wrap">
+    <ul>
+      <li><a href="#svc-strategy"><img src="img/strategy.jpg" alt="" width="240" height="240"><span class="en">AI Strategy</span><span class="ta">AI உத்தி</span></a></li>
+      <li><a href="#svc-growth"><img src="img/growth.jpg" alt="" width="240" height="240"><span class="en">Sales Growth</span><span class="ta">விற்பனை வளர்ச்சி</span></a></li>
+      <li><a href="#svc-analytics"><img src="img/analytics.jpg" alt="" width="240" height="240"><span class="en">Analytics</span><span class="ta">பகுப்பாய்வு</span></a></li>
+      <li><a href="#svc-ai"><img src="img/ai.jpg" alt="" width="240" height="240"><span class="en">Custom AI</span><span class="ta">தனிப்பயன் AI</span></a></li>
+      <li><a href="#svc-automation"><img src="img/automation.jpg" alt="" width="240" height="240"><span class="en">Automation</span><span class="ta">தானியக்கம்</span></a></li>
+      <li><a href="#svc-design"><img src="img/design.jpg" alt="" width="240" height="240"><span class="en">Design</span><span class="ta">வடிவமைப்பு</span></a></li>
+      <li><a href="#svc-audio"><img src="img/audio.jpg" alt="" width="240" height="240"><span class="en">Voice &amp; Music</span><span class="ta">குரல் & இசை</span></a></li>
+      <li><a href="#svc-video"><img src="img/video.jpg" alt="" width="240" height="240"><span class="en">Video</span><span class="ta">வீடியோ</span></a></li>
+      <li><a href="#svc-content"><img src="img/content.jpg" alt="" width="240" height="240"><span class="en">YouTube</span><span class="ta">யூடியூப்</span></a></li>
+    </ul>
+  </div>
+</div>
+
+<section class="deep" id="about">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow"><span class="en">About us</span><span class="ta">எங்களைப் பற்றி</span></p>
+      <h2><span class="en">AI that fits the way your business already works</span><span class="ta">உங்கள் தொழில் இயங்கும் முறைக்கு ஏற்ற AI</span></h2>
+    </div>
+    <div class="about-grid">
+      <div class="story">
+        <p>
+          <span class="en">Every business owner hears that AI will change their industry. Few get clear advice on where to start, what it will cost, or who will set it up. Nethra Strategic Solutions exists to close that gap.</span>
+          <span class="ta">AI உங்கள் துறையை மாற்றும் என்று ஒவ்வொரு தொழில் உரிமையாளரும் கேள்விப்படுகிறார்கள். ஆனால் எங்கே தொடங்குவது, எவ்வளவு செலவாகும், யார் அமைத்துத் தருவார்கள் என்ற தெளிவான வழிகாட்டுதல் சிலருக்கே கிடைக்கிறது. அந்த இடைவெளியை நிரப்புவதே நேத்ரா ஸ்ட்ராடஜிக் சொல்யூஷன்ஸின் நோக்கம்.</span>
+        </p>
+        <p>
+          <span class="en">We work with small and mid-sized businesses from first idea to working system. One team covers strategy, automation, analytics and AI-made creative work, so you don't have to manage five vendors to get one result.</span>
+          <span class="ta">முதல் யோசனையிலிருந்து செயல்படும் அமைப்பு வரை சிறு மற்றும் நடுத்தர நிறுவனங்களுடன் இணைந்து பணியாற்றுகிறோம். உத்தி, தானியக்கம், பகுப்பாய்வு, AI படைப்புப் பணிகள் அனைத்தையும் ஒரே குழு கவனிக்கிறது. ஒரு முடிவுக்காக ஐந்து நிறுவனங்களை நிர்வகிக்க வேண்டியதில்லை.</span>
+        </p>
+      </div>
+      <div class="values">
+        <div class="value">
+          <h3><span class="en">Simple</span><span class="ta">எளிமை</span></h3>
+          <p><span class="en">No jargon. You see what each AI tool does and what it saves.</span><span class="ta">கடினச் சொற்கள் இல்லை. ஒவ்வொரு AI கருவியும் என்ன செய்கிறது, எதை மிச்சப்படுத்துகிறது என்பது தெளிவு.</span></p>
+        </div>
+        <div class="value">
+          <h3><span class="en">Practical</span><span class="ta">நடைமுறை</span></h3>
+          <p><span class="en">We start with the tasks that cost you the most time today.</span><span class="ta">இன்று அதிக நேரம் எடுக்கும் பணிகளிலிருந்தே தொடங்குகிறோம்.</span></p>
+        </div>
+        <div class="value">
+          <h3><span class="en">Measurable</span><span class="ta">அளவிடக்கூடியது</span></h3>
+          <p><span class="en">Every project has a target: hours saved, leads gained, costs cut.</span><span class="ta">ஒவ்வொரு திட்டத்துக்கும் இலக்கு உண்டு: மிச்சமான நேரம், கூடுதல் வாடிக்கையாளர்கள், குறைந்த செலவு.</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow"><span class="en">Services</span><span class="ta">சேவைகள்</span></p>
+      <h2><span class="en">AI transformation, end to end</span><span class="ta">முழுமையான AI மாற்றம்</span></h2>
+      <p><span class="en">Nine services across strategy, building and creative work. Start with one, or let us run the full transformation.</span><span class="ta">உத்தி, உருவாக்கம், படைப்பு என மூன்று பிரிவுகளில் ஒன்பது சேவைகள். ஒன்றில் தொடங்கலாம், அல்லது முழு மாற்றத்தையும் எங்களிடம் ஒப்படைக்கலாம்.</span></p>
+    </div>
+    <div class="services">
+      <article class="svc" id="svc-strategy">
+        <img src="img/strategy.jpg" alt="" width="240" height="240">
+        <span class="tag"><span class="en">Strategy</span><span class="ta">உத்தி</span></span>
+        <h3><span class="en">AI Strategy &amp; Roadmap</span><span class="ta">AI உத்தி & வழிவரைபடம்</span></h3>
+        <p><span class="en">Find where AI saves the most time and money in your business, and plan the order to adopt it.</span><span class="ta">உங்கள் தொழிலில் AI எங்கே அதிக நேரத்தையும் பணத்தையும் மிச்சப்படுத்தும் எனக் கண்டறிந்து, செயல்படுத்தும் வரிசையைத் திட்டமிடுகிறோம்.</span></p>
+      </article>
+      <article class="svc" id="svc-growth">
+        <img src="img/growth.jpg" alt="" width="240" height="240">
+        <span class="tag"><span class="en">Strategy</span><span class="ta">உத்தி</span></span>
+        <h3><span class="en">AI for Sales &amp; Marketing</span><span class="ta">விற்பனை & மார்க்கெட்டிங்கில் AI</span></h3>
+        <p><span class="en">Lead scoring, personalised campaigns and automatic follow-ups that turn enquiries into revenue.</span><span class="ta">லீட் மதிப்பீடு, தனிப்பயன் பிரச்சாரங்கள், தானியங்கி பின்தொடர்தல் மூலம் விசாரணைகளை வருவாயாக மாற்றுதல்.</span></p>
+      </article>
+      <article class="svc" id="svc-analytics">
+        <img src="img/analytics.jpg" alt="" width="240" height="240">
+        <span class="tag"><span class="en">Strategy</span><span class="ta">உத்தி</span></span>
+        <h3><span class="en">Data Analytics &amp; Dashboards</span><span class="ta">தரவு பகுப்பாய்வு & டாஷ்போர்டு</span></h3>
+        <p><span class="en">Live dashboards and AI forecasts, so decisions come from your data instead of guesswork.</span><span class="ta">யூகத்தால் அல்ல, உங்கள் தரவின் அடிப்படையில் முடிவெடுக்க நேரடி டாஷ்போர்டுகளும் AI முன்கணிப்புகளும்.</span></p>
+      </article>
+      <article class="svc" id="svc-ai">
+        <img src="img/ai.jpg" alt="" width="240" height="240">
+        <span class="tag"><span class="en">Build</span><span class="ta">உருவாக்கம்</span></span>
+        <h3><span class="en">Custom AI Solutions</span><span class="ta">தனிப்பயன் AI தீர்வுகள்</span></h3>
+        <p><span class="en">Chatbots, AI agents and assistants trained on your own products, policies and customer questions.</span><span class="ta">உங்கள் தயாரிப்புகள், விதிமுறைகள், வாடிக்கையாளர் கேள்விகளில் பயிற்றுவிக்கப்பட்ட சாட்பாட்கள், AI ஏஜென்ட்கள், உதவியாளர்கள்.</span></p>
+      </article>
+      <article class="svc" id="svc-automation">
+        <img src="img/automation.jpg" alt="" width="240" height="240">
+        <span class="tag"><span class="en">Build</span><span class="ta">உருவாக்கம்</span></span>
+        <h3><span class="en">Workflow Automation</span><span class="ta">பணிச்சுழற்சி தானியக்கம்</span></h3>
+        <p><span class="en">Automate invoices, reports, data entry and approvals across the tools you already use.</span><span class="ta">நீங்கள் ஏற்கனவே பயன்படுத்தும் கருவிகளில் இன்வாய்ஸ், அறிக்கை, தரவு உள்ளீடு, ஒப்புதல்களைத் தானியங்கியாக்குதல்.</span></p>
+      </article>
+      <article class="svc" id="svc-design">
+        <img src="img/design.jpg" alt="" width="240" height="240">
+        <span class="tag"><span class="en">Creative</span><span class="ta">படைப்பு</span></span>
+        <h3><span class="en">AI Design &amp; Branding</span><span class="ta">AI வடிவமைப்பு & பிராண்டிங்</span></h3>
+        <p><span class="en">Logos, social media creatives, posters and brand kits produced faster with AI and finished by designers.</span><span class="ta">லோகோ, சமூக ஊடகப் படைப்புகள், போஸ்டர்கள், பிராண்ட் கிட்கள். AI மூலம் விரைவாக, வடிவமைப்பாளர்களின் இறுதித் தொடுதலுடன்.</span></p>
+      </article>
+      <article class="svc" id="svc-audio">
+        <img src="img/audio.jpg" alt="" width="240" height="240">
+        <span class="tag"><span class="en">Creative</span><span class="ta">படைப்பு</span></span>
+        <h3><span class="en">AI Voice &amp; Music</span><span class="ta">AI குரல் & இசை</span></h3>
+        <p><span class="en">Voice-overs in Tamil and English, jingles, background scores and podcast production.</span><span class="ta">தமிழ், ஆங்கிலக் குரல்பதிவுகள், ஜிங்கிள்கள், பின்னணி இசை, பாட்காஸ்ட் தயாரிப்பு.</span></p>
+      </article>
+      <article class="svc" id="svc-video">
+        <img src="img/video.jpg" alt="" width="240" height="240">
+        <span class="tag"><span class="en">Creative</span><span class="ta">படைப்பு</span></span>
+        <h3><span class="en">AI Video Production</span><span class="ta">AI வீடியோ தயாரிப்பு</span></h3>
+        <p><span class="en">Ad films, product explainers and training videos made in days rather than weeks.</span><span class="ta">விளம்பரப் படங்கள், தயாரிப்பு விளக்க வீடியோக்கள், பயிற்சி வீடியோக்கள். வாரங்களில் அல்ல, நாட்களில்.</span></p>
+      </article>
+      <article class="svc" id="svc-content">
+        <img src="img/content.jpg" alt="" width="240" height="240">
+        <span class="tag"><span class="en">Creative</span><span class="ta">படைப்பு</span></span>
+        <h3><span class="en">YouTube &amp; Digital Content</span><span class="ta">யூடியூப் & டிஜிட்டல் உள்ளடக்கம்</span></h3>
+        <p><span class="en">Channel setup, Shorts and Reels, and a steady AI-assisted content calendar.</span><span class="ta">சேனல் அமைப்பு, ஷார்ட்ஸ் & ரீல்ஸ், AI உதவியுடன் தொடர்ச்சியான உள்ளடக்க அட்டவணை.</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="deep">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow"><span class="en">How we work</span><span class="ta">எங்கள் பணிமுறை</span></p>
+      <h2><span class="en">From first call to AI in daily use</span><span class="ta">முதல் அழைப்பிலிருந்து தினசரி பயன்பாட்டில் AI வரை</span></h2>
+    </div>
+    <ol class="steps">
+      <li><h3><span class="en">Discover</span><span class="ta">கண்டறிதல்</span></h3><p><span class="en">A free AI readiness call. We learn your goals and where your team loses time.</span><span class="ta">இலவச AI தயார்நிலை அழைப்பு. உங்கள் இலக்குகளையும், குழு நேரம் இழக்கும் இடங்களையும் அறிகிறோம்.</span></p></li>
+      <li><h3><span class="en">Design</span><span class="ta">வடிவமைத்தல்</span></h3><p><span class="en">A roadmap of AI use cases, ranked by impact and cost.</span><span class="ta">பலன் மற்றும் செலவின் அடிப்படையில் வரிசைப்படுத்தப்பட்ட AI பயன்பாட்டு வழிவரைபடம்.</span></p></li>
+      <li><h3><span class="en">Build</span><span class="ta">உருவாக்குதல்</span></h3><p><span class="en">We build, connect and test each tool alongside your team.</span><span class="ta">உங்கள் குழுவுடன் இணைந்து ஒவ்வொரு கருவியையும் உருவாக்கி, இணைத்து, சோதிக்கிறோம்.</span></p></li>
+      <li><h3><span class="en">Scale</span><span class="ta">விரிவாக்குதல்</span></h3><p><span class="en">Staff training, monthly results review, and AI extended to more areas.</span><span class="ta">பணியாளர் பயிற்சி, மாதாந்திர முடிவு மதிப்பாய்வு, மேலும் பல பகுதிகளுக்கு AI விரிவாக்கம்.</span></p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="head" style="margin-bottom:34px">
+        <p class="eyebrow"><span class="en">Contact</span><span class="ta">தொடர்பு</span></p>
+        <h2><span class="en">Ready to put AI to work?</span><span class="ta">AI-ஐ உங்கள் தொழிலில் பயன்படுத்தத் தயாரா?</span></h2>
+        <p><span class="en">Tell us about your business. We reply within two working days.</span><span class="ta">உங்கள் தொழில் பற்றி சொல்லுங்கள். இரண்டு வேலை நாட்களுக்குள் பதிலளிப்போம்.</span></p>
+      </div>
+      <dl class="details">
+        <div><dt><span class="en">Phone / WhatsApp</span><span class="ta">தொலைபேசி / வாட்ஸ்அப்</span></dt><dd><span class="todo">+91 — add number</span></dd></div>
+        <div><dt><span class="en">Email</span><span class="ta">மின்னஞ்சல்</span></dt><dd><span class="todo">add email address</span></dd></div>
+        <div><dt><span class="en">Office</span><span class="ta">அலுவலகம்</span></dt><dd><span class="todo">add office address</span></dd></div>
+      </dl>
+    </div>
+    <form id="enquiry" novalidate>
+      <div class="field"><label for="f-name"><span class="en">Your name</span><span class="ta">உங்கள் பெயர்</span></label><input id="f-name" name="name" autocomplete="name" required></div>
+      <div class="field"><label for="f-company"><span class="en">Company</span><span class="ta">நிறுவனம்</span></label><input id="f-company" name="company" autocomplete="organization"></div>
+      <div class="field"><label for="f-phone"><span class="en">Phone</span><span class="ta">தொலைபேசி</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required></div>
+      <div class="field"><label for="f-email"><span class="en">Email</span><span class="ta">மின்னஞ்சல்</span></label><input id="f-email" name="email" type="email" autocomplete="email"></div>
+      <div class="field full"><label for="f-topic"><span class="en">What would you like AI to help with?</span><span class="ta">எதற்கு AI உதவி தேவை?</span></label>
+        <select id="f-topic" name="topic">
+          <option>AI Strategy &amp; Roadmap / AI உத்தி</option>
+          <option>AI for Sales &amp; Marketing / விற்பனை & மார்க்கெட்டிங்</option>
+          <option>Data Analytics &amp; Dashboards / தரவு பகுப்பாய்வு</option>
+          <option>Custom AI Solutions / தனிப்பயன் AI</option>
+          <option>Workflow Automation / தானியக்கம்</option>
+          <option>AI Design &amp; Branding / வடிவமைப்பு</option>
+          <option>AI Voice &amp; Music / குரல் & இசை</option>
+          <option>AI Video Production / வீடியோ</option>
+          <option>YouTube &amp; Digital Content / யூடியூப்</option>
+          <option>Not sure yet / இன்னும் உறுதியில்லை</option>
+        </select>
+      </div>
+      <div class="field full"><label for="f-msg"><span class="en">Message</span><span class="ta">செய்தி</span></label><textarea id="f-msg" name="message"></textarea></div>
+      <div class="field full"><button class="btn primary" type="submit"><span class="en">Send enquiry</span><span class="ta">விசாரணையை அனுப்பு</span></button></div>
+      <p class="form-note" id="form-note" hidden></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Nethra Strategic Solutions</span>
+    <i><span class="en">Think AI. Build Smarter. Grow Faster.</span><span class="ta">வெற்றி, எளிதாக</span></i>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var body=document.body, buttons=document.querySelectorAll('.lang button');
+  function setLang(l){
+    body.classList.toggle('lang-ta', l==='ta');
+    document.documentElement.lang = l;
+    buttons.forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.lang===l)); });
+    try{ localStorage.setItem('nethra-lang', l); }catch(e){}
+  }
+  buttons.forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); }); });
+  var saved='en'; try{ saved = localStorage.getItem('nethra-lang') || 'en'; }catch(e){}
+  setLang(saved);
+
+  var form=document.getElementById('enquiry'), note=document.getElementById('form-note');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var ta = body.classList.contains('lang-ta');
+    var name=document.getElementById('f-name'), phone=document.getElementById('f-phone');
+    if(!name.value.trim() || !phone.value.trim()){
+      note.textContent = ta ? 'பெயர் மற்றும் தொலைபேசி எண்ணை நிரப்பவும்.' : 'Please fill in your name and phone number.';
+      note.hidden=false; (name.value.trim()?phone:name).focus(); return;
+    }
+    note.textContent = ta ? 'இது முன்னோட்டப் பதிப்பு. இணையதளம் வெளியானதும் இந்தப் படிவம் செய்திகளை அனுப்பும்.' : 'This is a preview. The form will send enquiries once the site is live.';
+    note.hidden=false;
+  });
+})();
+</script>
+
+</body>
+</html>
