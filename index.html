@@ -1,4 +1,10 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Nethra Strategic Solutions - AI transformation partner. Think AI. Build Smarter. Grow Faster.">
+<link rel="icon" href="img/logo.jpg">
 <title>Nethra Strategic Solutions</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +23,7 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;background:var(--bg-deep)}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
-body{background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--f-body)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--f-body)}
 body.lang-ta{font-family:var(--f-tamil);font-size:16px}
 body:not(.lang-ta) .ta, body.lang-ta .en{display:none}
 .wrap{max-width:var(--wrap);margin:0 auto;padding-inline:20px}
@@ -46,7 +52,20 @@ nav a:hover{color:var(--ink)}
 .lang button{border:0;background:transparent;color:var(--muted);font:700 14px/1 var(--f-display);padding:10px 15px;border-radius:999px;cursor:pointer}
 .lang button[aria-pressed="true"]{background:var(--cyan);color:var(--bg-deep)}
 .lang button:last-child{font-family:var(--f-tamil)}
-@media (max-width:860px){nav{display:none}}
+.menu-btn{display:none;width:46px;height:46px;border:1px solid var(--line);border-radius:12px;background:var(--bg-deep);cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0}
+.menu-btn span{display:block;width:20px;height:2px;border-radius:2px;background:var(--ink);transition:transform .2s,opacity .2s}
+.menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media (max-width:860px){
+  .menu-btn{display:inline-flex}
+  nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--bg-deep);border-bottom:1px solid var(--line);box-shadow:0 20px 40px -20px rgba(0,0,0,.6)}
+  nav.open{display:block}
+  nav ul{flex-direction:column;gap:0;max-width:var(--wrap);margin:0 auto;padding:6px 20px 14px}
+  nav a{display:block;padding:16px 0;font-size:18px;border-bottom:1px solid var(--line)}
+  nav li:last-child a{border-bottom:0}
+}
+@media (prefers-reduced-motion: reduce){.menu-btn span{transition:none}}
 
 /* buttons */
 .btns{display:flex;flex-wrap:wrap;gap:12px}
@@ -154,13 +173,15 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-bet
 footer i{font-family:var(--f-display);font-weight:600;color:var(--ink)}
 </style>
 
+</head>
+<body>
 <header>
   <div class="wrap bar">
     <a class="brand" href="#home" aria-label="Nethra Strategic Solutions home">
       <img src="img/logo.jpg" alt="" width="68" height="68">
       <span><b>NETHRA</b><small>Strategic Solutions</small></span>
     </a>
-    <nav aria-label="Main">
+    <nav aria-label="Main" id="main-nav">
       <ul>
         <li><a href="#home"><span class="en">Home</span><span class="ta">முகப்பு</span></a></li>
         <li><a href="#about"><span class="en">About us</span><span class="ta">எங்களைப் பற்றி</span></a></li>
@@ -172,6 +193,7 @@ footer i{font-family:var(--f-display);font-weight:600;color:var(--ink)}
       <button type="button" id="btn-en" data-lang="en" aria-pressed="true">EN</button>
       <button type="button" id="btn-ta" data-lang="ta" aria-pressed="false">தமிழ்</button>
     </div>
+    <button class="menu-btn" type="button" id="menu-btn" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </header>
 
@@ -391,6 +413,12 @@ footer i{font-family:var(--f-display);font-weight:600;color:var(--ink)}
   var saved='en'; try{ saved = localStorage.getItem('nethra-lang') || 'en'; }catch(e){}
   setLang(saved);
 
+  var menuBtn=document.getElementById('menu-btn'), nav=document.getElementById('main-nav');
+  function setMenu(open){ nav.classList.toggle('open',open); menuBtn.setAttribute('aria-expanded',String(open)); menuBtn.setAttribute('aria-label', open?'Close menu':'Open menu'); }
+  menuBtn.addEventListener('click', function(){ setMenu(!nav.classList.contains('open')); });
+  nav.addEventListener('click', function(e){ if(e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') setMenu(false); });
+
   var form=document.getElementById('enquiry'), note=document.getElementById('form-note');
   form.addEventListener('submit', function(e){
     e.preventDefault();
@@ -406,4 +434,5 @@ footer i{font-family:var(--f-display);font-weight:600;color:var(--ink)}
 })();
 </script>
 
-</body></html>
+</body>
+</html>
