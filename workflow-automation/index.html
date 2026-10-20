@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="version" content="2026-10-20 v6">
+<title>Workflow Automation | Nethra Strategic Solutions</title>
+<meta name="description" content="Stop copying data between sheets and software. We automate invoices, reports, data entry and approvals across the tools you already use.">
+<link rel="icon" href="../img/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;0,800;0,900;1,600&family=Source+Sans+3:wght@400;600&family=Noto+Sans+Tamil:wght@400;600;700;800&display=swap">
+<style>
+/* Layout: brand-navy single theme (from the NSS banner). Sticky bar, hero with logo orb, icon index strip, 3x3 service grid, process, contact. Cyan carries links/accents, red is reserved for the one primary action and the "Success Made Simple" rule. */
+:root{
+  color-scheme:dark;
+  --bg:#011B47; --bg-deep:#00112F; --surface:#062658; --surface-2:#0A3070; --line:#17407F;
+  --ink:#FFFFFF; --muted:#AFC2E4; --cyan:#22A9EC; --cyan-soft:rgba(34,169,236,.14); --red:#E3232F;
+  --f-display:"Montserrat","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Source Sans 3","Segoe UI",Roboto,Arial,sans-serif;
+  --f-tamil:"Noto Sans Tamil","Latha","Nirmala UI",sans-serif;
+  --wrap:1180px; --r:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:100px;background:var(--bg-deep)}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--f-body)}
+body.lang-ta{font-family:var(--f-tamil);font-size:16px}
+body:not(.lang-ta) .ta, body.lang-ta .en{display:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.12}
+body.lang-ta h1,body.lang-ta h2,body.lang-ta h3{font-family:var(--f-tamil);line-height:1.4}
+p{margin:0}
+a{color:inherit}
+img{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+.eyebrow{font:700 13px/1 var(--f-display);text-transform:uppercase;letter-spacing:.24em;color:var(--cyan)}
+body.lang-ta .eyebrow{font-family:var(--f-tamil);letter-spacing:.02em;text-transform:none;font-size:14px}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:rgba(1,20,55,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.brand .b-text{display:flex;flex-direction:column;align-items:center;text-align:center}
+.brand .b-tag{display:block;margin-top:9px;font:800 14px/1.2 var(--f-display);color:var(--ink);letter-spacing:.01em}
+.brand .b-tag em{font-style:normal;color:var(--cyan)}
+.brand .b-slogan{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:5px;font:italic 600 13px/1.2 var(--f-display);color:var(--ink)}
+.brand .b-slogan::before,.brand .b-slogan::after{content:"";width:18px;height:2px;border-radius:2px;background:var(--red);flex:none}
+.bar{display:flex;align-items:center;gap:28px;min-height:128px;padding-block:12px}
+.brand{display:flex;align-items:center;gap:16px;text-decoration:none;margin-right:auto}
+.brand img{width:96px;height:96px;border-radius:50%}
+.brand b{font:900 30px/1 var(--f-display);letter-spacing:.06em;display:block}
+.brand small{font:700 13px/1 var(--f-display);color:var(--cyan);letter-spacing:.24em;text-transform:uppercase;display:block;margin-top:7px}
+@media (max-width:560px){.bar{min-height:96px;gap:12px}.brand{gap:10px}.brand img{width:62px;height:62px}.brand b{font-size:22px}.brand small{font-size:9.5px;letter-spacing:.14em;margin-top:5px}.brand .b-tag{font-size:10.5px;margin-top:6px}.brand .b-slogan{font-size:10.5px;gap:6px;margin-top:4px}.brand .b-slogan::before,.brand .b-slogan::after{width:12px}}
+nav{background:var(--bg-deep);border-top:1px solid var(--line)}
+nav ul{display:flex;justify-content:center;gap:8px;list-style:none;margin:0 auto;padding-block:0}
+nav a{display:block;position:relative;padding:17px 22px;text-decoration:none;font:600 16px/1 var(--f-display);letter-spacing:.04em;color:var(--muted)}
+body.lang-ta nav a{font-family:var(--f-tamil);letter-spacing:0}
+nav a::after{content:"";position:absolute;left:22px;right:22px;bottom:0;height:3px;border-radius:3px 3px 0 0;background:var(--cyan);transform:scaleX(0);transition:transform .2s}
+nav a:hover{color:var(--ink)}
+nav a:hover::after,nav a:focus-visible::after{transform:scaleX(1)}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--bg-deep)}
+.lang button{border:0;background:transparent;color:var(--muted);font:700 14px/1 var(--f-display);padding:10px 15px;border-radius:999px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--cyan);color:var(--bg-deep)}
+.lang button:last-child{font-family:var(--f-tamil)}
+.menu-btn{display:none;width:46px;height:46px;border:1px solid var(--line);border-radius:12px;background:var(--bg-deep);cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0}
+.menu-btn span{display:block;width:20px;height:2px;border-radius:2px;background:var(--ink);transition:transform .2s,opacity .2s}
+.menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media (max-width:860px){
+  .menu-btn{display:inline-flex}
+  nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--bg-deep);border-bottom:1px solid var(--line);box-shadow:0 20px 40px -20px rgba(0,0,0,.6)}
+  nav.open{display:block}
+  nav ul{flex-direction:column;gap:0;padding-block:6px 14px}
+  nav a{display:block;padding:16px 0;font-size:18px;border-bottom:1px solid var(--line)}
+  nav a::after{display:none}
+  nav li:last-child a{border-bottom:0}
+  html{scroll-padding-top:120px}
+  .svc{scroll-margin-top:120px}
+}
+/* compact header after scrolling (desktop only) */
+.brand img{transition:width .25s,height .25s}
+@media (min-width:861px){
+  header.compact{display:grid;grid-template-columns:max(20px,calc((100% - var(--wrap))/2 + 20px)) auto 1fr auto max(20px,calc((100% - var(--wrap))/2 + 20px));align-items:center;column-gap:16px;min-height:72px}
+  header.compact .bar{display:contents}
+  header.compact .brand{grid-column:2;grid-row:1;margin-right:0;gap:12px;padding-block:8px}
+  header.compact .brand img{width:52px;height:52px}
+  header.compact .brand b{font-size:22px}
+  header.compact .brand small{font-size:10px;margin-top:5px}
+  header.compact .b-tag,header.compact .b-slogan{display:none}
+  header.compact nav{grid-column:3;grid-row:1;background:transparent;border-top:0}
+  header.compact nav ul{max-width:none;padding-inline:0;gap:0}
+  header.compact nav a{padding:27px 14px}
+  header.compact nav a::after{left:14px;right:14px}
+  header.compact .lang{grid-column:4;grid-row:1}
+}
+@media (min-width:861px) and (max-width:1020px){header.compact .brand small{display:none}}
+@media (max-width:860px){
+  header.compact .bar{min-height:64px;padding-block:6px}
+  header.compact .brand{gap:10px}
+  header.compact .brand img{width:44px;height:44px}
+  header.compact .brand b{font-size:20px}
+  header.compact .brand small{font-size:9.5px;letter-spacing:.14em;margin-top:4px}
+  header.compact .b-tag,header.compact .b-slogan{display:none}
+}
+@media (prefers-reduced-motion: reduce){.menu-btn span,nav a::after,.brand img{transition:none}}
+
+/* buttons */
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;text-decoration:none;font:700 15.5px/1 var(--f-display);padding:15px 24px;border-radius:999px;border:1.5px solid transparent;cursor:pointer}
+body.lang-ta .btn{font-family:var(--f-tamil)}
+.btn.primary{background:var(--red);color:#fff;box-shadow:0 8px 24px -10px rgba(227,35,47,.8)}
+.btn.primary:hover{filter:brightness(1.1)}
+.btn.ghost{border-color:var(--cyan);color:var(--ink)}
+.btn.ghost:hover{background:var(--cyan-soft)}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding-block:72px 64px;
+  background:
+    radial-gradient(600px 380px at 82% 40%, rgba(34,169,236,.22), transparent 70%),
+    radial-gradient(rgba(120,170,240,.16) 1px, transparent 1.4px) 0 0/14px 14px,
+    var(--bg)}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:120px;background:linear-gradient(transparent,var(--bg));pointer-events:none}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.hero .wrap > *{min-width:0}
+.hero h1{font-size:clamp(28px,3.6vw,46px);font-weight:800;margin-top:18px;letter-spacing:-.01em}
+.hero h1 .c{color:var(--cyan)}
+body.lang-ta .hero h1{font-size:clamp(23px,2.8vw,36px);font-weight:800}
+.hero .lead{font-size:19px;color:var(--muted);max-width:56ch;margin-block:24px 32px}
+.hero-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;width:100%;max-width:440px;justify-self:end}
+.hero-grid a{display:flex;flex-direction:column;align-items:center;gap:8px;padding:10px 8px 12px;border:1px solid var(--line);border-radius:14px;background:var(--bg-deep);text-decoration:none;text-align:center;font:700 12.5px/1.25 var(--f-display);color:var(--muted);transition:border-color .2s,transform .2s,color .2s}
+body.lang-ta .hero-grid a{font-family:var(--f-tamil);font-size:12px}
+.hero-grid img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:10px}
+.hero-grid a:hover{border-color:var(--cyan);color:var(--ink);transform:translateY(-3px)}
+@media (prefers-reduced-motion: reduce){.hero-grid a{transition:none}.hero-grid a:hover{transform:none}}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero-grid{justify-self:center;max-width:520px}}
+@media (max-width:420px){.hero-grid{gap:8px}.hero-grid a{padding:6px 4px 8px;font-size:11px}}
+
+
+/* sections */
+section{padding-block:84px}
+.head{display:grid;gap:14px;max-width:700px;margin-bottom:46px}
+.head h2{font-size:clamp(28px,3.6vw,44px);font-weight:800}
+body.lang-ta .head h2{font-size:clamp(23px,2.8vw,32px)}
+.head p{color:var(--muted);font-size:18px}
+.deep{background:var(--bg-deep);border-block:1px solid var(--line)}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px}
+.about-grid > *{min-width:0}
+.story p{font-size:18px}
+.story p+p{margin-top:18px;color:var(--muted)}
+.values{display:grid;gap:14px}
+.value{padding:22px 24px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);display:grid;gap:6px}
+.value h3{font-size:18px;color:var(--cyan)}
+.value p{color:var(--muted);font-size:16px}
+.founder{margin-top:44px;display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center;padding:28px 32px;border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(135deg,var(--surface-2),var(--surface))}
+.founder-body{min-width:0;display:grid;gap:8px}
+.founder-photo{width:160px;height:160px;border-radius:50%;object-fit:cover;background:#fff;box-shadow:0 0 0 4px var(--cyan),0 18px 40px -12px rgba(34,169,236,.5)}
+.founder-name{font-size:clamp(22px,2.4vw,28px);font-weight:800}
+.founder-title{color:var(--ink);font-weight:600}
+.founder-roles{color:var(--cyan);font:700 14px/1.4 var(--f-display);letter-spacing:.04em}
+body.lang-ta .founder-roles{font-family:var(--f-tamil)}
+.creds{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.creds li{padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:var(--bg-deep);font:700 13px/1 var(--f-display);letter-spacing:.03em}
+.creds li.more{border-color:var(--cyan);color:var(--cyan)}
+body.lang-ta .creds li.more{font-family:var(--f-tamil)}
+.founder-exp{font-size:16px;line-height:1.6;max-width:70ch}
+.founder-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.founder-links a{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid var(--cyan);border-radius:999px;color:var(--ink);text-decoration:none;font:700 13.5px/1 var(--f-display)}
+.founder-links a:hover{background:var(--cyan-soft)}
+body.lang-ta .founder-links a{font-family:var(--f-tamil)}
+@media (max-width:640px){.founder-links{justify-content:center}}
+.founder-areas{color:var(--muted);font-size:15.5px}
+@media (max-width:640px){.founder{grid-template-columns:1fr;justify-items:center;text-align:center;padding:24px 20px}.creds{justify-content:center}.founder-photo{width:132px;height:132px}}
+@media (max-width:860px){.about-grid{grid-template-columns:1fr}}
+
+/* services */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.svc{background:linear-gradient(180deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-radius:var(--r);padding:22px 24px 26px;display:grid;grid-template-columns:84px 1fr;gap:6px 18px;align-content:start;scroll-margin-top:100px}
+.svc img{width:84px;height:84px;object-fit:cover;border-radius:12px;grid-row:span 3}
+.svc .tag{font:700 11px/1 var(--f-display);text-transform:uppercase;letter-spacing:.16em;color:var(--cyan);align-self:end;padding-top:4px}
+body.lang-ta .svc .tag{font-family:var(--f-tamil);letter-spacing:0;text-transform:none;font-size:12px}
+.svc h3{font-size:19px;font-weight:700}
+.svc p{color:var(--muted);font-size:15.5px}
+.svc-wide{grid-column:1/-1}
+.svc-wide p{max-width:80ch}
+.svc .more{grid-column:2;justify-self:start;margin-top:6px;color:var(--cyan);font:700 14px/1 var(--f-display);text-decoration:none}
+.svc .more:hover{text-decoration:underline}
+body.lang-ta .svc .more{font-family:var(--f-tamil)}
+.svc:target{border-color:var(--cyan);box-shadow:0 0 0 3px var(--cyan-soft)}
+@media (max-width:980px){.services{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.services{grid-template-columns:1fr}}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{counter-increment:s;padding:26px 22px;border-radius:var(--r);border:1px solid var(--line);background:var(--surface);display:grid;gap:10px;align-content:start;position:relative}
+.steps li::before{content:counter(s,decimal-leading-zero);font:900 34px/1 var(--f-display);color:transparent;-webkit-text-stroke:1.5px var(--cyan);font-variant-numeric:tabular-nums}
+.steps h3{font-size:19px}
+.steps p{font-size:15.5px;color:var(--muted)}
+@media (max-width:900px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:start}
+.contact-grid > *{min-width:0}
+.details{display:grid;gap:22px;margin:0}
+.details dt{font:700 12px/1 var(--f-display);text-transform:uppercase;letter-spacing:.16em;color:var(--cyan)}
+body.lang-ta .details dt{font-family:var(--f-tamil);letter-spacing:0;text-transform:none;font-size:13px}
+.details dd{margin:8px 0 0;font-size:18px}
+.details a.mail{color:var(--cyan);text-decoration:none;font-weight:600;word-break:break-all}
+.details a.mail:hover{text-decoration:underline}
+.details .addr{font-style:normal;font-size:16.5px;line-height:1.55}
+.details a.map{display:inline-block;margin-top:8px;font-size:14.5px;font-weight:600;color:var(--cyan);text-decoration:none}
+.details a.map:hover{text-decoration:underline}
+.todo{display:inline-block;border:1px dashed var(--line);color:var(--muted);padding:3px 12px;border-radius:6px;font-size:15px}
+form{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{display:grid;gap:7px}
+.field.full{grid-column:1/-1}
+label{font-weight:600;font-size:14.5px}
+input,textarea,select{font:inherit;font-size:16px;color:var(--ink);background:var(--bg-deep);border:1px solid var(--line);border-radius:10px;padding:12px 13px;width:100%}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--cyan);outline-offset:0;border-color:transparent}
+textarea{min-height:120px;resize:vertical}
+textarea::placeholder,input::placeholder{color:var(--muted);opacity:.75}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.btn[disabled]{opacity:.6;cursor:wait}
+.req{color:var(--red);font-weight:700;margin-left:2px}
+.req-note{grid-column:1/-1;margin:0;font-size:14px;color:var(--muted)}
+.phone-row{display:flex;gap:8px}
+.phone-row select{flex:0 0 auto;width:auto;max-width:46%}
+.phone-row input{flex:1 1 auto;min-width:0}
+.err{color:#FF6B74;font-size:13.5px;font-weight:600}
+input[aria-invalid="true"],select[aria-invalid="true"]{border-color:#FF6B74;box-shadow:0 0 0 1px #FF6B74}
+.ver{opacity:.45;font-size:12px}
+.form-note{grid-column:1/-1;font-size:15px;color:var(--cyan);font-weight:600}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr}}
+@media (max-width:560px){form{grid-template-columns:1fr;padding:20px}}
+
+footer{padding-block:30px;border-top:1px solid var(--line);background:var(--bg-deep);color:var(--muted);font-size:14.5px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:center}
+footer i{font-family:var(--f-display);font-weight:600;color:var(--ink)}
+
+/* service page */
+.crumbs{font-size:14px;color:var(--muted);margin-bottom:18px}
+.crumbs a{color:var(--cyan);text-decoration:none}
+.crumbs a:hover{text-decoration:underline}
+.svc-hero{padding-block:56px 48px;background:radial-gradient(600px 300px at 85% 30%, rgba(34,169,236,.18), transparent 70%),var(--bg)}
+.svc-hero .wrap{display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center}
+.svc-hero .wrap > *{min-width:0}
+.svc-hero img{width:150px;height:150px;border-radius:20px;object-fit:cover;box-shadow:0 20px 50px -18px rgba(34,169,236,.6)}
+.svc-hero h1{font-size:clamp(30px,4vw,48px);font-weight:800;margin-top:10px}
+body.lang-ta .svc-hero h1{font-size:clamp(24px,3vw,36px)}
+.svc-hero .lead{font-size:18.5px;color:var(--muted);max-width:62ch;margin-block:14px 24px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.two > *{min-width:0}
+.box{padding:24px 26px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+.box h2{font-size:20px;margin-bottom:12px}
+.box ul{margin:0;padding-left:20px;display:grid;gap:8px;color:var(--muted)}
+.box.q li{list-style:none;margin-left:-20px;padding-left:28px;position:relative;font-style:italic;color:var(--ink)}
+.box.q li::before{content:"?";position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;background:var(--red);color:#fff;font:700 12px/20px var(--f-display);text-align:center;font-style:normal}
+.sols{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;list-style:none;margin:0;padding:0;counter-reset:sol}
+.sol{counter-increment:sol;display:grid;grid-template-columns:44px 1fr;gap:4px 16px;padding:22px 24px;border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(180deg,var(--surface-2),var(--surface))}
+.sol::before{content:counter(sol);grid-row:span 2;width:40px;height:40px;border-radius:12px;background:var(--cyan-soft);color:var(--cyan);font:800 17px/40px var(--f-display);text-align:center;border:1px solid var(--line)}
+.sol h3{font-size:18px}
+.sol p{color:var(--muted);font-size:15.5px}
+.get{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;list-style:none;margin:0;padding:0}
+.get li{display:flex;gap:10px;align-items:flex-start;padding:16px 18px;border:1px solid var(--line);border-radius:12px;background:var(--surface);font-weight:600}
+.get li::before{content:"";flex:none;width:18px;height:18px;margin-top:2px;border-radius:50%;background:var(--cyan) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.2l-3.5-3.5L4 14.2l5 5 11-11-1.5-1.5z' fill='%23011B47'/%3E%3C/svg%3E") center/14px no-repeat}
+.meta{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:22px}
+.meta > *{min-width:0}
+.cta-band{text-align:center;padding-block:64px;background:var(--bg-deep);border-top:1px solid var(--line)}
+.cta-band h2{font-size:clamp(24px,3vw,34px);font-weight:800;margin-bottom:12px}
+.cta-band p{color:var(--muted);margin-bottom:24px}
+.cta-band .btns{justify-content:center}
+.related{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:28px}
+.related a{padding:9px 16px;border:1px solid var(--line);border-radius:999px;color:var(--muted);text-decoration:none;font:600 14px/1 var(--f-display)}
+.related a:hover{border-color:var(--cyan);color:var(--ink)}
+body.lang-ta .related a{font-family:var(--f-tamil)}
+@media (max-width:860px){.two,.meta,.sols{grid-template-columns:1fr}.get{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.svc-hero .wrap{grid-template-columns:1fr}.svc-hero img{width:110px;height:110px}.get{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="../" aria-label="Nethra Strategic Solutions home">
+      <img src="../img/logo.jpg" alt="" width="96" height="96">
+      <span class="b-text"><b>NETHRA</b><small>Strategic Solutions</small><span class="b-tag">Think AI. Build Smarter. <em>Grow Faster.</em></span><span class="b-slogan">Success Made Simple</span></span>
+    </a>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" id="btn-en" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" id="btn-ta" data-lang="ta" aria-pressed="false">தமிழ்</button>
+    </div>
+    <button class="menu-btn" type="button" id="menu-btn" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+  <nav aria-label="Main" id="main-nav">
+    <ul class="wrap">
+        <li><a href="../#home"><span class="en">Home</span><span class="ta">முகப்பு</span></a></li>
+        <li><a href="../#about"><span class="en">About us</span><span class="ta">எங்களைப் பற்றி</span></a></li>
+        <li><a href="../#services"><span class="en">Services</span><span class="ta">சேவைகள்</span></a></li>
+        <li><a href="../#contact"><span class="en">Contact</span><span class="ta">தொடர்பு</span></a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<section class="svc-hero" id="home">
+  <div class="wrap">
+    <img src="../img/automation.jpg" alt="" width="240" height="240">
+    <div>
+      <p class="crumbs"><a href="../"><span class="en">Home</span><span class="ta">முகப்பு</span></a> › <a href="../#services"><span class="en">Services</span><span class="ta">சேவைகள்</span></a> › <span class="en">Workflow Automation</span><span class="ta">பணிச்சுழற்சி தானியக்கம்</span></p>
+      <p class="eyebrow"><span class="en">Build</span><span class="ta">உருவாக்கம்</span></p>
+      <h1><span class="en">Workflow Automation</span><span class="ta">பணிச்சுழற்சி தானியக்கம்</span></h1>
+      <p class="lead"><span class="en">Stop copying data between sheets and software. We automate invoices, reports, data entry and approvals across the tools you already use.</span><span class="ta">தாள்களுக்கும் மென்பொருள்களுக்கும் இடையே தரவை நகலெடுப்பதை நிறுத்துங்கள். நீங்கள் ஏற்கனவே பயன்படுத்தும் கருவிகளில் இன்வாய்ஸ், அறிக்கை, தரவு உள்ளீடு, ஒப்புதல்களைத் தானியங்கியாக்குகிறோம்.</span></p>
+      <div class="btns">
+        <a class="btn primary" href="../?service=Workflow%20Automation#contact"><span class="en">Book a free AI consultation</span><span class="ta">இலவச AI ஆலோசனை பெறுங்கள்</span></a>
+        <a class="btn ghost" href="#solutions"><span class="en">See what we provide</span><span class="ta">நாங்கள் வழங்குவது</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="deep">
+  <div class="wrap two">
+    <div class="box"><h2><span class="en">Who it's for</span><span class="ta">யாருக்கு ஏற்றது</span></h2><ul><li><span class="en">Offices where staff spend hours on repetitive typing and copying</span><span class="ta">மீண்டும் மீண்டும் தட்டச்சு, நகலெடுத்தலில் பணியாளர்கள் மணிநேரம் செலவிடும் அலுவலகங்கள்</span></li><li><span class="en">Businesses with approvals stuck in email or paper</span><span class="ta">மின்னஞ்சல் அல்லது காகிதத்தில் ஒப்புதல்கள் சிக்கியுள்ள நிறுவனங்கள்</span></li><li><span class="en">Teams using several tools that don't talk to each other</span><span class="ta">ஒன்றோடொன்று இணையாத பல கருவிகளைப் பயன்படுத்தும் குழுக்கள்</span></li></ul></div>
+    <div class="box q"><h2><span class="en">Questions we answer</span><span class="ta">நாங்கள் பதிலளிக்கும் கேள்விகள்</span></h2><ul><li><span class="en">How many hours a week go into copy-paste work?</span><span class="ta">வாரத்துக்கு எத்தனை மணிநேரம் நகலெடுக்கும் வேலையில் செல்கிறது?</span></li><li><span class="en">Why do approvals take days?</span><span class="ta">ஒப்புதல்கள் ஏன் நாட்கள் எடுக்கின்றன?</span></li><li><span class="en">Can our tools share data automatically?</span><span class="ta">எங்கள் கருவிகள் தரவைத் தானாகப் பகிர முடியுமா?</span></li><li><span class="en">How do we avoid errors in manual entry?</span><span class="ta">கைமுறை உள்ளீட்டில் பிழைகளை எப்படித் தவிர்ப்பது?</span></li></ul></div>
+  </div>
+</section>
+
+<section id="solutions">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow"><span class="en">Solutions</span><span class="ta">தீர்வுகள்</span></p>
+      <h2><span class="en">What we provide</span><span class="ta">நாங்கள் வழங்குவது</span></h2>
+      <p><span class="en">Choose the parts you need, or take the complete package.</span><span class="ta">உங்களுக்குத் தேவையானவற்றைத் தேர்ந்தெடுக்கலாம், அல்லது முழுத் தொகுப்பையும் எடுத்துக்கொள்ளலாம்.</span></p>
+    </div>
+    <ol class="sols"><li class="sol"><h3><span class="en">Invoice & Bill Processing</span><span class="ta">இன்வாய்ஸ் & பில் செயலாக்கம்</span></h3><p><span class="en">Read incoming bills automatically, match them to orders and send them for approval and entry.</span><span class="ta">வரும் பில்களைத் தானாகப் படித்து, ஆர்டர்களுடன் பொருத்தி, ஒப்புதலுக்கும் பதிவுக்கும் அனுப்புகிறது.</span></p></li><li class="sol"><h3><span class="en">Data Entry Automation</span><span class="ta">தரவு உள்ளீட்டுத் தானியக்கம்</span></h3><p><span class="en">Move data between forms, Google Sheets, Tally, CRM and email without retyping.</span><span class="ta">படிவங்கள், Google Sheets, Tally, CRM, மின்னஞ்சல் இடையே மீண்டும் தட்டச்சு செய்யாமல் தரவை நகர்த்துகிறது.</span></p></li><li class="sol"><h3><span class="en">Approval Workflows</span><span class="ta">ஒப்புதல் பணிச்சுழற்சிகள்</span></h3><p><span class="en">Purchase, leave and expense approvals on phone with one tap, with reminders and a full record.</span><span class="ta">கொள்முதல், விடுப்பு, செலவு ஒப்புதல்கள் கைபேசியில் ஒரே தட்டில்; நினைவூட்டல்களும் முழுப் பதிவும்.</span></p></li><li class="sol"><h3><span class="en">Automatic Reports & Reminders</span><span class="ta">தானியங்கி அறிக்கைகள் & நினைவூட்டல்கள்</span></h3><p><span class="en">Daily summaries, payment reminders to customers and renewal alerts sent on schedule.</span><span class="ta">தினசரிச் சுருக்கங்கள், வாடிக்கையாளர்களுக்குக் கட்டண நினைவூட்டல்கள், புதுப்பிப்பு எச்சரிக்கைகள் அட்டவணைப்படி அனுப்பப்படும்.</span></p></li><li class="sol"><h3><span class="en">Email & WhatsApp Triage</span><span class="ta">மின்னஞ்சல் & WhatsApp வகைப்படுத்தல்</span></h3><p><span class="en">AI sorts incoming messages, drafts replies and routes them to the right person.</span><span class="ta">AI வரும் செய்திகளை வகைப்படுத்தி, பதில்களை வரைந்து, சரியான நபருக்கு அனுப்புகிறது.</span></p></li><li class="sol"><h3><span class="en">Tool Integration</span><span class="ta">கருவி இணைப்பு</span></h3><p><span class="en">We connect your existing software using tools such as Zapier, Make, n8n or Zoho Flow, so you don't need to replace what works.</span><span class="ta">Zapier, Make, n8n, Zoho Flow போன்ற கருவிகளைப் பயன்படுத்தி உங்கள் தற்போதைய மென்பொருள்களை இணைக்கிறோம்; வேலை செய்வதை மாற்ற வேண்டியதில்லை.</span></p></li></ol>
+  </div>
+</section>
+
+<section class="deep">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow"><span class="en">How it works</span><span class="ta">செயல்முறை</span></p>
+      <h2><span class="en">From manual work to work that runs itself</span><span class="ta">கைமுறை வேலையிலிருந்து தானாக இயங்கும் வேலை வரை</span></h2>
+    </div>
+    <ol class="steps"><li><h3><span class="en">Map</span><span class="ta">வரைபடம்</span></h3><p><span class="en">We map how the work flows today and measure where time is lost.</span><span class="ta">இன்று பணி எப்படி நகர்கிறது என்று வரைபடமிட்டு, நேரம் எங்கே இழக்கப்படுகிறது என்று அளவிடுகிறோம்.</span></p></li><li><h3><span class="en">Prioritise</span><span class="ta">முன்னுரிமை</span></h3><p><span class="en">We pick the automations that save the most time first.</span><span class="ta">அதிக நேரத்தை மிச்சப்படுத்தும் தானியக்கங்களை முதலில் தேர்ந்தெடுக்கிறோம்.</span></p></li><li><h3><span class="en">Automate</span><span class="ta">தானியக்கம்</span></h3><p><span class="en">We build, connect and test each automation with your team.</span><span class="ta">ஒவ்வொரு தானியக்கத்தையும் உருவாக்கி, இணைத்து, உங்கள் குழுவுடன் சோதிக்கிறோம்.</span></p></li><li><h3><span class="en">Measure</span><span class="ta">அளவீடு</span></h3><p><span class="en">We track hours saved and errors avoided, then add the next automation.</span><span class="ta">மிச்சமான மணிநேரங்களையும் தவிர்க்கப்பட்ட பிழைகளையும் கண்காணித்து, அடுத்த தானியக்கத்தைச் சேர்க்கிறோம்.</span></p></li></ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow"><span class="en">Deliverables</span><span class="ta">வழங்கப்படுபவை</span></p>
+      <h2><span class="en">What you receive</span><span class="ta">நீங்கள் பெறுவது</span></h2>
+    </div>
+    <ul class="get"><li><span class="en">Process map of current work</span><span class="ta">தற்போதைய பணியின் செயல்முறை வரைபடம்</span></li><li><span class="en">Prioritised automation list</span><span class="ta">முன்னுரிமைப்படுத்தப்பட்ட தானியக்கப் பட்டியல்</span></li><li><span class="en">Working automations</span><span class="ta">செயல்படும் தானியக்கங்கள்</span></li><li><span class="en">Simple guide for your staff</span><span class="ta">பணியாளர்களுக்கான எளிய வழிகாட்டி</span></li><li><span class="en">Hours-saved report</span><span class="ta">மிச்சமான மணிநேர அறிக்கை</span></li><li><span class="en">Support for fixes and changes</span><span class="ta">திருத்தங்கள் & மாற்றங்களுக்கு ஆதரவு</span></li></ul>
+    <div class="meta">
+      <div class="box"><h2><span class="en">Typical duration</span><span class="ta">வழக்கமான காலம்</span></h2><p><span class="en">First automations are typically live in 2–4 weeks; more can be added step by step.</span><span class="ta">முதல் தானியக்கங்கள் பொதுவாக 2–4 வாரங்களில் செயல்படும்; மேலும் படிப்படியாகச் சேர்க்கலாம்.</span></p></div>
+      <div class="box"><h2><span class="en">After launch</span><span class="ta">தொடங்கிய பிறகு</span></h2><p><span class="en">We monitor the automations and add new ones as your team finds more repetitive work.</span><span class="ta">தானியக்கங்களைக் கண்காணித்து, உங்கள் குழு மேலும் மீண்டும் மீண்டும் செய்யும் வேலைகளைக் கண்டறியும்போது புதியவற்றைச் சேர்க்கிறோம்.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2><span class="en">Ready to give your team their hours back?</span><span class="ta">உங்கள் குழுவுக்கு அவர்களின் நேரத்தைத் திருப்பித் தரத் தயாரா?</span></h2>
+    <p><span class="en">The first consultation is free. Tell us about your business and we will reply within two working days.</span><span class="ta">முதல் ஆலோசனை இலவசம். உங்கள் தொழில் பற்றி சொல்லுங்கள்; இரண்டு வேலை நாட்களுக்குள் பதிலளிப்போம்.</span></p>
+    <div class="btns">
+      <a class="btn primary" href="../?service=Workflow%20Automation#contact"><span class="en">Book a free AI consultation</span><span class="ta">இலவச AI ஆலோசனை பெறுங்கள்</span></a>
+      <a class="btn ghost" href="../#services"><span class="en">All services</span><span class="ta">அனைத்து சேவைகள்</span></a>
+    </div>
+    <p style="margin:28px 0 0;font-size:14px"><span class="en">Related services</span><span class="ta">தொடர்புடைய சேவைகள்</span></p>
+    <div class="related"><a href="../custom-ai/"><span class="en">Custom AI Solutions</span><span class="ta">தனிப்பயன் AI</span></a><a href="../data-analytics/"><span class="en">Data Analytics &amp; Dashboards</span><span class="ta">தரவு பகுப்பாய்வு</span></a><a href="../ai-strategy/"><span class="en">AI Strategy &amp; Roadmap</span><span class="ta">AI உத்தி</span></a></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Nethra Strategic Solutions <span class="ver" title="Website version">· 2026-10-20 v6</span></span>
+    <i><span class="en">Think AI. Build Smarter. Grow Faster.</span><span class="ta">வெற்றி, எளிதாக</span></i>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var body=document.body, buttons=document.querySelectorAll('.lang button');
+  function setLang(l){
+    body.classList.toggle('lang-ta', l==='ta');
+    document.documentElement.lang = l;
+    buttons.forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.lang===l)); });
+    document.querySelectorAll('option[data-en]').forEach(function(o){ o.textContent = l==='ta' ? o.dataset.ta : o.dataset.en; });
+    try{ localStorage.setItem('nethra-lang', l); }catch(e){}
+  }
+  buttons.forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); }); });
+  var saved='en'; try{ saved = localStorage.getItem('nethra-lang') || 'en'; }catch(e){}
+  setLang(saved);
+
+  var header=document.querySelector('header'), compact=false;
+  function onScroll(){
+    var y=window.scrollY||0;
+    if(!compact && y>120){ compact=true; header.classList.add('compact'); }
+    else if(compact && y<20){ compact=false; header.classList.remove('compact'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  var menuBtn=document.getElementById('menu-btn'), nav=document.getElementById('main-nav');
+  function setMenu(open){ nav.classList.toggle('open',open); menuBtn.setAttribute('aria-expanded',String(open)); menuBtn.setAttribute('aria-label', open?'Close menu':'Open menu'); }
+  menuBtn.addEventListener('click', function(){ setMenu(!nav.classList.contains('open')); });
+  nav.addEventListener('click', function(e){ if(e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') setMenu(false); });
+
+})();
+</script>
+</body>
+</html>
