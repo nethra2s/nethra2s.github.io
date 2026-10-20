@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="version" content="2026-10-20 v7">
+<meta name="version" content="2026-10-20 v8">
 <title>Custom AI Solutions | Nethra Strategic Solutions</title>
 <meta name="description" content="Chatbots, AI agents and assistants trained on your own products, policies and customer questions, answering in English and Tamil, day and night.">
 <link rel="icon" href="../img/logo.jpg">
@@ -304,6 +304,7 @@ body.lang-ta .chart text{font-family:var(--f-tamil)}
 .chart .dot text{font:800 13px var(--f-display);fill:var(--ink)}
 .chart .dot.win text{fill:var(--bg-deep)}
 .chart .dot:hover circle,.chart .bar:hover rect{stroke:#fff;stroke-width:2}
+.chart .rl{font-size:12px;font-weight:600;fill:var(--muted)}
 .chart .grid line{stroke:var(--line);stroke-width:1}
 .chart .mlab text{font-size:12px;fill:var(--muted);font-weight:700}
 .chart .bar rect{fill:var(--surface-2);stroke:var(--line)}
@@ -318,6 +319,55 @@ body.lang-ta .chart text{font-family:var(--f-tamil)}
 .fig-key .sw.win{background:var(--cyan);border:0;margin-left:0}
 .outcome ul{margin:10px 0 12px;padding-left:20px;display:grid;gap:6px}
 @media (max-width:860px){.ex-grid{grid-template-columns:1fr}.fig-legend{columns:1}}
+
+/* example components */
+.chart .val{font:800 13px var(--f-display);fill:var(--ink)}
+.chart .fix{font-size:11.5px;font-weight:700;fill:var(--cyan)}
+.chart .tick{font-size:11px;fill:var(--muted)}
+.chart .gl{stroke:var(--line);stroke-width:1}
+.seq{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.seq li{display:grid;grid-template-columns:76px 1fr;gap:10px;align-items:start}
+.seq .when{font:800 12.5px/1.3 var(--f-display);color:var(--cyan);padding-top:8px}
+body.lang-ta .seq .when{font-family:var(--f-tamil)}
+.bubble{background:#0b5c46;color:#eafff6;border-radius:4px 14px 14px 14px;padding:9px 12px;font-size:14.5px;line-height:1.45}
+.chat{display:grid;gap:8px;padding:14px;border-radius:14px;background:var(--bg-deep);border:1px solid var(--line)}
+.chat-top{font:700 13.5px/1.3 var(--f-display);color:var(--ink);padding-bottom:8px;border-bottom:1px solid var(--line)}
+.chat-top small{color:var(--cyan);font-weight:600}
+body.lang-ta .chat-top{font-family:var(--f-tamil)}
+.msg{max-width:85%;padding:9px 12px;border-radius:14px;font-size:14.5px;line-height:1.45}
+.msg.me{justify-self:end;background:#0b5c46;color:#eafff6;border-top-right-radius:4px}
+.msg.bot{justify-self:start;background:var(--surface-2);color:var(--ink);border-top-left-radius:4px}
+.msg.hand{border:1px solid var(--red)}
+.dash{display:grid;gap:12px}
+.kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.kpi{display:grid;gap:2px;padding:12px 14px;border-radius:12px;background:var(--bg-deep);border:1px solid var(--line)}
+.kpi .k{font-size:12.5px;color:var(--muted);font-weight:600}
+.kpi b{font:800 22px/1.2 var(--f-display);color:var(--ink);font-variant-numeric:tabular-nums}
+.kpi .d{font-size:12px;color:var(--cyan);font-weight:600}
+.dash-h{font:700 13.5px/1.3 var(--f-display);color:var(--ink)}
+body.lang-ta .dash-h{font-family:var(--f-tamil)}
+.spec{width:100%;border-collapse:collapse;font-size:14.5px}
+.spec th,.spec td{text-align:left;vertical-align:top;padding:10px 8px;border-bottom:1px solid var(--line)}
+.spec th{color:var(--cyan);font-weight:700;width:38%}
+.flow{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.flow-col{padding:14px;border-radius:12px;border:1px solid var(--line);background:var(--bg-deep);display:grid;gap:8px;align-content:start}
+.flow-col.after{border-color:var(--cyan);background:rgba(34,169,236,.08)}
+.flow-col h4{margin:0;font:800 14.5px/1.3 var(--f-display)}
+body.lang-ta .flow-col h4{font-family:var(--f-tamil)}
+.flow-col.before h4{color:var(--muted)}
+.flow-col.after h4{color:var(--cyan)}
+.flow-col ol{margin:0;padding-left:20px;display:grid;gap:6px;font-size:14px;color:var(--ink)}
+.flow-t{margin:0;font-weight:700;font-size:13.5px;color:var(--red)}
+.flow-col.after .flow-t{color:var(--cyan)}
+.agenda{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.agenda li{display:grid;grid-template-columns:56px 1fr;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.agenda time{font:800 13px/1.5 var(--f-display);color:var(--cyan);font-variant-numeric:tabular-nums}
+.prompt-card{display:grid;gap:10px;padding:16px;border-radius:12px;border:1px dashed var(--cyan);background:var(--bg-deep)}
+.pc-h{margin:0;font:800 14.5px/1.3 var(--f-display);color:var(--cyan)}
+body.lang-ta .pc-h{font-family:var(--f-tamil)}
+.prompt-card pre{margin:0;white-space:pre-wrap;font:500 13.5px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--ink)}
+body.lang-ta .prompt-card pre{font-family:var(--f-tamil)}
+@media (max-width:560px){.flow{grid-template-columns:1fr}.kpis{grid-template-columns:1fr 1fr}.seq li{grid-template-columns:1fr}.seq .when{padding-top:0}}
 @media (max-width:860px){.two,.meta,.sols{grid-template-columns:1fr}.get{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.svc-hero .wrap{grid-template-columns:1fr}.svc-hero img{width:110px;height:110px}.get{grid-template-columns:1fr}}
 </style>
@@ -380,6 +430,47 @@ body.lang-ta .chart text{font-family:var(--f-tamil)}
   </div>
 </section>
 
+<section class="example" id="example">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow"><span class="en">See an example</span><span class="ta">ஒரு எடுத்துக்காட்டு</span></p>
+      <h2><span class="en">What a custom AI assistant looks like</span><span class="ta">தனிப்பயன் AI உதவியாளர் எப்படி இருக்கும்</span></h2>
+      <p class="ex-badge"><span class="en">Illustrative example, not a client project</span><span class="ta">மாதிரி எடுத்துக்காட்டு, உண்மையான வாடிக்கையாளர் திட்டம் அல்ல</span></p>
+    </div>
+    <div class="scenario box">
+      <h3><span class="en">The business</span><span class="ta">தொழில்</span></h3>
+      <p><span class="en">A two-wheeler service centre in Tirunelveli. Customers call and message all day about prices, bookings and bike status, and staff struggle to answer while working on bikes.</span><span class="ta">திருநெல்வேலியில் ஒரு இருசக்கர வாகன சர்வீஸ் சென்டர். விலை, முன்பதிவு, வாகன நிலை பற்றி வாடிக்கையாளர்கள் நாள் முழுவதும் அழைக்கின்றனர், செய்தி அனுப்புகின்றனர்; வேலை செய்துகொண்டே பதிலளிக்கப் பணியாளர்கள் சிரமப்படுகின்றனர்.</span></p>
+      <h3><span class="en">What they asked</span><span class="ta">அவர்கள் கேட்டது</span></h3>
+      <p><span class="en">"Can something answer the common questions so my mechanics can keep working?"</span><span class="ta">"என் மெக்கானிக்குகள் தொடர்ந்து வேலை செய்ய, பொதுவான கேள்விகளுக்கு ஏதாவது பதிலளிக்க முடியுமா?"</span></p>
+    </div>
+    <div class="ex-grid">
+      <figure class="box fig">
+        <figcaption><span class="en">A WhatsApp chatbot conversation</span><span class="ta">ஒரு WhatsApp சாட்பாட் உரையாடல்</span></figcaption>
+        <p class="fig-note"><span class="en">Shown in the page language; the bot replies in whichever language the customer uses.</span><span class="ta">பக்க மொழியில் காட்டப்படுகிறது; வாடிக்கையாளர் பயன்படுத்தும் மொழியிலேயே பாட் பதிலளிக்கும்.</span></p>
+        <div class="chat phone-chat">
+          <div class="chat-top"><span class="en">Service Centre Assistant</span><span class="ta">சர்வீஸ் சென்டர் உதவியாளர்</span> · <small><span class="en">AI, replies instantly</span><span class="ta">AI, உடனடிப் பதில்</span></small></div>
+          <div class="msg me"><span class="en">How much is a general service for a Splendor bike?</span><span class="ta">ஸ்பிளெண்டர் பைக்கிற்கு ஜெனரல் சர்வீஸ் எவ்வளவு?</span></div>
+          <div class="msg bot"><span class="en">A general service for the Splendor is ₹650 including oil change. Parts, if needed, are extra. Would you like to book a slot?</span><span class="ta">ஸ்பிளெண்டருக்கு ஜெனரல் சர்வீஸ் ஆயில் மாற்றம் உட்பட ₹650. தேவைப்பட்டால் உதிரிபாகங்கள் தனி. ஸ்லாட் முன்பதிவு செய்யலாமா?</span></div>
+          <div class="msg me"><span class="en">Yes, tomorrow morning.</span><span class="ta">ஆம், நாளை காலை.</span></div>
+          <div class="msg bot"><span class="en">Booked for tomorrow at 10:00 am. Pick-up from home is available for ₹50. Shall I add it?</span><span class="ta">நாளை காலை 10:00 மணிக்கு முன்பதிவு செய்யப்பட்டது. வீட்டிலிருந்து எடுத்துச் செல்ல ₹50. சேர்க்கட்டுமா?</span></div>
+          <div class="msg me"><span class="en">My bike is making a strange noise from the engine.</span><span class="ta">என் பைக் இன்ஜினில் விசித்திரமான சத்தம் வருகிறது.</span></div>
+          <div class="msg bot hand"><span class="en">That needs a mechanic to check. I've passed your message to Senthil, our service advisor; he will call you within 15 minutes.</span><span class="ta">அதை மெக்கானிக் பார்க்க வேண்டும். உங்கள் செய்தியை எங்கள் சர்வீஸ் ஆலோசகர் செந்திலுக்கு அனுப்பியுள்ளேன்; 15 நிமிடங்களில் அழைப்பார்.</span></div>
+        </div>
+        <p class="fig-note"><span class="en">Prices and names are invented for this example. The last reply shows the hand-over to a person.</span><span class="ta">இந்த எடுத்துக்காட்டுக்காக விலைகளும் பெயர்களும் கற்பனையானவை. கடைசிப் பதில் மனிதரிடம் ஒப்படைப்பதைக் காட்டுகிறது.</span></p>
+      </figure>
+      <figure class="box fig">
+        <figcaption><span class="en">How the assistant is set up</span><span class="ta">உதவியாளர் எப்படி அமைக்கப்படுகிறது</span></figcaption>
+        <p class="fig-note"><span class="en">Clear rules decide what the bot may answer and when a person takes over.</span><span class="ta">பாட் எதற்குப் பதிலளிக்கலாம், எப்போது மனிதர் பொறுப்பேற்க வேண்டும் என்பதைத் தெளிவான விதிகள் தீர்மானிக்கின்றன.</span></p>
+        <table class="spec"><tr><th><span class="en">Learns from</span><span class="ta">கற்றுக்கொள்வது</span></th><td><span class="en">Price list, service menu, timings, FAQs</span><span class="ta">விலைப் பட்டியல், சர்வீஸ் மெனு, நேரம், அடிக்கடி கேட்கப்படும் கேள்விகள்</span></td></tr><tr><th><span class="en">Connected to</span><span class="ta">இணைக்கப்பட்டது</span></th><td><span class="en">Booking calendar and job-card system</span><span class="ta">முன்பதிவு நாட்காட்டி மற்றும் ஜாப்-கார்டு அமைப்பு</span></td></tr><tr><th><span class="en">Answers in</span><span class="ta">பதில் மொழி</span></th><td><span class="en">Tamil and English, 24/7</span><span class="ta">தமிழ் மற்றும் ஆங்கிலம், 24/7</span></td></tr><tr><th><span class="en">Hands over when</span><span class="ta">ஒப்படைப்பது எப்போது</span></th><td><span class="en">Repairs, complaints or anything unsure</span><span class="ta">பழுதுகள், புகார்கள் அல்லது உறுதியில்லாத எதுவும்</span></td></tr><tr><th><span class="en">Never does</span><span class="ta">ஒருபோதும் செய்யாதது</span></th><td><span class="en">Guess prices or share other customers' data</span><span class="ta">விலையை ஊகிப்பது அல்லது பிற வாடிக்கையாளர் தரவைப் பகிர்வது</span></td></tr></table>
+      </figure>
+    </div>
+    <div class="box outcome">
+      <h3><span class="en">The kind of results to expect</span><span class="ta">எதிர்பார்க்கக்கூடிய பலன்கள்</span></h3>
+      <ul><li><span class="en">Common questions answered instantly, day and night</span><span class="ta">பொதுவான கேள்விகளுக்கு இரவும் பகலும் உடனடிப் பதில்</span></li><li><span class="en">Bookings made directly into the calendar</span><span class="ta">முன்பதிவுகள் நேரடியாக நாட்காட்டியில் பதிவாகும்</span></li><li><span class="en">Fewer phone interruptions for the mechanics</span><span class="ta">மெக்கானிக்குகளுக்குக் குறைவான தொலைபேசி இடையூறுகள்</span></li><li><span class="en">Complex issues reach the right person quickly</span><span class="ta">சிக்கலான பிரச்சினைகள் விரைவாகச் சரியான நபரைச் சென்றடையும்</span></li></ul>
+      <p class="fig-note"><span class="en">Actual results depend on each business. Your own solution is designed from your processes and numbers.</span><span class="ta">உண்மையான பலன்கள் ஒவ்வொரு தொழிலையும் பொறுத்தது. உங்கள் தீர்வு உங்கள் நடைமுறைகள் மற்றும் எண்களைக் கொண்டு வடிவமைக்கப்படும்.</span></p>
+    </div>
+  </div>
+</section>
 
 <section class="deep">
   <div class="wrap">
@@ -421,7 +512,7 @@ body.lang-ta .chart text{font-family:var(--f-tamil)}
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Nethra Strategic Solutions <span class="ver" title="Website version">· 2026-10-20 v7</span></span>
+    <span>© 2026 Nethra Strategic Solutions <span class="ver" title="Website version">· 2026-10-20 v8</span></span>
     <i><span class="en">Think AI. Build Smarter. Grow Faster.</span><span class="ta">வெற்றி, எளிதாக</span></i>
   </div>
 </footer>

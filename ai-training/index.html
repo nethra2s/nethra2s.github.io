@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="version" content="2026-10-20 v7">
+<meta name="version" content="2026-10-20 v8">
 <title>AI Training &amp; Workshops | Nethra Strategic Solutions</title>
 <meta name="description" content="Hands-on AI training for business owners, staff, colleges and institutions, in English or Tamil, on-site or online, so your people use AI confidently and safely.">
 <link rel="icon" href="../img/logo.jpg">
@@ -304,6 +304,7 @@ body.lang-ta .chart text{font-family:var(--f-tamil)}
 .chart .dot text{font:800 13px var(--f-display);fill:var(--ink)}
 .chart .dot.win text{fill:var(--bg-deep)}
 .chart .dot:hover circle,.chart .bar:hover rect{stroke:#fff;stroke-width:2}
+.chart .rl{font-size:12px;font-weight:600;fill:var(--muted)}
 .chart .grid line{stroke:var(--line);stroke-width:1}
 .chart .mlab text{font-size:12px;fill:var(--muted);font-weight:700}
 .chart .bar rect{fill:var(--surface-2);stroke:var(--line)}
@@ -318,6 +319,55 @@ body.lang-ta .chart text{font-family:var(--f-tamil)}
 .fig-key .sw.win{background:var(--cyan);border:0;margin-left:0}
 .outcome ul{margin:10px 0 12px;padding-left:20px;display:grid;gap:6px}
 @media (max-width:860px){.ex-grid{grid-template-columns:1fr}.fig-legend{columns:1}}
+
+/* example components */
+.chart .val{font:800 13px var(--f-display);fill:var(--ink)}
+.chart .fix{font-size:11.5px;font-weight:700;fill:var(--cyan)}
+.chart .tick{font-size:11px;fill:var(--muted)}
+.chart .gl{stroke:var(--line);stroke-width:1}
+.seq{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.seq li{display:grid;grid-template-columns:76px 1fr;gap:10px;align-items:start}
+.seq .when{font:800 12.5px/1.3 var(--f-display);color:var(--cyan);padding-top:8px}
+body.lang-ta .seq .when{font-family:var(--f-tamil)}
+.bubble{background:#0b5c46;color:#eafff6;border-radius:4px 14px 14px 14px;padding:9px 12px;font-size:14.5px;line-height:1.45}
+.chat{display:grid;gap:8px;padding:14px;border-radius:14px;background:var(--bg-deep);border:1px solid var(--line)}
+.chat-top{font:700 13.5px/1.3 var(--f-display);color:var(--ink);padding-bottom:8px;border-bottom:1px solid var(--line)}
+.chat-top small{color:var(--cyan);font-weight:600}
+body.lang-ta .chat-top{font-family:var(--f-tamil)}
+.msg{max-width:85%;padding:9px 12px;border-radius:14px;font-size:14.5px;line-height:1.45}
+.msg.me{justify-self:end;background:#0b5c46;color:#eafff6;border-top-right-radius:4px}
+.msg.bot{justify-self:start;background:var(--surface-2);color:var(--ink);border-top-left-radius:4px}
+.msg.hand{border:1px solid var(--red)}
+.dash{display:grid;gap:12px}
+.kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.kpi{display:grid;gap:2px;padding:12px 14px;border-radius:12px;background:var(--bg-deep);border:1px solid var(--line)}
+.kpi .k{font-size:12.5px;color:var(--muted);font-weight:600}
+.kpi b{font:800 22px/1.2 var(--f-display);color:var(--ink);font-variant-numeric:tabular-nums}
+.kpi .d{font-size:12px;color:var(--cyan);font-weight:600}
+.dash-h{font:700 13.5px/1.3 var(--f-display);color:var(--ink)}
+body.lang-ta .dash-h{font-family:var(--f-tamil)}
+.spec{width:100%;border-collapse:collapse;font-size:14.5px}
+.spec th,.spec td{text-align:left;vertical-align:top;padding:10px 8px;border-bottom:1px solid var(--line)}
+.spec th{color:var(--cyan);font-weight:700;width:38%}
+.flow{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.flow-col{padding:14px;border-radius:12px;border:1px solid var(--line);background:var(--bg-deep);display:grid;gap:8px;align-content:start}
+.flow-col.after{border-color:var(--cyan);background:rgba(34,169,236,.08)}
+.flow-col h4{margin:0;font:800 14.5px/1.3 var(--f-display)}
+body.lang-ta .flow-col h4{font-family:var(--f-tamil)}
+.flow-col.before h4{color:var(--muted)}
+.flow-col.after h4{color:var(--cyan)}
+.flow-col ol{margin:0;padding-left:20px;display:grid;gap:6px;font-size:14px;color:var(--ink)}
+.flow-t{margin:0;font-weight:700;font-size:13.5px;color:var(--red)}
+.flow-col.after .flow-t{color:var(--cyan)}
+.agenda{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.agenda li{display:grid;grid-template-columns:56px 1fr;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.agenda time{font:800 13px/1.5 var(--f-display);color:var(--cyan);font-variant-numeric:tabular-nums}
+.prompt-card{display:grid;gap:10px;padding:16px;border-radius:12px;border:1px dashed var(--cyan);background:var(--bg-deep)}
+.pc-h{margin:0;font:800 14.5px/1.3 var(--f-display);color:var(--cyan)}
+body.lang-ta .pc-h{font-family:var(--f-tamil)}
+.prompt-card pre{margin:0;white-space:pre-wrap;font:500 13.5px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--ink)}
+body.lang-ta .prompt-card pre{font-family:var(--f-tamil)}
+@media (max-width:560px){.flow{grid-template-columns:1fr}.kpis{grid-template-columns:1fr 1fr}.seq li{grid-template-columns:1fr}.seq .when{padding-top:0}}
 @media (max-width:860px){.two,.meta,.sols{grid-template-columns:1fr}.get{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.svc-hero .wrap{grid-template-columns:1fr}.svc-hero img{width:110px;height:110px}.get{grid-template-columns:1fr}}
 </style>
@@ -380,6 +430,54 @@ body.lang-ta .chart text{font-family:var(--f-tamil)}
   </div>
 </section>
 
+<section class="example" id="example">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow"><span class="en">See an example</span><span class="ta">ஒரு எடுத்துக்காட்டு</span></p>
+      <h2><span class="en">What an AI workshop looks like</span><span class="ta">AI பட்டறை எப்படி இருக்கும்</span></h2>
+      <p class="ex-badge"><span class="en">Illustrative example, not a client project</span><span class="ta">மாதிரி எடுத்துக்காட்டு, உண்மையான வாடிக்கையாளர் திட்டம் அல்ல</span></p>
+    </div>
+    <div class="scenario box">
+      <h3><span class="en">The business</span><span class="ta">தொழில்</span></h3>
+      <p><span class="en">An engineering college in Tirunelveli wants its 60 faculty members to use AI for teaching material, letters and reports, safely and confidently.</span><span class="ta">திருநெல்வேலியில் ஒரு பொறியியல் கல்லூரி, தன் 60 ஆசிரியர்களும் பாடப் பொருள், கடிதங்கள், அறிக்கைகளுக்கு AI-ஐப் பாதுகாப்பாகவும் நம்பிக்கையுடனும் பயன்படுத்த விரும்புகிறது.</span></p>
+      <h3><span class="en">What they asked</span><span class="ta">அவர்கள் கேட்டது</span></h3>
+      <p><span class="en">"Our staff have heard of ChatGPT but don't know how to use it properly. Can you train them in one day?"</span><span class="ta">"எங்கள் ஆசிரியர்கள் ChatGPT பற்றிக் கேள்விப்பட்டுள்ளனர், ஆனால் சரியாகப் பயன்படுத்தத் தெரியவில்லை. ஒரே நாளில் பயிற்சி அளிக்க முடியுமா?"</span></p>
+    </div>
+    <div class="ex-grid">
+      <figure class="box fig">
+        <figcaption><span class="en">Sample one-day workshop agenda</span><span class="ta">மாதிரி ஒரு நாள் பட்டறை நிகழ்ச்சிநிரல்</span></figcaption>
+        <p class="fig-note"><span class="en">Adjusted to each group's work and level.</span><span class="ta">ஒவ்வொரு குழுவின் வேலை மற்றும் நிலைக்கு ஏற்ப மாற்றப்படும்.</span></p>
+        <ol class="agenda"><li><time>9:30</time><span><span class="en">Why AI matters for your work</span><span class="ta">உங்கள் வேலைக்கு AI ஏன் முக்கியம்</span></span></li><li><time>10:15</time><span><span class="en">Hands-on: ChatGPT, Claude and Gemini basics</span><span class="ta">நேரடிப் பயிற்சி: ChatGPT, Claude, Gemini அடிப்படைகள்</span></span></li><li><time>11:30</time><span><span class="en">Writing good prompts (with templates)</span><span class="ta">நல்ல ப்ராம்ப்ட்கள் எழுதுதல் (மாதிரிகளுடன்)</span></span></li><li><time>12:30</time><span><span class="en">Lunch</span><span class="ta">மதிய உணவு</span></span></li><li><time>1:30</time><span><span class="en">Practice: emails, letters, reports in English and Tamil</span><span class="ta">பயிற்சி: ஆங்கிலம், தமிழில் மின்னஞ்சல், கடிதங்கள், அறிக்கைகள்</span></span></li><li><time>2:45</time><span><span class="en">Safe use: what never to share with AI</span><span class="ta">பாதுகாப்பான பயன்பாடு: AI-யுடன் ஒருபோதும் பகிரக்கூடாதவை</span></span></li><li><time>3:30</time><span><span class="en">Your own task: bring real work and solve it with AI</span><span class="ta">உங்கள் சொந்தப் பணி: உண்மையான வேலையைக் கொண்டு வந்து AI-ல் தீர்க்கவும்</span></span></li><li><time>4:30</time><span><span class="en">Q&A and certificates</span><span class="ta">கேள்வி-பதில் & சான்றிதழ்கள்</span></span></li></ol>
+      </figure>
+      <figure class="box fig">
+        <figcaption><span class="en">Sample take-home prompt card</span><span class="ta">மாதிரி ப்ராம்ப்ட் அட்டை</span></figcaption>
+        <p class="fig-note"><span class="en">Fill in the brackets and paste into any AI assistant.</span><span class="ta">அடைப்புக்குறிகளை நிரப்பி எந்த AI உதவியாளரிலும் ஒட்டவும்.</span></p>
+        <div class="prompt-card">
+          <p class="pc-h"><span class="en">Prompt card: reply to a customer complaint</span><span class="ta">ப்ராம்ப்ட் அட்டை: வாடிக்கையாளர் புகாருக்குப் பதில்</span></p>
+          <pre><span class="en">You are a polite customer-service officer at [company].
+A customer wrote: "[paste message]".
+Write a short reply that:
+• apologises once
+• explains the next step and the date
+• gives our phone number [number]
+Tone: warm, professional. Language: Tamil.</span><span class="ta">நீங்கள் [நிறுவனம்]-ல் பணிவான வாடிக்கையாளர் சேவை அலுவலர்.
+ஒரு வாடிக்கையாளர் எழுதியது: "[செய்தியை ஒட்டவும்]".
+ஒரு சிறிய பதில் எழுதவும்:
+• ஒருமுறை மன்னிப்பு கேட்கவும்
+• அடுத்த நடவடிக்கையையும் தேதியையும் விளக்கவும்
+• எங்கள் தொலைபேசி எண் [எண்] தரவும்
+தொனி: அன்பான, தொழில்முறை. மொழி: தமிழ்.</span></pre>
+          <p class="fig-note"><span class="en">Participants take home 25+ cards like this for daily tasks.</span><span class="ta">தினசரிப் பணிகளுக்கு இதுபோன்ற 25+ அட்டைகளைப் பங்கேற்பாளர்கள் எடுத்துச் செல்வர்.</span></p>
+        </div>
+      </figure>
+    </div>
+    <div class="box outcome">
+      <h3><span class="en">The kind of results to expect</span><span class="ta">எதிர்பார்க்கக்கூடிய பலன்கள்</span></h3>
+      <ul><li><span class="en">Every participant completes real tasks with AI during the day</span><span class="ta">ஒவ்வொரு பங்கேற்பாளரும் அன்றே AI மூலம் உண்மையான பணிகளை முடிப்பர்</span></li><li><span class="en">Clear rules on what not to share with AI tools</span><span class="ta">AI கருவிகளுடன் எதைப் பகிரக்கூடாது என்பதற்கான தெளிவான விதிகள்</span></li><li><span class="en">Prompt cards and notes to keep using AI after the session</span><span class="ta">அமர்வுக்குப் பிறகும் AI-ஐத் தொடர்ந்து பயன்படுத்த ப்ராம்ப்ட் அட்டைகளும் குறிப்புகளும்</span></li><li><span class="en">A follow-up session to answer questions from real use</span><span class="ta">உண்மையான பயன்பாட்டிலிருந்து எழும் கேள்விகளுக்குப் பின்தொடர் அமர்வு</span></li></ul>
+      <p class="fig-note"><span class="en">Agenda and duration are adjusted for each organisation.</span><span class="ta">நிகழ்ச்சிநிரலும் காலமும் ஒவ்வொரு நிறுவனத்துக்கும் ஏற்ப மாற்றப்படும்.</span></p>
+    </div>
+  </div>
+</section>
 
 <section class="deep">
   <div class="wrap">
@@ -421,7 +519,7 @@ body.lang-ta .chart text{font-family:var(--f-tamil)}
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Nethra Strategic Solutions <span class="ver" title="Website version">· 2026-10-20 v7</span></span>
+    <span>© 2026 Nethra Strategic Solutions <span class="ver" title="Website version">· 2026-10-20 v8</span></span>
     <i><span class="en">Think AI. Build Smarter. Grow Faster.</span><span class="ta">வெற்றி, எளிதாக</span></i>
   </div>
 </footer>
