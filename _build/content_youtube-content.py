@@ -26,3 +26,4 @@ NEXT_TA='யூடியூப் வளர்ச்சி தொடர்ச்
 CTA_EN='Ready to grow your channel?'
 CTA_TA='உங்கள் சேனலை வளர்க்கத் தயாரா?'
 RELATED=['ai-video', 'ai-voice-music', 'ai-sales-marketing']
+EXAMPLE_FILE="work_youtube-content.html"

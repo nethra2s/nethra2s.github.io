@@ -162,6 +162,23 @@ body.lang-ta .pc-h{font-family:var(--f-tamil)}
 .prompt-card pre{margin:0;white-space:pre-wrap;font:500 13.5px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--ink)}
 body.lang-ta .prompt-card pre{font-family:var(--f-tamil)}
 @media (max-width:560px){.flow{grid-template-columns:1fr}.kpis{grid-template-columns:1fr 1fr}.seq li{grid-template-columns:1fr}.seq .when{padding-top:0}}
+
+/* our work (real samples) */
+.ex-badge.real{border-style:solid;border-color:var(--red);color:#fff;background:rgba(227,35,47,.18)}
+.work .head > p:last-child{color:var(--muted)}
+.work-img{width:100%;height:auto;border-radius:12px;display:block;background:var(--bg-deep)}
+.work-img.logo{max-width:340px;justify-self:center;background:transparent}
+.work-video,.yt,.yt-frame{width:100%;aspect-ratio:16/9;height:auto;border-radius:12px;display:block;background:#000;border:0}
+.yt{position:relative;padding:0;cursor:pointer;overflow:hidden;background:#000 url("../img/work/taw-banner.jpg") center/cover no-repeat}
+.yt img{width:100%;height:100%;object-fit:cover;display:block;opacity:.9}
+.yt:hover img{opacity:1}
+.yt-play{position:absolute;left:50%;top:50%;width:68px;height:48px;margin:-24px 0 0 -34px;border-radius:14px;background:var(--red)}
+.yt-play::after{content:"";position:absolute;left:28px;top:14px;border-style:solid;border-width:10px 0 10px 16px;border-color:transparent transparent transparent #fff}
+.work-t{font-weight:700;color:var(--ink)}
+.work-link{color:var(--cyan);font:700 14px/1 var(--f-display);text-decoration:none}
+.work-link:hover{text-decoration:underline}
+body.lang-ta .work-link{font-family:var(--f-tamil)}
+.work-cta{text-align:center;margin-top:20px}
 @media (max-width:860px){.two,.meta,.sols{grid-template-columns:1fr}.get{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.svc-hero .wrap{grid-template-columns:1fr}.svc-hero img{width:110px;height:110px}.get{grid-template-columns:1fr}}
 """

@@ -26,3 +26,4 @@ NEXT_TA='உங்கள் பிரச்சாரங்கள், வீட�
 CTA_EN='Ready to give your brand a voice?'
 CTA_TA='உங்கள் பிராண்டுக்குக் குரல் கொடுக்கத் தயாரா?'
 RELATED=['ai-video', 'youtube-content', 'ai-design-branding']
+EXAMPLE_FILE="work_ai-voice-music.html"

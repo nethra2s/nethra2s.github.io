@@ -1,0 +1,38 @@
+<section class="example work" id="work">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow"><span class="en">Our work</span><span class="ta">எங்கள் படைப்புகள்</span></p>
+      <h2><span class="en">Videos we have made</span><span class="ta">நாங்கள் உருவாக்கிய வீடியோக்கள்</span></h2>
+      <p class="ex-badge real"><span class="en">Real work by Nethra's founder</span><span class="ta">நேத்ரா நிறுவனரின் உண்மையான படைப்பு</span></p>
+      <p><span class="en">An animated channel intro and a full AI music video, both made for our own channel.</span><span class="ta">அனிமேஷன் சேனல் அறிமுகமும் முழு AI இசை வீடியோவும்; இரண்டும் எங்கள் சொந்தச் சேனலுக்காக உருவாக்கப்பட்டவை.</span></p>
+    </div>
+    <div class="ex-grid">
+      <figure class="box fig">
+        <figcaption><span class="en">Channel intro animation (12 seconds)</span><span class="ta">சேனல் அறிமுக அனிமேஷன் (12 வினாடிகள்)</span></figcaption>
+        <p class="fig-note"><span class="en">Logo reveal with particles, light and music; the kind of intro we make for brands.</span><span class="ta">துகள்கள், ஒளி, இசையுடன் லோகோ வெளிப்பாடு; பிராண்டுகளுக்கு நாங்கள் உருவாக்கும் அறிமுக வகை.</span></p>
+        <video class="work-video" controls playsinline preload="none" poster="../img/work/intro-poster.jpg" width="1280" height="720">
+          <source src="../media/intro.mp4" type="video/mp4">
+        </video>
+      </figure>
+      <figure class="box fig">
+        <figcaption><span class="en">AI music video</span><span class="ta">AI இசை வீடியோ</span></figcaption>
+        <p class="fig-note"><span class="en">A complete music video created with AI visuals and music.</span><span class="ta">AI காட்சிகள் மற்றும் இசையுடன் உருவாக்கப்பட்ட முழு இசை வீடியோ.</span></p>
+        <button class="yt" type="button" data-id="hCELszvT_no" aria-label="Play video: Naan: Mahakavi Bharathiyar song, Tamil AI music video">
+          <img src="https://i.ytimg.com/vi/hCELszvT_no/hqdefault.jpg" alt="" loading="lazy" width="480" height="360" onerror="this.remove()">
+          <span class="yt-play" aria-hidden="true"></span>
+        </button>
+        <p class="work-t"><span class="en">Naan: Mahakavi Bharathiyar song, Tamil AI music video</span><span class="ta">நான்: மகாகவி பாரதியார் பாடல், தமிழ் AI இசை வீடியோ</span></p>
+        <a class="work-link" href="https://youtu.be/hCELszvT_no" target="_blank" rel="noopener"><span class="en">Watch on YouTube ↗</span><span class="ta">யூடியூபில் பார்க்க ↗</span></a>
+      </figure>
+    </div>
+
+  </div>
+</section>
+<script>
+document.querySelectorAll('.yt').forEach(function(b){ b.addEventListener('click', function(){
+  var f=document.createElement('iframe');
+  f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.id+'?autoplay=1&rel=0';
+  f.title=b.getAttribute('aria-label')||'YouTube video'; f.allow='autoplay; encrypted-media; picture-in-picture'; f.allowFullscreen=true;
+  f.className='yt-frame'; b.replaceWith(f);
+}); });
+</script>

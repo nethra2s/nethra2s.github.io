@@ -26,3 +26,4 @@ NEXT_TA='பதிவுகள், சலுகைகள், பண்டிக�
 CTA_EN='Ready for a brand that looks as good as your work?'
 CTA_TA='உங்கள் வேலையைப் போலவே சிறப்பாகத் தோன்றும் பிராண்டுக்குத் தயாரா?'
 RELATED=['ai-video', 'youtube-content', 'ai-sales-marketing']
+EXAMPLE_FILE="work_ai-design-branding.html"

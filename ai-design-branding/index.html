@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="version" content="2026-10-20 v8">
+<meta name="version" content="2026-10-20 v9">
 <title>AI Design &amp; Branding | Nethra Strategic Solutions</title>
 <meta name="description" content="Logos, social media creatives, posters and complete brand kits, created faster with AI and finished by designers so they look professional and consistent.">
 <link rel="icon" href="../img/logo.jpg">
@@ -368,6 +368,23 @@ body.lang-ta .pc-h{font-family:var(--f-tamil)}
 .prompt-card pre{margin:0;white-space:pre-wrap;font:500 13.5px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--ink)}
 body.lang-ta .prompt-card pre{font-family:var(--f-tamil)}
 @media (max-width:560px){.flow{grid-template-columns:1fr}.kpis{grid-template-columns:1fr 1fr}.seq li{grid-template-columns:1fr}.seq .when{padding-top:0}}
+
+/* our work (real samples) */
+.ex-badge.real{border-style:solid;border-color:var(--red);color:#fff;background:rgba(227,35,47,.18)}
+.work .head > p:last-child{color:var(--muted)}
+.work-img{width:100%;height:auto;border-radius:12px;display:block;background:var(--bg-deep)}
+.work-img.logo{max-width:340px;justify-self:center;background:transparent}
+.work-video,.yt,.yt-frame{width:100%;aspect-ratio:16/9;height:auto;border-radius:12px;display:block;background:#000;border:0}
+.yt{position:relative;padding:0;cursor:pointer;overflow:hidden;background:#000 url("../img/work/taw-banner.jpg") center/cover no-repeat}
+.yt img{width:100%;height:100%;object-fit:cover;display:block;opacity:.9}
+.yt:hover img{opacity:1}
+.yt-play{position:absolute;left:50%;top:50%;width:68px;height:48px;margin:-24px 0 0 -34px;border-radius:14px;background:var(--red)}
+.yt-play::after{content:"";position:absolute;left:28px;top:14px;border-style:solid;border-width:10px 0 10px 16px;border-color:transparent transparent transparent #fff}
+.work-t{font-weight:700;color:var(--ink)}
+.work-link{color:var(--cyan);font:700 14px/1 var(--f-display);text-decoration:none}
+.work-link:hover{text-decoration:underline}
+body.lang-ta .work-link{font-family:var(--f-tamil)}
+.work-cta{text-align:center;margin-top:20px}
 @media (max-width:860px){.two,.meta,.sols{grid-template-columns:1fr}.get{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.svc-hero .wrap{grid-template-columns:1fr}.svc-hero img{width:110px;height:110px}.get{grid-template-columns:1fr}}
 </style>
@@ -430,6 +447,37 @@ body.lang-ta .prompt-card pre{font-family:var(--f-tamil)}
   </div>
 </section>
 
+<section class="example work" id="work">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow"><span class="en">Our work</span><span class="ta">எங்கள் படைப்புகள்</span></p>
+      <h2><span class="en">Brand identity for Tamil AI Wonders Hub</span><span class="ta">Tamil AI Wonders Hub-க்கான பிராண்ட் அடையாளம்</span></h2>
+      <p class="ex-badge real"><span class="en">Real work by Nethra's founder</span><span class="ta">நேத்ரா நிறுவனரின் உண்மையான படைப்பு</span></p>
+      <p><span class="en">The logo and YouTube channel banner for our own Tamil AI channel, created with AI tools and finished by hand.</span><span class="ta">எங்கள் சொந்தத் தமிழ் AI சேனலுக்கான லோகோ மற்றும் யூடியூப் சேனல் பேனர்; AI கருவிகளுடன் உருவாக்கி கையால் முடிக்கப்பட்டவை.</span></p>
+    </div>
+    <div class="ex-grid">
+      <figure class="box fig">
+        <figcaption><span class="en">Channel logo</span><span class="ta">சேனல் லோகோ</span></figcaption>
+        <p class="fig-note"><span class="en">Round badge for the profile picture, readable at small sizes.</span><span class="ta">சுயவிவரப் படத்துக்கான வட்ட லோகோ; சிறிய அளவிலும் தெளிவாகத் தெரியும்.</span></p>
+        <img class="work-img logo" src="../img/work/taw-logo.webp" alt="Tamil AI Wonders Hub logo: veena and music notes above the channel name" width="600" height="600" loading="lazy">
+      </figure>
+      <figure class="box fig">
+        <figcaption><span class="en">YouTube channel banner</span><span class="ta">யூடியூப் சேனல் பேனர்</span></figcaption>
+        <p class="fig-note"><span class="en">Tamil heritage meets AI: veena, palm-leaf manuscripts, film reels and the coastline.</span><span class="ta">தமிழ் பாரம்பரியமும் AI-யும்: வீணை, ஓலைச்சுவடிகள், திரைச்சுருள்கள், கடற்கரை.</span></p>
+        <img class="work-img " src="../img/work/taw-banner.jpg" alt="Tamil AI Wonders Hub YouTube banner with a poet, children, veena and film reels around the logo" width="1600" height="635" loading="lazy">
+      </figure>
+    </div>
+
+  </div>
+</section>
+<script>
+document.querySelectorAll('.yt').forEach(function(b){ b.addEventListener('click', function(){
+  var f=document.createElement('iframe');
+  f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.id+'?autoplay=1&rel=0';
+  f.title=b.getAttribute('aria-label')||'YouTube video'; f.allow='autoplay; encrypted-media; picture-in-picture'; f.allowFullscreen=true;
+  f.className='yt-frame'; b.replaceWith(f);
+}); });
+</script>
 
 <section class="deep">
   <div class="wrap">
@@ -471,7 +519,7 @@ body.lang-ta .prompt-card pre{font-family:var(--f-tamil)}
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Nethra Strategic Solutions <span class="ver" title="Website version">· 2026-10-20 v8</span></span>
+    <span>© 2026 Nethra Strategic Solutions <span class="ver" title="Website version">· 2026-10-20 v9</span></span>
     <i><span class="en">Think AI. Build Smarter. Grow Faster.</span><span class="ta">வெற்றி, எளிதாக</span></i>
   </div>
 </footer>

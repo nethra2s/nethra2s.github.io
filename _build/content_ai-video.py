@@ -26,3 +26,4 @@ NEXT_TA='உங்கள் சேனல், பிரச்சாரங்க�
 CTA_EN='Ready to tell your story on video?'
 CTA_TA='உங்கள் கதையை வீடியோவில் சொல்லத் தயாரா?'
 RELATED=['youtube-content', 'ai-voice-music', 'ai-design-branding']
+EXAMPLE_FILE="work_ai-video.html"
