@@ -197,6 +197,13 @@ input:focus,textarea:focus,select:focus{outline:2px solid var(--cyan);outline-of
 textarea{min-height:120px;resize:vertical}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
 .btn[disabled]{opacity:.6;cursor:wait}
+.req{color:var(--red);font-weight:700;margin-left:2px}
+.req-note{grid-column:1/-1;margin:0;font-size:14px;color:var(--muted)}
+.phone-row{display:flex;gap:8px}
+.phone-row select{flex:0 0 auto;width:auto;max-width:46%}
+.phone-row input{flex:1 1 auto;min-width:0}
+.err{color:#FF6B74;font-size:13.5px;font-weight:600}
+input[aria-invalid="true"],select[aria-invalid="true"]{border-color:#FF6B74;box-shadow:0 0 0 1px #FF6B74}
 .form-note{grid-column:1/-1;font-size:15px;color:var(--cyan);font-weight:600}
 @media (max-width:860px){.contact-grid{grid-template-columns:1fr}}
 @media (max-width:560px){form{grid-template-columns:1fr;padding:20px}}
@@ -393,12 +400,14 @@ footer i{font-family:var(--f-display);font-weight:600;color:var(--ink)}
       </dl>
     </div>
     <form id="enquiry" novalidate>
-      <div class="field"><label for="f-name"><span class="en">Your name</span><span class="ta">உங்கள் பெயர்</span></label><input id="f-name" name="name" autocomplete="name" required></div>
+      <p class="req-note"><span class="req">*</span> <span class="en">Required fields</span><span class="ta">கட்டாயம் நிரப்ப வேண்டியவை</span></p>
+      <div class="field"><label for="f-name"><span class="en">Your name</span><span class="ta">உங்கள் பெயர்</span> <span class="req" aria-hidden="true">*</span></label><input id="f-name" name="name" autocomplete="name" required aria-describedby="e-name"><small class="err" id="e-name" hidden></small></div>
       <div class="field"><label for="f-company"><span class="en">Company</span><span class="ta">நிறுவனம்</span></label><input id="f-company" name="company" autocomplete="organization"></div>
-      <div class="field"><label for="f-phone"><span class="en">Phone</span><span class="ta">தொலைபேசி</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required></div>
-      <div class="field"><label for="f-email"><span class="en">Email</span><span class="ta">மின்னஞ்சல்</span></label><input id="f-email" name="email" type="email" autocomplete="email"></div>
-      <div class="field full"><label for="f-topic"><span class="en">What would you like AI to help with?</span><span class="ta">எதற்கு AI உதவி தேவை?</span></label>
-        <select id="f-topic" name="topic">
+      <div class="field"><label for="f-phone"><span class="en">Phone</span><span class="ta">தொலைபேசி</span> <span class="req" aria-hidden="true">*</span></label><div class="phone-row"><select id="f-cc" name="country_code" aria-label="Country code" autocomplete="tel-country-code"><option value="+91" selected>India (+91)</option><option value="+971">UAE (+971)</option><option value="+966">Saudi Arabia (+966)</option><option value="+974">Qatar (+974)</option><option value="+968">Oman (+968)</option><option value="+965">Kuwait (+965)</option><option value="+973">Bahrain (+973)</option><option value="+65">Singapore (+65)</option><option value="+60">Malaysia (+60)</option><option value="+94">Sri Lanka (+94)</option><option value="+977">Nepal (+977)</option><option value="+880">Bangladesh (+880)</option><option value="+1">USA / Canada (+1)</option><option value="+44">UK (+44)</option><option value="+61">Australia (+61)</option><option value="+64">New Zealand (+64)</option><option value="+49">Germany (+49)</option><option value="+33">France (+33)</option><option value="+81">Japan (+81)</option></select><input id="f-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="98765 43210" required aria-describedby="e-phone"></div><small class="err" id="e-phone" hidden></small></div>
+      <div class="field"><label for="f-email"><span class="en">Email</span><span class="ta">மின்னஞ்சல்</span></label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="name@company.com" aria-describedby="e-email"><small class="err" id="e-email" hidden></small></div>
+      <div class="field full"><label for="f-topic"><span class="en">What would you like AI to help with?</span><span class="ta">எதற்கு AI உதவி தேவை?</span> <span class="req" aria-hidden="true">*</span></label>
+        <select id="f-topic" name="topic" required aria-describedby="e-topic">
+          <option value="" data-en="Select a service" data-ta="ஒரு சேவையைத் தேர்ந்தெடுக்கவும் / Select a service" selected disabled>Select a service</option>
           <option value="AI Strategy &amp; Roadmap" data-en="AI Strategy &amp; Roadmap" data-ta="AI Strategy &amp; Roadmap / AI உத்தி">AI Strategy &amp; Roadmap</option>
           <option value="AI for Sales &amp; Marketing" data-en="AI for Sales &amp; Marketing" data-ta="AI for Sales &amp; Marketing / விற்பனை & மார்க்கெட்டிங்">AI for Sales &amp; Marketing</option>
           <option value="Data Analytics &amp; Dashboards" data-en="Data Analytics &amp; Dashboards" data-ta="Data Analytics &amp; Dashboards / தரவு பகுப்பாய்வு">Data Analytics &amp; Dashboards</option>
@@ -410,6 +419,7 @@ footer i{font-family:var(--f-display);font-weight:600;color:var(--ink)}
           <option value="YouTube &amp; Digital Content" data-en="YouTube &amp; Digital Content" data-ta="YouTube &amp; Digital Content / யூடியூப்">YouTube &amp; Digital Content</option>
           <option value="Not sure yet" data-en="Not sure yet" data-ta="Not sure yet / இன்னும் உறுதியில்லை">Not sure yet</option>
         </select>
+        <small class="err" id="e-topic" hidden></small>
       </div>
       <div class="field full"><label for="f-msg"><span class="en">Message</span><span class="ta">செய்தி</span></label><textarea id="f-msg" name="message"></textarea></div>
       <div class="field full"><button class="btn primary" type="submit"><span class="en">Send enquiry</span><span class="ta">விசாரணையை அனுப்பு</span></button></div>
@@ -457,14 +467,47 @@ footer i{font-family:var(--f-display);font-weight:600;color:var(--ink)}
   document.addEventListener('keydown', function(e){ if(e.key==='Escape') setMenu(false); });
 
   var form=document.getElementById('enquiry'), note=document.getElementById('form-note');
+  ['name','phone','email','topic'].forEach(function(id){ var el=document.getElementById('f-'+id); el.addEventListener(id==='topic'?'change':'input', function(){ if(el.getAttribute('aria-invalid')){ el.removeAttribute('aria-invalid'); var e=document.getElementById('e-'+id); e.hidden=true; } }); });
   form.addEventListener('submit', function(e){
     e.preventDefault();
     var ta = body.classList.contains('lang-ta');
-    var name=document.getElementById('f-name'), phone=document.getElementById('f-phone');
-    if(!name.value.trim() || !phone.value.trim()){
-      note.textContent = ta ? 'பெயர் மற்றும் தொலைபேசி எண்ணை நிரப்பவும்.' : 'Please fill in your name and phone number.';
-      note.hidden=false; (name.value.trim()?phone:name).focus(); return;
+    var M = ta ? {
+      name:'உங்கள் பெயரை நிரப்பவும்.',
+      phone:'சரியான தொலைபேசி எண்ணை நிரப்பவும்.',
+      phone91:'இந்திய மொபைல் எண் 6, 7, 8 அல்லது 9 இல் தொடங்கும் 10 இலக்கங்களாக இருக்க வேண்டும்.',
+      email:'மின்னஞ்சல் முகவரியை நிரப்பவும்.',
+      emailBad:'சரியான மின்னஞ்சல் முகவரியை நிரப்பவும் (எ.கா. name@company.com).',
+      topic:'ஒரு சேவையைத் தேர்ந்தெடுக்கவும்.',
+      fix:'சிவப்பு நிறத்தில் குறிக்கப்பட்ட புலங்களைச் சரிசெய்யவும்.'
+    } : {
+      name:'Please enter your name.',
+      phone:'Please enter a valid phone number.',
+      phone91:'Indian mobile numbers have 10 digits and start with 6, 7, 8 or 9.',
+      email:'Please enter your email address.',
+      emailBad:'Please enter a valid email address (for example name@company.com).',
+      topic:'Please select a service.',
+      fix:'Please correct the fields marked in red.'
+    };
+    var checks=[], first=null;
+    function mark(id, msg){
+      var el=document.getElementById('f-'+id), e=document.getElementById('e-'+id);
+      if(msg){ el.setAttribute('aria-invalid','true'); e.textContent=msg; e.hidden=false; if(!first) first=el; }
+      else { el.removeAttribute('aria-invalid'); e.textContent=''; e.hidden=true; }
     }
+    var nameV=document.getElementById('f-name').value.trim();
+    mark('name', nameV ? '' : M.name);
+    var cc=document.getElementById('f-cc').value;
+    var digits=document.getElementById('f-phone').value.replace(/[^0-9]/g,'');
+    if(cc==='+91' && digits.length===11 && digits.charAt(0)==='0') digits=digits.slice(1);
+    var phoneMsg='';
+    if(!digits) phoneMsg=M.phone;
+    else if(cc==='+91' && !/^[6-9][0-9]{9}$/.test(digits)) phoneMsg=M.phone91;
+    else if(digits.length<6 || digits.length>14) phoneMsg=M.phone;
+    mark('phone', phoneMsg);
+    var emailV=document.getElementById('f-email').value.trim();
+    mark('email', !emailV ? '' : (/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailV) ? '' : M.emailBad));
+    mark('topic', document.getElementById('f-topic').value ? '' : M.topic);
+    if(first){ note.textContent=M.fix; note.hidden=false; first.focus(); return; }
     var v=function(id){ return document.getElementById(id).value.trim(); };
     var topic=document.getElementById('f-topic').value;
     var btn=form.querySelector('button[type="submit"]');
@@ -474,7 +517,7 @@ footer i{font-family:var(--f-display);font-weight:600;color:var(--ink)}
       from_name:'Nethra website',
       name:v('f-name'),
       company:v('f-company')||'-',
-      phone:v('f-phone'),
+      phone:document.getElementById('f-cc').value+' '+document.getElementById('f-phone').value.trim(),
       email:v('f-email')||'',
       service:topic,
       message:v('f-msg')||'-',
