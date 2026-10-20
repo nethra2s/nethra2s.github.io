@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<!-- Nethra website version: 2026-10-20 v2 -->
-<meta name="version" content="2026-10-20 v2">
+<!-- Nethra website version: 2026-10-20 v3 -->
+<meta name="version" content="2026-10-20 v3">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Nethra Strategic Solutions - AI transformation partner. Think AI. Build Smarter. Grow Faster.">
 <link rel="icon" href="img/logo.jpg">
@@ -177,6 +177,8 @@ body.lang-ta .creds li.more{font-family:var(--f-tamil)}
 body.lang-ta .svc .tag{font-family:var(--f-tamil);letter-spacing:0;text-transform:none;font-size:12px}
 .svc h3{font-size:19px;font-weight:700}
 .svc p{color:var(--muted);font-size:15.5px}
+.svc-wide{grid-column:1/-1}
+.svc-wide p{max-width:80ch}
 .svc:target{border-color:var(--cyan);box-shadow:0 0 0 3px var(--cyan-soft)}
 @media (max-width:980px){.services{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:620px){.services{grid-template-columns:1fr}}
@@ -340,7 +342,7 @@ footer i{font-family:var(--f-display);font-weight:600;color:var(--ink)}
     <div class="head">
       <p class="eyebrow"><span class="en">Services</span><span class="ta">சேவைகள்</span></p>
       <h2><span class="en">AI transformation, end to end</span><span class="ta">முழுமையான AI மாற்றம்</span></h2>
-      <p><span class="en">Nine services across strategy, building and creative work. Start with one, or let us run the full transformation.</span><span class="ta">உத்தி, உருவாக்கம், படைப்பு என மூன்று பிரிவுகளில் ஒன்பது சேவைகள். ஒன்றில் தொடங்கலாம், அல்லது முழு மாற்றத்தையும் எங்களிடம் ஒப்படைக்கலாம்.</span></p>
+      <p><span class="en">Ten services across strategy, building, creative work and training. Start with one, or let us run the full transformation.</span><span class="ta">உத்தி, உருவாக்கம், படைப்பு, பயிற்சி என நான்கு பிரிவுகளில் பத்து சேவைகள். ஒன்றில் தொடங்கலாம், அல்லது முழு மாற்றத்தையும் எங்களிடம் ஒப்படைக்கலாம்.</span></p>
     </div>
     <div class="services">
       <article class="svc" id="svc-strategy">
@@ -397,6 +399,12 @@ footer i{font-family:var(--f-display);font-weight:600;color:var(--ink)}
         <h3><span class="en">YouTube &amp; Digital Content</span><span class="ta">யூடியூப் & டிஜிட்டல் உள்ளடக்கம்</span></h3>
         <p><span class="en">Channel setup, Shorts and Reels, and a steady AI-assisted content calendar.</span><span class="ta">சேனல் அமைப்பு, ஷார்ட்ஸ் & ரீல்ஸ், AI உதவியுடன் தொடர்ச்சியான உள்ளடக்க அட்டவணை.</span></p>
       </article>
+      <article class="svc svc-wide" id="svc-training">
+        <img src="img/training.jpg" alt="" width="240" height="240">
+        <span class="tag"><span class="en">Training</span><span class="ta">பயிற்சி</span></span>
+        <h3><span class="en">AI Training &amp; Workshops</span><span class="ta">AI பயிற்சி & பட்டறைகள்</span></h3>
+        <p><span class="en">Hands-on AI training for business owners, staff, colleges and institutions. Learn to use tools like ChatGPT, Claude and Gemini for emails, reports, marketing and customer replies, in English or Tamil, on-site or online.</span><span class="ta">தொழில் உரிமையாளர்கள், பணியாளர்கள், கல்லூரிகள் மற்றும் நிறுவனங்களுக்கு நடைமுறை AI பயிற்சி. மின்னஞ்சல், அறிக்கைகள், மார்க்கெட்டிங், வாடிக்கையாளர் பதில்களுக்கு ChatGPT, Claude, Gemini போன்ற கருவிகளைப் பயன்படுத்தக் கற்றுக்கொள்ளுங்கள். தமிழிலோ ஆங்கிலத்திலோ, நேரிலோ ஆன்லைனிலோ.</span></p>
+      </article>
     </div>
   </div>
 </section>
@@ -448,6 +456,7 @@ footer i{font-family:var(--f-display);font-weight:600;color:var(--ink)}
           <option value="AI Voice &amp; Music" data-en="AI Voice &amp; Music" data-ta="AI Voice &amp; Music / குரல் & இசை">AI Voice &amp; Music</option>
           <option value="AI Video Production" data-en="AI Video Production" data-ta="AI Video Production / வீடியோ">AI Video Production</option>
           <option value="YouTube &amp; Digital Content" data-en="YouTube &amp; Digital Content" data-ta="YouTube &amp; Digital Content / யூடியூப்">YouTube &amp; Digital Content</option>
+          <option value="AI Training &amp; Workshops" data-en="AI Training &amp; Workshops" data-ta="AI Training &amp; Workshops / AI பயிற்சி">AI Training &amp; Workshops</option>
           <option value="Not sure yet" data-en="Not sure yet" data-ta="Not sure yet / இன்னும் உறுதியில்லை">Not sure yet</option>
         </select>
         <small class="err" id="e-topic" hidden></small>
@@ -463,7 +472,7 @@ footer i{font-family:var(--f-display);font-weight:600;color:var(--ink)}
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Nethra Strategic Solutions <span class="ver" title="Website version">· 2026-10-20 v2</span></span>
+    <span>© 2026 Nethra Strategic Solutions <span class="ver" title="Website version">· 2026-10-20 v3</span></span>
     <i><span class="en">Think AI. Build Smarter. Grow Faster.</span><span class="ta">வெற்றி, எளிதாக</span></i>
   </div>
 </footer>
@@ -499,7 +508,7 @@ footer i{font-family:var(--f-display);font-weight:600;color:var(--ink)}
 
   var form=document.getElementById('enquiry'), note=document.getElementById('form-note');
 
-  var HINTS={"": {"en": "Tell us briefly about your business and what you need, e.g. We are a 20-person trading company and want to reduce manual work.", "ta": "உங்கள் தொழில் மற்றும் தேவை பற்றி சுருக்கமாக, எ.கா. நாங்கள் 20 பேர் கொண்ட வர்த்தக நிறுவனம்; கைமுறை வேலையைக் குறைக்க விரும்புகிறோம்."}, "AI Strategy & Roadmap": {"en": "e.g. We run a 50-person manufacturing unit and want to know where AI can save time and cost first.", "ta": "எ.கா. நாங்கள் 50 பேர் கொண்ட உற்பத்தி நிறுவனம்; AI எங்கே முதலில் நேரத்தையும் செலவையும் மிச்சப்படுத்தும் என அறிய விரும்புகிறோம்."}, "AI for Sales & Marketing": {"en": "e.g. We get about 100 enquiries a month and want faster follow-ups and better conversion.", "ta": "எ.கா. மாதம் சுமார் 100 விசாரணைகள் வருகின்றன; விரைவான பின்தொடர்தலும் அதிக விற்பனையும் தேவை."}, "Data Analytics & Dashboards": {"en": "e.g. Our sales data is in Excel and Tally; we want one live dashboard for daily decisions.", "ta": "எ.கா. எங்கள் விற்பனைத் தரவு Excel மற்றும் Tally-ல் உள்ளது; தினசரி முடிவுகளுக்கு ஒரே நேரடி டாஷ்போர்டு தேவை."}, "Custom AI Solutions": {"en": "e.g. We want a WhatsApp chatbot that answers customer questions about our products in Tamil and English.", "ta": "எ.கா. எங்கள் தயாரிப்புகள் பற்றிய வாடிக்கையாளர் கேள்விகளுக்கு தமிழிலும் ஆங்கிலத்திலும் பதிலளிக்கும் WhatsApp சாட்பாட் தேவை."}, "Workflow Automation": {"en": "e.g. Our team spends hours on invoices and data entry; we use Tally and Google Sheets.", "ta": "எ.கா. இன்வாய்ஸ் மற்றும் தரவு உள்ளீட்டில் எங்கள் குழு பல மணி நேரம் செலவிடுகிறது; Tally மற்றும் Google Sheets பயன்படுத்துகிறோம்."}, "AI Design & Branding": {"en": "e.g. We need a new logo and 30 social media posts a month for our restaurant.", "ta": "எ.கா. எங்கள் உணவகத்துக்கு புதிய லோகோவும் மாதம் 30 சமூக ஊடகப் பதிவுகளும் தேவை."}, "AI Voice & Music": {"en": "e.g. We need a 30-second Tamil voice-over and a jingle for our radio advertisement.", "ta": "எ.கா. எங்கள் வானொலி விளம்பரத்துக்கு 30 வினாடி தமிழ் குரல்பதிவும் ஜிங்கிளும் தேவை."}, "AI Video Production": {"en": "e.g. We need a 1-minute product explainer video in English and Tamil for our website.", "ta": "எ.கா. எங்கள் இணையதளத்துக்கு ஆங்கிலம் மற்றும் தமிழில் 1 நிமிட தயாரிப்பு விளக்க வீடியோ தேவை."}, "YouTube & Digital Content": {"en": "e.g. We want to start a YouTube channel for our business with 2 videos and 8 Shorts a month.", "ta": "எ.கா. எங்கள் தொழிலுக்கு மாதம் 2 வீடியோக்கள் மற்றும் 8 ஷார்ட்ஸுடன் யூடியூப் சேனல் தொடங்க விரும்புகிறோம்."}, "Not sure yet": {"en": "e.g. We are a family-run business and want to understand how AI could help us. Happy to discuss.", "ta": "எ.கா. நாங்கள் குடும்பத் தொழில் நடத்துகிறோம்; AI எப்படி உதவும் என்று அறிய விரும்புகிறோம். கலந்துரையாட தயார்."}};
+  var HINTS={"": {"en": "Tell us briefly about your business and what you need, e.g. We are a 20-person trading company and want to reduce manual work.", "ta": "உங்கள் தொழில் மற்றும் தேவை பற்றி சுருக்கமாக, எ.கா. நாங்கள் 20 பேர் கொண்ட வர்த்தக நிறுவனம்; கைமுறை வேலையைக் குறைக்க விரும்புகிறோம்."}, "AI Strategy & Roadmap": {"en": "e.g. We run a 50-person manufacturing unit and want to know where AI can save time and cost first.", "ta": "எ.கா. நாங்கள் 50 பேர் கொண்ட உற்பத்தி நிறுவனம்; AI எங்கே முதலில் நேரத்தையும் செலவையும் மிச்சப்படுத்தும் என அறிய விரும்புகிறோம்."}, "AI for Sales & Marketing": {"en": "e.g. We get about 100 enquiries a month and want faster follow-ups and better conversion.", "ta": "எ.கா. மாதம் சுமார் 100 விசாரணைகள் வருகின்றன; விரைவான பின்தொடர்தலும் அதிக விற்பனையும் தேவை."}, "Data Analytics & Dashboards": {"en": "e.g. Our sales data is in Excel and Tally; we want one live dashboard for daily decisions.", "ta": "எ.கா. எங்கள் விற்பனைத் தரவு Excel மற்றும் Tally-ல் உள்ளது; தினசரி முடிவுகளுக்கு ஒரே நேரடி டாஷ்போர்டு தேவை."}, "Custom AI Solutions": {"en": "e.g. We want a WhatsApp chatbot that answers customer questions about our products in Tamil and English.", "ta": "எ.கா. எங்கள் தயாரிப்புகள் பற்றிய வாடிக்கையாளர் கேள்விகளுக்கு தமிழிலும் ஆங்கிலத்திலும் பதிலளிக்கும் WhatsApp சாட்பாட் தேவை."}, "Workflow Automation": {"en": "e.g. Our team spends hours on invoices and data entry; we use Tally and Google Sheets.", "ta": "எ.கா. இன்வாய்ஸ் மற்றும் தரவு உள்ளீட்டில் எங்கள் குழு பல மணி நேரம் செலவிடுகிறது; Tally மற்றும் Google Sheets பயன்படுத்துகிறோம்."}, "AI Design & Branding": {"en": "e.g. We need a new logo and 30 social media posts a month for our restaurant.", "ta": "எ.கா. எங்கள் உணவகத்துக்கு புதிய லோகோவும் மாதம் 30 சமூக ஊடகப் பதிவுகளும் தேவை."}, "AI Voice & Music": {"en": "e.g. We need a 30-second Tamil voice-over and a jingle for our radio advertisement.", "ta": "எ.கா. எங்கள் வானொலி விளம்பரத்துக்கு 30 வினாடி தமிழ் குரல்பதிவும் ஜிங்கிளும் தேவை."}, "AI Video Production": {"en": "e.g. We need a 1-minute product explainer video in English and Tamil for our website.", "ta": "எ.கா. எங்கள் இணையதளத்துக்கு ஆங்கிலம் மற்றும் தமிழில் 1 நிமிட தயாரிப்பு விளக்க வீடியோ தேவை."}, "YouTube & Digital Content": {"en": "e.g. We want to start a YouTube channel for our business with 2 videos and 8 Shorts a month.", "ta": "எ.கா. எங்கள் தொழிலுக்கு மாதம் 2 வீடியோக்கள் மற்றும் 8 ஷார்ட்ஸுடன் யூடியூப் சேனல் தொடங்க விரும்புகிறோம்."}, "AI Training & Workshops": {"en": "e.g. We want a one-day AI workshop in Tamil for our 25 office staff on using ChatGPT for daily work.", "ta": "எ.கா. எங்கள் 25 அலுவலகப் பணியாளர்களுக்கு தினசரி வேலையில் ChatGPT பயன்படுத்துவது குறித்து தமிழில் ஒரு நாள் AI பட்டறை தேவை."}, "Not sure yet": {"en": "e.g. We are a family-run business and want to understand how AI could help us. Happy to discuss.", "ta": "எ.கா. நாங்கள் குடும்பத் தொழில் நடத்துகிறோம்; AI எப்படி உதவும் என்று அறிய விரும்புகிறோம். கலந்துரையாட தயார்."}};
   var msgBox=document.getElementById('f-msg'), topicSel=document.getElementById('f-topic');
   function updateHint(){
     var h=HINTS[topicSel.value]||HINTS[''];
