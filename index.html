@@ -182,6 +182,11 @@ body.lang-ta .svc .tag{font-family:var(--f-tamil);letter-spacing:0;text-transfor
 .details dt{font:700 12px/1 var(--f-display);text-transform:uppercase;letter-spacing:.16em;color:var(--cyan)}
 body.lang-ta .details dt{font-family:var(--f-tamil);letter-spacing:0;text-transform:none;font-size:13px}
 .details dd{margin:8px 0 0;font-size:18px}
+.details a.mail{color:var(--cyan);text-decoration:none;font-weight:600;word-break:break-all}
+.details a.mail:hover{text-decoration:underline}
+.details .addr{font-style:normal;font-size:16.5px;line-height:1.55}
+.details a.map{display:inline-block;margin-top:8px;font-size:14.5px;font-weight:600;color:var(--cyan);text-decoration:none}
+.details a.map:hover{text-decoration:underline}
 .todo{display:inline-block;border:1px dashed var(--line);color:var(--muted);padding:3px 12px;border-radius:6px;font-size:15px}
 form{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .field{display:grid;gap:7px}
@@ -380,9 +385,9 @@ footer i{font-family:var(--f-display);font-weight:600;color:var(--ink)}
         <p><span class="en">Tell us about your business. We reply within two working days.</span><span class="ta">உங்கள் தொழில் பற்றி சொல்லுங்கள். இரண்டு வேலை நாட்களுக்குள் பதிலளிப்போம்.</span></p>
       </div>
       <dl class="details">
-        <div><dt><span class="en">Phone / WhatsApp</span><span class="ta">தொலைபேசி / வாட்ஸ்அப்</span></dt><dd><span class="todo">+91 — add number</span></dd></div>
-        <div><dt><span class="en">Email</span><span class="ta">மின்னஞ்சல்</span></dt><dd><span class="todo">add email address</span></dd></div>
-        <div><dt><span class="en">Office</span><span class="ta">அலுவலகம்</span></dt><dd><span class="todo">add office address</span></dd></div>
+        <div><dt><span class="en">Phone / WhatsApp</span><span class="ta">தொலைபேசி / வாட்ஸ்அப்</span></dt><dd><a class="mail" href="tel:+919574000002">+91 95740 00002</a></dd></div>
+        <div><dt><span class="en">Email</span><span class="ta">மின்னஞ்சல்</span></dt><dd><a class="mail" href="mailto:contact@nethra2s.com">contact@nethra2s.com</a></dd></div>
+        <div><dt><span class="en">Office</span><span class="ta">அலுவலகம்</span></dt><dd><address class="addr">No. 108, Second Street, Jothi Lakshmi Bhavan<br>Ram Nagar Extensions, Maharaja Nagar Post<br>Tirunelveli – 627011, Tamil Nadu, India</address><a class="map" href="https://maps.app.goo.gl/edZZht2Z11DQbrQh6" target="_blank" rel="noopener"><span class="en">Open in Google Maps</span><span class="ta">கூகுள் மேப்ஸில் பார்க்க</span></a></dd></div>
       </dl>
     </div>
     <form id="enquiry" novalidate>
