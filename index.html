@@ -462,8 +462,27 @@ footer i{font-family:var(--f-display);font-weight:600;color:var(--ink)}
       note.textContent = ta ? 'பெயர் மற்றும் தொலைபேசி எண்ணை நிரப்பவும்.' : 'Please fill in your name and phone number.';
       note.hidden=false; (name.value.trim()?phone:name).focus(); return;
     }
-    note.textContent = ta ? 'இது முன்னோட்டப் பதிப்பு. இணையதளம் வெளியானதும் இந்தப் படிவம் செய்திகளை அனுப்பும்.' : 'This is a preview. The form will send enquiries once the site is live.';
+    var v=function(id){ return document.getElementById(id).value.trim(); };
+    var topic=document.getElementById('f-topic').value;
+    var subject='Website enquiry: '+topic+' - '+v('f-name');
+    var lines=[
+      'Name: '+v('f-name'),
+      'Company: '+(v('f-company')||'-'),
+      'Phone: '+v('f-phone'),
+      'Email: '+(v('f-email')||'-'),
+      'Service: '+topic,
+      '',
+      'Message:',
+      v('f-msg')||'-',
+      '',
+      '(Sent from the enquiry form on nethra2s.com)'
+    ];
+    var href='mailto:contact@nethra2s.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(lines.join('\r\n'));
+    note.textContent = ta
+      ? 'உங்கள் மின்னஞ்சல் செயலியில் செய்தி தயாராக திறக்கும். அனுப்பு பொத்தானை அழுத்தவும். எதுவும் திறக்கவில்லை என்றால், contact@nethra2s.com என்ற முகவரிக்கு எழுதவும் அல்லது +91 95740 00002 என்ற எண்ணை அழைக்கவும்.'
+      : 'Your email app will open with your enquiry ready. Please press Send there. If nothing opens, email us at contact@nethra2s.com or call +91 95740 00002.';
     note.hidden=false;
+    window.location.href=href;
   });
 })();
 </script>
