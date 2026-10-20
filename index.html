@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<!-- Nethra website version: 2026-10-20 v4 -->
-<meta name="version" content="2026-10-20 v4">
+<!-- Nethra website version: 2026-10-20 v5 -->
+<meta name="version" content="2026-10-20 v5">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Nethra Strategic Solutions - AI transformation partner. Think AI. Build Smarter. Grow Faster.">
 <link rel="icon" href="img/logo.jpg">
@@ -185,6 +185,9 @@ body.lang-ta .svc .tag{font-family:var(--f-tamil);letter-spacing:0;text-transfor
 .svc p{color:var(--muted);font-size:15.5px}
 .svc-wide{grid-column:1/-1}
 .svc-wide p{max-width:80ch}
+.svc .more{grid-column:2;justify-self:start;margin-top:6px;color:var(--cyan);font:700 14px/1 var(--f-display);text-decoration:none}
+.svc .more:hover{text-decoration:underline}
+body.lang-ta .svc .more{font-family:var(--f-tamil)}
 .svc:target{border-color:var(--cyan);box-shadow:0 0 0 3px var(--cyan-soft)}
 @media (max-width:980px){.services{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:620px){.services{grid-template-columns:1fr}}
@@ -362,6 +365,7 @@ footer i{font-family:var(--f-display);font-weight:600;color:var(--ink)}
         <span class="tag"><span class="en">Strategy</span><span class="ta">உத்தி</span></span>
         <h3><span class="en">AI Strategy &amp; Roadmap</span><span class="ta">AI உத்தி & வழிவரைபடம்</span></h3>
         <p><span class="en">Find where AI saves the most time and money in your business, and plan the order to adopt it.</span><span class="ta">உங்கள் தொழிலில் AI எங்கே அதிக நேரத்தையும் பணத்தையும் மிச்சப்படுத்தும் எனக் கண்டறிந்து, செயல்படுத்தும் வரிசையைத் திட்டமிடுகிறோம்.</span></p>
+        <a class="more" href="ai-strategy/"><span class="en">Learn more →</span><span class="ta">மேலும் அறிய →</span></a>
       </article>
       <article class="svc" id="svc-growth">
         <img src="img/growth.jpg" alt="" width="240" height="240">
@@ -484,7 +488,7 @@ footer i{font-family:var(--f-display);font-weight:600;color:var(--ink)}
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Nethra Strategic Solutions <span class="ver" title="Website version">· 2026-10-20 v4</span></span>
+    <span>© 2026 Nethra Strategic Solutions <span class="ver" title="Website version">· 2026-10-20 v5</span></span>
     <i><span class="en">Think AI. Build Smarter. Grow Faster.</span><span class="ta">வெற்றி, எளிதாக</span></i>
   </div>
 </footer>
@@ -528,6 +532,10 @@ footer i{font-family:var(--f-display);font-weight:600;color:var(--ink)}
   }
   topicSel.addEventListener('change', updateHint);
   buttons.forEach(function(b){ b.addEventListener('click', updateHint); });
+  try{
+    var want=new URLSearchParams(location.search).get('service');
+    if(want){ for(var i=0;i<topicSel.options.length;i++){ if(topicSel.options[i].value===want){ topicSel.selectedIndex=i; break; } } }
+  }catch(e){}
   updateHint();
   ['name','phone','email','topic'].forEach(function(id){ var el=document.getElementById('f-'+id); el.addEventListener(id==='topic'?'change':'input', function(){ if(el.getAttribute('aria-invalid')){ el.removeAttribute('aria-invalid'); var e=document.getElementById('e-'+id); e.hidden=true; } }); });
   form.addEventListener('submit', function(e){
