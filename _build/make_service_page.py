@@ -69,6 +69,50 @@ body.lang-ta .svc-hero h1{font-size:clamp(24px,3vw,36px)}
 .related a{padding:9px 16px;border:1px solid var(--line);border-radius:999px;color:var(--muted);text-decoration:none;font:600 14px/1 var(--f-display)}
 .related a:hover{border-color:var(--cyan);color:var(--ink)}
 body.lang-ta .related a{font-family:var(--f-tamil)}
+
+/* illustrative example section */
+.example .head{max-width:760px}
+.ex-badge{display:inline-flex;align-self:start;justify-self:start;padding:6px 12px;border:1px dashed var(--cyan);border-radius:999px;color:var(--cyan);font:700 12.5px/1.2 var(--f-display);letter-spacing:.04em}
+body.lang-ta .ex-badge{font-family:var(--f-tamil)}
+.scenario{display:grid;gap:8px;margin-bottom:20px}
+.scenario h3,.outcome h3{font-size:17px;color:var(--cyan)}
+.scenario p{color:var(--ink)}
+.ex-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
+.ex-grid > *{min-width:0}
+.fig{margin:0;display:grid;gap:10px;align-content:start}
+.fig figcaption{font:800 18px/1.3 var(--f-display)}
+body.lang-ta .fig figcaption{font-family:var(--f-tamil)}
+.fig-note{color:var(--muted);font-size:14.5px}
+.fig-scroll{overflow-x:auto}
+.chart{width:100%;min-width:320px;height:auto;display:block}
+.chart text{font-family:var(--f-body);fill:var(--ink)}
+body.lang-ta .chart text{font-family:var(--f-tamil)}
+.chart .q{fill:var(--bg-deep);stroke:var(--line)}
+.chart .q-win{fill:rgba(34,169,236,.12);stroke:var(--cyan)}
+.chart .ql{font-size:12.5px;font-weight:700;fill:var(--muted)}
+.chart .ql.win{fill:var(--cyan)}
+.chart .ax{stroke:var(--muted);stroke-width:1.5}
+.chart .axl{font-size:12.5px;fill:var(--muted);font-weight:600}
+.chart .dot circle{fill:var(--surface-2);stroke:var(--muted);stroke-width:2}
+.chart .dot.win circle{fill:var(--cyan);stroke:var(--bg)}
+.chart .dot text{font:800 13px var(--f-display);fill:var(--ink)}
+.chart .dot.win text{fill:var(--bg-deep)}
+.chart .dot:hover circle,.chart .bar:hover rect{stroke:#fff;stroke-width:2}
+.chart .rl{font-size:12px;font-weight:600;fill:var(--muted)}
+.chart .grid line{stroke:var(--line);stroke-width:1}
+.chart .mlab text{font-size:12px;fill:var(--muted);font-weight:700}
+.chart .bar rect{fill:var(--surface-2);stroke:var(--line)}
+.chart .bar.win rect{fill:var(--cyan);stroke:none}
+.chart .bar text{font-size:11.5px;font-weight:700;fill:var(--ink)}
+.chart .bar.win text{fill:var(--bg-deep)}
+.chart .gate line{stroke:var(--red);stroke-width:2;stroke-dasharray:4 4}
+.chart .gate text{font-size:11px;fill:var(--red);font-weight:700}
+.fig-legend{margin:0;padding-left:22px;display:grid;gap:4px;color:var(--muted);font-size:14.5px;columns:2}
+.fig-key{display:flex;flex-wrap:wrap;align-items:center;gap:8px;color:var(--muted);font-size:14px}
+.fig-key .sw{width:14px;height:14px;border-radius:4px;background:var(--surface-2);border:1px solid var(--line);margin-left:8px}
+.fig-key .sw.win{background:var(--cyan);border:0;margin-left:0}
+.outcome ul{margin:10px 0 12px;padding-left:20px;display:grid;gap:6px}
+@media (max-width:860px){.ex-grid{grid-template-columns:1fr}.fig-legend{columns:1}}
 @media (max-width:860px){.two,.meta,.sols{grid-template-columns:1fr}.get{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.svc-hero .wrap{grid-template-columns:1fr}.svc-hero img{width:110px;height:110px}.get{grid-template-columns:1fr}}
 """
@@ -79,13 +123,15 @@ def li_bi(en, ta): return "".join(f"<li>{bi(e, t)}</li>" for e, t in zip(en, ta)
 
 sols = "".join(f'<li class="sol"><h3>{bi(a, b)}</h3><p>{bi(d, e)}</p></li>' for a, b, d, e in c.SOL)
 steps = "".join(f'<li><h3>{bi(a, b)}</h3><p>{bi(d, e)}</p></li>' for a, b, d, e in c.STEPS)
-sys.path.insert(0, '/home/claude/build'); from pages import NAMES
+sys.path.insert(0, __import__('os').path.dirname(__import__('os').path.abspath(__file__))); from pages import NAMES
 related = "".join(f'<a href="{H}{slug}/">{bi(*NAMES[slug])}</a>' for slug in c.RELATED)
 HOW_EN=getattr(c,'HOW_EN','From first conversation to a clear plan'); HOW_TA=getattr(c,'HOW_TA','முதல் உரையாடலிலிருந்து தெளிவான திட்டம் வரை')
 NL_EN=getattr(c,'NEXT_LABEL_EN','After the plan'); NL_TA=getattr(c,'NEXT_LABEL_TA','திட்டத்துக்குப் பிறகு')
 CTA_EN=getattr(c,'CTA_EN','Ready to find your AI starting point?'); CTA_TA=getattr(c,'CTA_TA','உங்கள் AI தொடக்கப் புள்ளியைக் கண்டறியத் தயாரா?')
 
 page_title_txt = html.unescape(c.TITLE_EN)
+import os
+EXAMPLE = open(os.path.join(os.path.dirname(os.path.abspath(mod_path)), c.EXAMPLE_FILE), encoding="utf-8").read() if getattr(c, "EXAMPLE_FILE", None) else ""
 out = f"""<!doctype html>
 <html lang="en">
 <head>
@@ -135,6 +181,7 @@ out = f"""<!doctype html>
   </div>
 </section>
 
+{EXAMPLE}
 <section class="deep">
   <div class="wrap">
     <div class="head">

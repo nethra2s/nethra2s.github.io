@@ -49,3 +49,4 @@ DUR_TA="பொதுவாக 2–4 வாரங்கள்; உங்கள்
 NEXT_EN="After the roadmap, we can implement it with you, or support your own team while they carry it out."
 NEXT_TA="வழிவரைபடத்துக்குப் பிறகு, அதை உங்களுடன் இணைந்து செயல்படுத்தலாம், அல்லது உங்கள் குழு செயல்படுத்தும்போது ஆதரவு அளிக்கலாம்."
 RELATED=["workflow-automation","data-analytics","ai-training"]
+EXAMPLE_FILE="example_ai_strategy.html"

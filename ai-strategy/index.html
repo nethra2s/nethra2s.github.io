@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="version" content="2026-10-20 v6">
+<meta name="version" content="2026-10-20 v7">
 <title>AI Strategy &amp; Roadmap | Nethra Strategic Solutions</title>
 <meta name="description" content="Find out where AI will save your business the most time and money, and get a clear, step-by-step plan to adopt it, sized to your budget and your team.">
 <link rel="icon" href="../img/logo.jpg">
@@ -275,6 +275,50 @@ body.lang-ta .svc-hero h1{font-size:clamp(24px,3vw,36px)}
 .related a{padding:9px 16px;border:1px solid var(--line);border-radius:999px;color:var(--muted);text-decoration:none;font:600 14px/1 var(--f-display)}
 .related a:hover{border-color:var(--cyan);color:var(--ink)}
 body.lang-ta .related a{font-family:var(--f-tamil)}
+
+/* illustrative example section */
+.example .head{max-width:760px}
+.ex-badge{display:inline-flex;align-self:start;justify-self:start;padding:6px 12px;border:1px dashed var(--cyan);border-radius:999px;color:var(--cyan);font:700 12.5px/1.2 var(--f-display);letter-spacing:.04em}
+body.lang-ta .ex-badge{font-family:var(--f-tamil)}
+.scenario{display:grid;gap:8px;margin-bottom:20px}
+.scenario h3,.outcome h3{font-size:17px;color:var(--cyan)}
+.scenario p{color:var(--ink)}
+.ex-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
+.ex-grid > *{min-width:0}
+.fig{margin:0;display:grid;gap:10px;align-content:start}
+.fig figcaption{font:800 18px/1.3 var(--f-display)}
+body.lang-ta .fig figcaption{font-family:var(--f-tamil)}
+.fig-note{color:var(--muted);font-size:14.5px}
+.fig-scroll{overflow-x:auto}
+.chart{width:100%;min-width:320px;height:auto;display:block}
+.chart text{font-family:var(--f-body);fill:var(--ink)}
+body.lang-ta .chart text{font-family:var(--f-tamil)}
+.chart .q{fill:var(--bg-deep);stroke:var(--line)}
+.chart .q-win{fill:rgba(34,169,236,.12);stroke:var(--cyan)}
+.chart .ql{font-size:12.5px;font-weight:700;fill:var(--muted)}
+.chart .ql.win{fill:var(--cyan)}
+.chart .ax{stroke:var(--muted);stroke-width:1.5}
+.chart .axl{font-size:12.5px;fill:var(--muted);font-weight:600}
+.chart .dot circle{fill:var(--surface-2);stroke:var(--muted);stroke-width:2}
+.chart .dot.win circle{fill:var(--cyan);stroke:var(--bg)}
+.chart .dot text{font:800 13px var(--f-display);fill:var(--ink)}
+.chart .dot.win text{fill:var(--bg-deep)}
+.chart .dot:hover circle,.chart .bar:hover rect{stroke:#fff;stroke-width:2}
+.chart .rl{font-size:12px;font-weight:600;fill:var(--muted)}
+.chart .grid line{stroke:var(--line);stroke-width:1}
+.chart .mlab text{font-size:12px;fill:var(--muted);font-weight:700}
+.chart .bar rect{fill:var(--surface-2);stroke:var(--line)}
+.chart .bar.win rect{fill:var(--cyan);stroke:none}
+.chart .bar text{font-size:11.5px;font-weight:700;fill:var(--ink)}
+.chart .bar.win text{fill:var(--bg-deep)}
+.chart .gate line{stroke:var(--red);stroke-width:2;stroke-dasharray:4 4}
+.chart .gate text{font-size:11px;fill:var(--red);font-weight:700}
+.fig-legend{margin:0;padding-left:22px;display:grid;gap:4px;color:var(--muted);font-size:14.5px;columns:2}
+.fig-key{display:flex;flex-wrap:wrap;align-items:center;gap:8px;color:var(--muted);font-size:14px}
+.fig-key .sw{width:14px;height:14px;border-radius:4px;background:var(--surface-2);border:1px solid var(--line);margin-left:8px}
+.fig-key .sw.win{background:var(--cyan);border:0;margin-left:0}
+.outcome ul{margin:10px 0 12px;padding-left:20px;display:grid;gap:6px}
+@media (max-width:860px){.ex-grid{grid-template-columns:1fr}.fig-legend{columns:1}}
 @media (max-width:860px){.two,.meta,.sols{grid-template-columns:1fr}.get{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.svc-hero .wrap{grid-template-columns:1fr}.svc-hero img{width:110px;height:110px}.get{grid-template-columns:1fr}}
 </style>
@@ -337,6 +381,113 @@ body.lang-ta .related a{font-family:var(--f-tamil)}
   </div>
 </section>
 
+<section class="example" id="example">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow"><span class="en">See an example</span><span class="ta">ஒரு எடுத்துக்காட்டு</span></p>
+      <h2><span class="en">What an AI strategy looks like in practice</span><span class="ta">நடைமுறையில் AI உத்தி எப்படி இருக்கும்</span></h2>
+      <p class="ex-badge"><span class="en">Illustrative example, not a client project</span><span class="ta">மாதிரி எடுத்துக்காட்டு, உண்மையான வாடிக்கையாளர் திட்டம் அல்ல</span></p>
+    </div>
+
+    <div class="scenario box">
+      <h3><span class="en">The business</span><span class="ta">தொழில்</span></h3>
+      <p><span class="en">A 40-person textile wholesaler in Tirunelveli. Enquiries arrive on WhatsApp and phone, invoices are typed into Tally by hand, and the owner sees sales figures only at month end.</span><span class="ta">திருநெல்வேலியில் 40 பேர் கொண்ட ஒரு ஜவுளி மொத்த விற்பனை நிறுவனம். விசாரணைகள் WhatsApp மற்றும் தொலைபேசியில் வருகின்றன; இன்வாய்ஸ்கள் Tally-ல் கைமுறையாகப் பதியப்படுகின்றன; உரிமையாளர் விற்பனை எண்களை மாத இறுதியில் மட்டுமே பார்க்கிறார்.</span></p>
+      <h3><span class="en">What they asked</span><span class="ta">அவர்கள் கேட்டது</span></h3>
+      <p><span class="en">"Everyone says we should use AI. Where do we start, and what will it cost?"</span><span class="ta">"AI பயன்படுத்த வேண்டும் என்று எல்லோரும் சொல்கிறார்கள். எங்கே தொடங்குவது, எவ்வளவு செலவாகும்?"</span></p>
+    </div>
+
+    <div class="ex-grid">
+      <figure class="box fig">
+        <figcaption><span class="en">Step 1: Opportunity map</span><span class="ta">படி 1: வாய்ப்பு வரைபடம்</span></figcaption>
+        <p class="fig-note"><span class="en">Each idea is placed by how much it helps (impact) and how hard it is (effort). Top-left = start here.</span><span class="ta">ஒவ்வொரு யோசனையும் எவ்வளவு உதவும் (பலன்), எவ்வளவு கடினம் (முயற்சி) என்பதன் அடிப்படையில் வைக்கப்படுகிறது. மேல்-இடது = இங்கே தொடங்குங்கள்.</span></p>
+        <div class="fig-scroll">
+        <svg viewBox="0 0 440 360" role="img" aria-labelledby="om-t" class="chart">
+          <title id="om-t">Sample opportunity map: six AI ideas placed by impact and effort</title>
+          <rect x="60" y="20" width="170" height="140" rx="8" class="q q-win"/>
+          <rect x="234" y="20" width="170" height="140" rx="8" class="q"/>
+          <rect x="60" y="164" width="170" height="140" rx="8" class="q"/>
+          <rect x="234" y="164" width="170" height="140" rx="8" class="q"/>
+          <text x="72" y="40" class="ql win"><tspan class="en">Quick wins</tspan><tspan class="ta">விரைவு வெற்றிகள்</tspan></text>
+          <text x="246" y="40" class="ql"><tspan class="en">Big projects</tspan><tspan class="ta">பெரிய திட்டங்கள்</tspan></text>
+          <text x="72" y="184" class="ql"><tspan class="en">Nice to have</tspan><tspan class="ta">இருந்தால் நல்லது</tspan></text>
+          <text x="246" y="184" class="ql"><tspan class="en">Not now</tspan><tspan class="ta">இப்போது வேண்டாம்</tspan></text>
+          <line x1="60" y1="308" x2="404" y2="308" class="ax"/>
+          <line x1="56" y1="20" x2="56" y2="304" class="ax"/>
+          <text x="232" y="330" class="axl" text-anchor="middle"><tspan class="en">Effort →</tspan><tspan class="ta">முயற்சி →</tspan></text>
+          <text x="22" y="162" class="axl" text-anchor="middle" transform="rotate(-90 22 162)"><tspan class="en">Impact →</tspan><tspan class="ta">பலன் →</tspan></text>
+          <g class="dot win"><title>1 WhatsApp enquiry auto-reply: high impact, low effort</title><circle cx="110" cy="70" r="14"/><text x="110" y="75" text-anchor="middle">1</text></g>
+          <g class="dot win"><title>2 Invoice entry automation: high impact, low effort</title><circle cx="175" cy="105" r="14"/><text x="175" y="110" text-anchor="middle">2</text></g>
+          <g class="dot"><title>3 Live sales dashboard: high impact, medium effort</title><circle cx="285" cy="80" r="14"/><text x="285" y="85" text-anchor="middle">3</text></g>
+          <g class="dot"><title>4 Demand forecasting: high impact, high effort</title><circle cx="365" cy="120" r="14"/><text x="365" y="125" text-anchor="middle">4</text></g>
+          <g class="dot"><title>5 AI social media posts: medium impact, low effort</title><circle cx="140" cy="215" r="14"/><text x="140" y="220" text-anchor="middle">5</text></g>
+          <g class="dot"><title>6 Custom ERP AI agent: low impact now, high effort</title><circle cx="350" cy="255" r="14"/><text x="350" y="260" text-anchor="middle">6</text></g>
+        </svg>
+        </div>
+        <ol class="fig-legend">
+          <li><span class="en">WhatsApp enquiry auto-reply</span><span class="ta">WhatsApp விசாரணைக்குத் தானியங்கி பதில்</span></li>
+          <li><span class="en">Invoice entry automation (Tally)</span><span class="ta">இன்வாய்ஸ் பதிவுத் தானியக்கம் (Tally)</span></li>
+          <li><span class="en">Live sales dashboard</span><span class="ta">நேரடி விற்பனை டாஷ்போர்டு</span></li>
+          <li><span class="en">Demand forecasting</span><span class="ta">தேவை முன்கணிப்பு</span></li>
+          <li><span class="en">AI social media posts</span><span class="ta">AI சமூக ஊடகப் பதிவுகள்</span></li>
+          <li><span class="en">Custom ERP AI agent</span><span class="ta">தனிப்பயன் ERP AI ஏஜென்ட்</span></li>
+        </ol>
+      </figure>
+
+      <figure class="box fig">
+        <figcaption><span class="en">Step 2: 6-month roadmap</span><span class="ta">படி 2: 6 மாத வழிவரைபடம்</span></figcaption>
+        <p class="fig-note"><span class="en">Quick wins first, so the business sees results early and funds the bigger steps.</span><span class="ta">முதலில் விரைவு வெற்றிகள்; தொழில் விரைவில் பலனைக் காணும், பெரிய படிகளுக்கு நிதி கிடைக்கும்.</span></p>
+        <div class="fig-scroll">
+        <svg viewBox="0 0 521 284" role="img" aria-labelledby="rm-t" class="chart">
+<title id="rm-t">Sample 6-month roadmap: quick wins in months 1-2, dashboard and follow-ups in months 3-5, forecasting pilot in months 5-6, with reviews after month 2 and month 4</title>
+<g class="grid">
+<line x1="165" y1="26" x2="165" y2="250"/>
+<line x1="223" y1="26" x2="223" y2="250"/>
+<line x1="281" y1="26" x2="281" y2="250"/>
+<line x1="339" y1="26" x2="339" y2="250"/>
+<line x1="397" y1="26" x2="397" y2="250"/>
+<line x1="455" y1="26" x2="455" y2="250"/>
+<line x1="513" y1="26" x2="513" y2="250"/>
+</g><g class="mlab">
+<text x="194" y="20" text-anchor="middle"><tspan class="en">M1</tspan><tspan class="ta">மா1</tspan></text>
+<text x="252" y="20" text-anchor="middle"><tspan class="en">M2</tspan><tspan class="ta">மா2</tspan></text>
+<text x="310" y="20" text-anchor="middle"><tspan class="en">M3</tspan><tspan class="ta">மா3</tspan></text>
+<text x="368" y="20" text-anchor="middle"><tspan class="en">M4</tspan><tspan class="ta">மா4</tspan></text>
+<text x="426" y="20" text-anchor="middle"><tspan class="en">M5</tspan><tspan class="ta">மா5</tspan></text>
+<text x="484" y="20" text-anchor="middle"><tspan class="en">M6</tspan><tspan class="ta">மா6</tspan></text>
+</g>
+<text x="150" y="56" text-anchor="end" class="rl"><tspan class="en">WhatsApp auto-reply</tspan><tspan class="ta">WhatsApp பதில்</tspan></text>
+<g class="bar win"><title>Months 1-2: WhatsApp auto-reply</title><rect x="167" y="40" width="112" height="24" rx="6"/></g>
+<text x="150" y="92" text-anchor="end" class="rl"><tspan class="en">Invoice automation</tspan><tspan class="ta">இன்வாய்ஸ் தானியக்கம்</tspan></text>
+<g class="bar win"><title>Months 1-2: Invoice automation</title><rect x="196.0" y="76" width="83.0" height="24" rx="6"/></g>
+<text x="150" y="128" text-anchor="end" class="rl"><tspan class="en">Staff AI training</tspan><tspan class="ta">பணியாளர் பயிற்சி</tspan></text>
+<g class="bar win"><title>Month 2: Staff AI training</title><rect x="225" y="112" width="54" height="24" rx="6"/></g>
+<text x="150" y="164" text-anchor="end" class="rl"><tspan class="en">Sales dashboard</tspan><tspan class="ta">விற்பனை டாஷ்போர்டு</tspan></text>
+<g class="bar"><title>Months 3-4: Live sales dashboard</title><rect x="283" y="148" width="112" height="24" rx="6"/></g>
+<text x="150" y="200" text-anchor="end" class="rl"><tspan class="en">Sales follow-ups</tspan><tspan class="ta">பின்தொடர்தல்</tspan></text>
+<g class="bar"><title>Months 4-5: Automatic sales follow-ups</title><rect x="341" y="184" width="112" height="24" rx="6"/></g>
+<text x="150" y="236" text-anchor="end" class="rl"><tspan class="en">Forecast pilot</tspan><tspan class="ta">முன்கணிப்பு முன்னோட்டம்</tspan></text>
+<g class="bar"><title>Months 5-6: Demand forecasting pilot</title><rect x="399" y="220" width="112" height="24" rx="6"/></g>
+<g class="gate"><line x1="281" y1="26" x2="281" y2="250"/><text x="281" y="268" text-anchor="middle"><tspan class="en">Review</tspan><tspan class="ta">மதிப்பாய்வு</tspan></text></g>
+<g class="gate"><line x1="397" y1="26" x2="397" y2="250"/><text x="397" y="268" text-anchor="middle"><tspan class="en">Review</tspan><tspan class="ta">மதிப்பாய்வு</tspan></text></g>
+</svg>
+        </div>
+        <p class="fig-key"><span class="sw win"></span><span class="en">Quick wins</span><span class="ta">விரைவு வெற்றிகள்</span> <span class="sw"></span><span class="en">Bigger projects</span><span class="ta">பெரிய திட்டங்கள்</span></p>
+      </figure>
+    </div>
+
+    <div class="box outcome">
+      <h3><span class="en">Step 3: The kind of results to expect</span><span class="ta">படி 3: எதிர்பார்க்கக்கூடிய பலன்கள்</span></h3>
+      <ul>
+        <li><span class="en">Every WhatsApp enquiry answered within minutes, even after hours</span><span class="ta">ஒவ்வொரு WhatsApp விசாரணைக்கும் சில நிமிடங்களில் பதில், அலுவலக நேரத்துக்குப் பிறகும்</span></li>
+        <li><span class="en">Several hours a week of invoice typing removed from the accounts team</span><span class="ta">கணக்குக் குழுவின் வாரத்துக்குப் பல மணிநேர இன்வாய்ஸ் தட்டச்சு வேலை குறையும்</span></li>
+        <li><span class="en">The owner sees daily sales on the phone instead of waiting for month end</span><span class="ta">மாத இறுதி வரை காத்திருக்காமல் உரிமையாளர் தினசரி விற்பனையைக் கைபேசியில் பார்க்கிறார்</span></li>
+        <li><span class="en">Bigger projects (forecasting) start only after the quick wins prove their value</span><span class="ta">விரைவு வெற்றிகள் பலனை நிரூபித்த பிறகே பெரிய திட்டங்கள் (முன்கணிப்பு) தொடங்கும்</span></li>
+      </ul>
+      <p class="fig-note"><span class="en">Actual results depend on each business. Your own plan is built from your processes and numbers.</span><span class="ta">உண்மையான பலன்கள் ஒவ்வொரு தொழிலையும் பொறுத்தது. உங்கள் திட்டம் உங்கள் நடைமுறைகள் மற்றும் எண்களைக் கொண்டு உருவாக்கப்படும்.</span></p>
+    </div>
+  </div>
+</section>
+
 <section class="deep">
   <div class="wrap">
     <div class="head">
@@ -377,7 +528,7 @@ body.lang-ta .related a{font-family:var(--f-tamil)}
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Nethra Strategic Solutions <span class="ver" title="Website version">· 2026-10-20 v6</span></span>
+    <span>© 2026 Nethra Strategic Solutions <span class="ver" title="Website version">· 2026-10-20 v7</span></span>
     <i><span class="en">Think AI. Build Smarter. Grow Faster.</span><span class="ta">வெற்றி, எளிதாக</span></i>
   </div>
 </footer>
