@@ -195,6 +195,8 @@ label{font-weight:600;font-size:14.5px}
 input,textarea,select{font:inherit;font-size:16px;color:var(--ink);background:var(--bg-deep);border:1px solid var(--line);border-radius:10px;padding:12px 13px;width:100%}
 input:focus,textarea:focus,select:focus{outline:2px solid var(--cyan);outline-offset:0;border-color:transparent}
 textarea{min-height:120px;resize:vertical}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.btn[disabled]{opacity:.6;cursor:wait}
 .form-note{grid-column:1/-1;font-size:15px;color:var(--cyan);font-weight:600}
 @media (max-width:860px){.contact-grid{grid-template-columns:1fr}}
 @media (max-width:560px){form{grid-template-columns:1fr;padding:20px}}
@@ -411,6 +413,7 @@ footer i{font-family:var(--f-display);font-weight:600;color:var(--ink)}
       </div>
       <div class="field full"><label for="f-msg"><span class="en">Message</span><span class="ta">செய்தி</span></label><textarea id="f-msg" name="message"></textarea></div>
       <div class="field full"><button class="btn primary" type="submit"><span class="en">Send enquiry</span><span class="ta">விசாரணையை அனுப்பு</span></button></div>
+      <input type="checkbox" name="botcheck" id="f-botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
       <p class="form-note" id="form-note" hidden></p>
     </form>
   </div>
@@ -464,25 +467,42 @@ footer i{font-family:var(--f-display);font-weight:600;color:var(--ink)}
     }
     var v=function(id){ return document.getElementById(id).value.trim(); };
     var topic=document.getElementById('f-topic').value;
-    var subject='Website enquiry: '+topic+' - '+v('f-name');
-    var lines=[
-      'Name: '+v('f-name'),
-      'Company: '+(v('f-company')||'-'),
-      'Phone: '+v('f-phone'),
-      'Email: '+(v('f-email')||'-'),
-      'Service: '+topic,
-      '',
-      'Message:',
-      v('f-msg')||'-',
-      '',
-      '(Sent from the enquiry form on nethra2s.com)'
-    ];
-    var href='mailto:contact@nethra2s.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(lines.join('\r\n'));
-    note.textContent = ta
-      ? 'உங்கள் மின்னஞ்சல் செயலியில் செய்தி தயாராக திறக்கும். அனுப்பு பொத்தானை அழுத்தவும். எதுவும் திறக்கவில்லை என்றால், contact@nethra2s.com என்ற முகவரிக்கு எழுதவும் அல்லது +91 95740 00002 என்ற எண்ணை அழைக்கவும்.'
-      : 'Your email app will open with your enquiry ready. Please press Send there. If nothing opens, email us at contact@nethra2s.com or call +91 95740 00002.';
+    var btn=form.querySelector('button[type="submit"]');
+    var data={
+      access_key:'dc3e98e3-5b4e-486f-ab24-d40f2cb653ca',
+      subject:'Website enquiry: '+topic+' - '+v('f-name'),
+      from_name:'Nethra website',
+      name:v('f-name'),
+      company:v('f-company')||'-',
+      phone:v('f-phone'),
+      email:v('f-email')||'',
+      service:topic,
+      message:v('f-msg')||'-',
+      language:ta?'Tamil':'English',
+      botcheck:document.getElementById('f-botcheck').checked
+    };
+    if(data.email){ data.replyto=data.email; } else { delete data.email; }
+    btn.disabled=true;
+    note.textContent = ta ? 'அனுப்புகிறது…' : 'Sending…';
     note.hidden=false;
-    window.location.href=href;
+    fetch('https://api.web3forms.com/submit',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify(data)
+    }).then(function(r){ return r.json().catch(function(){ return {success:false}; }); })
+    .then(function(res){
+      if(res && res.success){
+        form.reset();
+        document.querySelectorAll('option[data-en]').forEach(function(o){ o.textContent = ta ? o.dataset.ta : o.dataset.en; });
+        note.textContent = ta
+          ? 'நன்றி! உங்கள் விசாரணை கிடைத்தது. இரண்டு வேலை நாட்களுக்குள் பதிலளிப்போம்.'
+          : 'Thank you! Your enquiry has been sent. We will reply within two working days.';
+      } else { throw new Error('failed'); }
+    }).catch(function(){
+      note.textContent = ta
+        ? 'மன்னிக்கவும், அனுப்ப முடியவில்லை. contact@nethra2s.com என்ற முகவரிக்கு எழுதவும் அல்லது +91 95740 00002 என்ற எண்ணை அழைக்கவும்.'
+        : 'Sorry, your enquiry could not be sent. Please email contact@nethra2s.com or call +91 95740 00002.';
+    }).then(function(){ btn.disabled=false; });
   });
 })();
 </script>
