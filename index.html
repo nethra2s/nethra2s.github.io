@@ -195,6 +195,7 @@ label{font-weight:600;font-size:14.5px}
 input,textarea,select{font:inherit;font-size:16px;color:var(--ink);background:var(--bg-deep);border:1px solid var(--line);border-radius:10px;padding:12px 13px;width:100%}
 input:focus,textarea:focus,select:focus{outline:2px solid var(--cyan);outline-offset:0;border-color:transparent}
 textarea{min-height:120px;resize:vertical}
+textarea::placeholder,input::placeholder{color:var(--muted);opacity:.75}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
 .btn[disabled]{opacity:.6;cursor:wait}
 .req{color:var(--red);font-weight:700;margin-left:2px}
@@ -467,6 +468,16 @@ footer i{font-family:var(--f-display);font-weight:600;color:var(--ink)}
   document.addEventListener('keydown', function(e){ if(e.key==='Escape') setMenu(false); });
 
   var form=document.getElementById('enquiry'), note=document.getElementById('form-note');
+
+  var HINTS={"": {"en": "Tell us briefly about your business and what you need, e.g. We are a 20-person trading company and want to reduce manual work.", "ta": "உங்கள் தொழில் மற்றும் தேவை பற்றி சுருக்கமாக, எ.கா. நாங்கள் 20 பேர் கொண்ட வர்த்தக நிறுவனம்; கைமுறை வேலையைக் குறைக்க விரும்புகிறோம்."}, "AI Strategy & Roadmap": {"en": "e.g. We run a 50-person manufacturing unit and want to know where AI can save time and cost first.", "ta": "எ.கா. நாங்கள் 50 பேர் கொண்ட உற்பத்தி நிறுவனம்; AI எங்கே முதலில் நேரத்தையும் செலவையும் மிச்சப்படுத்தும் என அறிய விரும்புகிறோம்."}, "AI for Sales & Marketing": {"en": "e.g. We get about 100 enquiries a month and want faster follow-ups and better conversion.", "ta": "எ.கா. மாதம் சுமார் 100 விசாரணைகள் வருகின்றன; விரைவான பின்தொடர்தலும் அதிக விற்பனையும் தேவை."}, "Data Analytics & Dashboards": {"en": "e.g. Our sales data is in Excel and Tally; we want one live dashboard for daily decisions.", "ta": "எ.கா. எங்கள் விற்பனைத் தரவு Excel மற்றும் Tally-ல் உள்ளது; தினசரி முடிவுகளுக்கு ஒரே நேரடி டாஷ்போர்டு தேவை."}, "Custom AI Solutions": {"en": "e.g. We want a WhatsApp chatbot that answers customer questions about our products in Tamil and English.", "ta": "எ.கா. எங்கள் தயாரிப்புகள் பற்றிய வாடிக்கையாளர் கேள்விகளுக்கு தமிழிலும் ஆங்கிலத்திலும் பதிலளிக்கும் WhatsApp சாட்பாட் தேவை."}, "Workflow Automation": {"en": "e.g. Our team spends hours on invoices and data entry; we use Tally and Google Sheets.", "ta": "எ.கா. இன்வாய்ஸ் மற்றும் தரவு உள்ளீட்டில் எங்கள் குழு பல மணி நேரம் செலவிடுகிறது; Tally மற்றும் Google Sheets பயன்படுத்துகிறோம்."}, "AI Design & Branding": {"en": "e.g. We need a new logo and 30 social media posts a month for our restaurant.", "ta": "எ.கா. எங்கள் உணவகத்துக்கு புதிய லோகோவும் மாதம் 30 சமூக ஊடகப் பதிவுகளும் தேவை."}, "AI Voice & Music": {"en": "e.g. We need a 30-second Tamil voice-over and a jingle for our radio advertisement.", "ta": "எ.கா. எங்கள் வானொலி விளம்பரத்துக்கு 30 வினாடி தமிழ் குரல்பதிவும் ஜிங்கிளும் தேவை."}, "AI Video Production": {"en": "e.g. We need a 1-minute product explainer video in English and Tamil for our website.", "ta": "எ.கா. எங்கள் இணையதளத்துக்கு ஆங்கிலம் மற்றும் தமிழில் 1 நிமிட தயாரிப்பு விளக்க வீடியோ தேவை."}, "YouTube & Digital Content": {"en": "e.g. We want to start a YouTube channel for our business with 2 videos and 8 Shorts a month.", "ta": "எ.கா. எங்கள் தொழிலுக்கு மாதம் 2 வீடியோக்கள் மற்றும் 8 ஷார்ட்ஸுடன் யூடியூப் சேனல் தொடங்க விரும்புகிறோம்."}, "Not sure yet": {"en": "e.g. We are a family-run business and want to understand how AI could help us. Happy to discuss.", "ta": "எ.கா. நாங்கள் குடும்பத் தொழில் நடத்துகிறோம்; AI எப்படி உதவும் என்று அறிய விரும்புகிறோம். கலந்துரையாட தயார்."}};
+  var msgBox=document.getElementById('f-msg'), topicSel=document.getElementById('f-topic');
+  function updateHint(){
+    var h=HINTS[topicSel.value]||HINTS[''];
+    msgBox.placeholder = body.classList.contains('lang-ta') ? h.ta : h.en;
+  }
+  topicSel.addEventListener('change', updateHint);
+  buttons.forEach(function(b){ b.addEventListener('click', updateHint); });
+  updateHint();
   ['name','phone','email','topic'].forEach(function(id){ var el=document.getElementById('f-'+id); el.addEventListener(id==='topic'?'change':'input', function(){ if(el.getAttribute('aria-invalid')){ el.removeAttribute('aria-invalid'); var e=document.getElementById('e-'+id); e.hidden=true; } }); });
   form.addEventListener('submit', function(e){
     e.preventDefault();
@@ -536,6 +547,7 @@ footer i{font-family:var(--f-display);font-weight:600;color:var(--ink)}
     .then(function(res){
       if(res && res.success){
         form.reset();
+        updateHint();
         document.querySelectorAll('option[data-en]').forEach(function(o){ o.textContent = ta ? o.dataset.ta : o.dataset.en; });
         note.textContent = ta
           ? 'நன்றி! உங்கள் விசாரணை கிடைத்தது. இரண்டு வேலை நாட்களுக்குள் பதிலளிப்போம்.'
