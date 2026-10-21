@@ -6,7 +6,7 @@ def bi(en, ta): return f'<span class="en">{en}</span><span class="ta">{ta}</span
 
 YT_ID = "hCELszvT_no"
 YT_TITLE_EN = "Naan: Mahakavi Bharathiyar song, Tamil AI music video"
-YT_TITLE_TA = "நான்: மகாகவி பாரதியார் பாடல், தமிழ் AI இசை வீடியோ"
+YT_TITLE_TA = "நான்: மகாகவி பாரதியார் பாடல், தமிழ் AI இசை Video"
 CHANNEL = "https://www.youtube.com/@TamilAIWonders"
 
 def yt_card(cap_en, cap_ta, note_en, note_ta):
@@ -64,36 +64,36 @@ def section(h_en, h_ta, intro_en, intro_ta, cards, extra=""):
 {YT_JS}
 '''
 
-channel_btn = f'<p class="work-cta"><a class="btn ghost" href="{CHANNEL}" target="_blank" rel="noopener">{bi("Visit Tamil AI Wonders Hub on YouTube ↗", "Tamil AI Wonders Hub யூடியூப் சேனலைப் பார்க்க ↗")}</a></p>'
+channel_btn = f'<p class="work-cta"><a class="btn ghost" href="{CHANNEL}" target="_blank" rel="noopener">{bi("Visit Tamil AI Wonders Hub on YouTube ↗", "Tamil AI Wonders Hub YouTube சேனலைப் பார்க்க ↗")}</a></p>'
 
 PAGES = {
  "ai-design-branding": section(
-   "Brand identity for Tamil AI Wonders Hub", "Tamil AI Wonders Hub-க்கான பிராண்ட் அடையாளம்",
+   "Brand identity for Tamil AI Wonders Hub", "Tamil AI Wonders Hub-க்கான Brand அடையாளம்",
    "The logo and YouTube channel banner for our own Tamil AI channel, created with AI tools and finished by hand.",
-   "எங்கள் சொந்தத் தமிழ் AI சேனலுக்கான லோகோ மற்றும் யூடியூப் சேனல் பேனர்; AI கருவிகளுடன் உருவாக்கி கையால் முடிக்கப்பட்டவை.",
-   img_card("Channel logo", "சேனல் லோகோ", "Round badge for the profile picture, readable at small sizes.", "சுயவிவரப் படத்துக்கான வட்ட லோகோ; சிறிய அளவிலும் தெளிவாகத் தெரியும்.",
+   "எங்கள் சொந்தத் தமிழ் AI சேனலுக்கான Logo மற்றும் YouTube Channel Banner; AI Tools-உடன் உருவாக்கி கையால் முடிக்கப்பட்டவை.",
+   img_card("Channel logo", "Channel Logo", "Round badge for the profile picture, readable at small sizes.", "சுயவிவரப் படத்துக்கான வட்ட Logo; சிறிய அளவிலும் தெளிவாகத் தெரியும்.",
             "taw-logo.webp", "Tamil AI Wonders Hub logo: veena and music notes above the channel name", 600, 600, "logo") + "\n" +
-   img_card("YouTube channel banner", "யூடியூப் சேனல் பேனர்", "Tamil heritage meets AI: veena, palm-leaf manuscripts, film reels and the coastline.", "தமிழ் பாரம்பரியமும் AI-யும்: வீணை, ஓலைச்சுவடிகள், திரைச்சுருள்கள், கடற்கரை.",
+   img_card("YouTube channel banner", "YouTube Channel Banner", "Tamil heritage meets AI: veena, palm-leaf manuscripts, film reels and the coastline.", "தமிழ் பாரம்பரியமும் AI-யும்: வீணை, ஓலைச்சுவடிகள், திரைச்சுருள்கள், கடற்கரை.",
             "taw-banner.jpg", "Tamil AI Wonders Hub YouTube banner with a poet, children, veena and film reels around the logo", 1600, 635)),
  "ai-video": section(
-   "Videos we have made", "நாங்கள் உருவாக்கிய வீடியோக்கள்",
+   "Videos we have made", "நாங்கள் உருவாக்கிய Videos",
    "An animated channel intro and a full AI music video, both made for our own channel.",
-   "அனிமேஷன் சேனல் அறிமுகமும் முழு AI இசை வீடியோவும்; இரண்டும் எங்கள் சொந்தச் சேனலுக்காக உருவாக்கப்பட்டவை.",
-   video_card("Channel intro animation (12 seconds)", "சேனல் அறிமுக அனிமேஷன் (12 வினாடிகள்)", "Logo reveal with particles, light and music; the kind of intro we make for brands.", "துகள்கள், ஒளி, இசையுடன் லோகோ வெளிப்பாடு; பிராண்டுகளுக்கு நாங்கள் உருவாக்கும் அறிமுக வகை.") + "\n" +
-   yt_card("AI music video", "AI இசை வீடியோ", "A complete music video created with AI visuals and music.", "AI காட்சிகள் மற்றும் இசையுடன் உருவாக்கப்பட்ட முழு இசை வீடியோ.")),
+   "Animation Channel அறிமுகமும் முழு AI இசை Video-வும்; இரண்டும் எங்கள் சொந்தச் சேனலுக்காக உருவாக்கப்பட்டவை.",
+   video_card("Channel intro animation (12 seconds)", "Channel அறிமுக Animation (12 வினாடிகள்)", "Logo reveal with particles, light and music; the kind of intro we make for brands.", "துகள்கள், ஒளி, இசையுடன் Logo வெளிப்பாடு; Brands-க்கு நாங்கள் உருவாக்கும் அறிமுக வகை.") + "\n" +
+   yt_card("AI music video", "AI இசை Video", "A complete music video created with AI visuals and music.", "AI காட்சிகள் மற்றும் இசையுடன் உருவாக்கப்பட்ட முழு இசை Video.")),
  "ai-voice-music": section(
    "Music we have made", "நாங்கள் உருவாக்கிய இசை",
    "A Tamil song set to Mahakavi Bharathiyar's poem, composed and produced with AI tools for our channel.",
-   "மகாகவி பாரதியாரின் கவிதைக்கு இசையமைக்கப்பட்ட தமிழ்ப் பாடல்; எங்கள் சேனலுக்காக AI கருவிகளுடன் உருவாக்கப்பட்டது.",
-   yt_card("Naan: Bharathiyar song", "நான்: பாரதியார் பாடல்", "Tamil vocals and music produced with AI, with a matching music video.", "AI மூலம் தயாரிக்கப்பட்ட தமிழ்க் குரலும் இசையும், பொருத்தமான இசை வீடியோவுடன்.") + "\n" +
-   video_card("Sound for a brand intro", "பிராண்ட் அறிமுகத்துக்கான ஒலி", "Music and sound effects timed to the logo animation.", "லோகோ அனிமேஷனுக்கு ஏற்ப நேரமிட்ட இசையும் ஒலி விளைவுகளும்.")),
+   "மகாகவி பாரதியாரின் கவிதைக்கு இசையமைக்கப்பட்ட தமிழ்ப் பாடல்; எங்கள் சேனலுக்காக AI Tools-உடன் உருவாக்கப்பட்டது.",
+   yt_card("Naan: Bharathiyar song", "நான்: பாரதியார் பாடல்", "Tamil vocals and music produced with AI, with a matching music video.", "AI மூலம் தயாரிக்கப்பட்ட தமிழ்க் குரலும் இசையும், பொருத்தமான இசை Video-உடன்.") + "\n" +
+   video_card("Sound for a brand intro", "Brand அறிமுகத்துக்கான ஒலி", "Music and sound effects timed to the logo animation.", "Logo அனிமேஷனுக்கு ஏற்ப நேரமிட்ட இசையும் ஒலி விளைவுகளும்.")),
  "youtube-content": section(
-   "Our own channel: Tamil AI Wonders Hub", "எங்கள் சொந்தச் சேனல்: Tamil AI Wonders Hub",
+   "Our own channel: Tamil AI Wonders Hub", "எங்கள் சொந்தச் Channel: Tamil AI Wonders Hub",
    "We run our own Tamil AI channel with 17K+ subscribers, so the advice we give comes from doing it ourselves.",
-   "17K+ சந்தாதாரர்களுடன் எங்கள் சொந்தத் தமிழ் AI சேனலை நடத்துகிறோம்; எனவே நாங்கள் தரும் ஆலோசனை எங்கள் சொந்த அனுபவத்திலிருந்து வருகிறது.",
-   img_card("Channel branding", "சேனல் பிராண்டிங்", "Banner and logo designed for the channel.", "சேனலுக்காக வடிவமைக்கப்பட்ட பேனரும் லோகோவும்.",
+   "17K+ Subscribers-உடன் எங்கள் சொந்தத் தமிழ் AI சேனலை நடத்துகிறோம்; எனவே நாங்கள் தரும் ஆலோசனை எங்கள் சொந்த அனுபவத்திலிருந்து வருகிறது.",
+   img_card("Channel branding", "Channel Branding", "Banner and logo designed for the channel.", "சேனலுக்காக வடிவமைக்கப்பட்ட பேனரும் Logo-வும்.",
             "taw-banner.jpg", "Tamil AI Wonders Hub YouTube banner", 1600, 635) + "\n" +
-   yt_card("A video from the channel", "சேனலிலிருந்து ஒரு வீடியோ", "Music video created, edited and published by our team.", "எங்கள் குழு உருவாக்கி, எடிட் செய்து, வெளியிட்ட இசை வீடியோ."),
+   yt_card("A video from the channel", "சேனலிலிருந்து ஒரு Video", "Music video created, edited and published by our team.", "எங்கள் குழு உருவாக்கி, Edit செய்து, வெளியிட்ட இசை Video."),
    channel_btn),
 }
 if __name__ == "__main__":

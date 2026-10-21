@@ -47,7 +47,7 @@ def fig(cap_en, cap_ta, note_en, note_ta, body):
 # ---------------------------------------------------------------- sales & marketing
 def funnel():
     stages = [("Enquiries received", "வந்த விசாரணைகள்", 120, "Instant reply, 24/7", "உடனடிப் பதில், 24/7"),
-              ("Replied the same day", "அதே நாளில் பதில்", 66, "Auto follow-up on day 1 and 3", "1, 3-ஆம் நாளில் தானியங்கி பின்தொடர்தல்"),
+              ("Replied the same day", "அதே நாளில் பதில்", 66, "Auto follow-up on day 1 and 3", "1, 3-ஆம் நாளில் Automated Follow-up"),
               ("Visited the showroom", "ஷோரூம் வருகை", 30, "Visit reminder with location", "இருப்பிடத்துடன் வருகை நினைவூட்டல்"),
               ("Bought", "வாங்கினர்", 12, "Thank-you and review request", "நன்றி & மதிப்புரை கோரிக்கை")]
     W, X0, BW, rh = 460, 10, 300, 52
@@ -73,7 +73,7 @@ def followups():
 def sales():
     figs = fig("Where enquiries are lost", "விசாரணைகள் எங்கே இழக்கப்படுகின்றன",
                "One month of enquiries (demo numbers) and the AI fix for each drop.", "ஒரு மாத விசாரணைகள் (மாதிரி எண்கள்) மற்றும் ஒவ்வொரு இழப்புக்குமான AI தீர்வு.", funnel()) + "\n" + \
-           fig("Automatic WhatsApp follow-ups", "தானியங்கி WhatsApp பின்தொடர்தல்",
+           fig("Automatic WhatsApp follow-ups", "Automated WhatsApp பின்தொடர்தல்",
                "Sent automatically; staff step in when the customer replies.", "தானாக அனுப்பப்படும்; வாடிக்கையாளர் பதிலளிக்கும்போது பணியாளர் தொடர்வார்.", followups())
     return shell("How AI turns more enquiries into sales", "AI எப்படி அதிக விசாரணைகளை விற்பனையாக மாற்றுகிறது",
                  "A furniture showroom in Madurai receives about 120 enquiries a month on Instagram and WhatsApp. Staff reply late on busy days and rarely follow up.",
@@ -83,7 +83,7 @@ def sales():
                  [("Every enquiry gets an instant reply, even at night", "இரவிலும் ஒவ்வொரு விசாரணைக்கும் உடனடிப் பதில்"),
                   ("No customer is forgotten: follow-ups go out on schedule", "எந்த வாடிக்கையாளரும் மறக்கப்படுவதில்லை: பின்தொடர்தல் அட்டவணைப்படி செல்லும்"),
                   ("Staff spend their time on customers who are ready to buy", "வாங்கத் தயாரான வாடிக்கையாளர்களுக்கே பணியாளர்கள் நேரம் செலவிடுவர்"),
-                  ("The owner sees which campaigns bring buyers", "எந்தப் பிரச்சாரங்கள் வாங்குபவர்களைக் கொண்டு வருகின்றன என்பதை உரிமையாளர் காண்பார்")])
+                  ("The owner sees which campaigns bring buyers", "எந்தப் Campaigns வாங்குபவர்களைக் கொண்டு வருகின்றன என்பதை உரிமையாளர் காண்பார்")])
 
 # ---------------------------------------------------------------- data analytics
 def dashboard():
@@ -121,18 +121,18 @@ def askdata():
         <p class="fig-note">{bi("Customer names are invented for this example.", "இந்த எடுத்துக்காட்டுக்காக வாடிக்கையாளர் பெயர்கள் கற்பனையானவை.")}</p>'''
 
 def analytics():
-    figs = fig("Owner's dashboard on the phone", "கைபேசியில் உரிமையாளர் டாஷ்போர்டு",
-               "Demo data. Updates automatically from billing and Tally.", "மாதிரித் தரவு. பில்லிங் மற்றும் Tally-லிருந்து தானாகப் புதுப்பிக்கப்படும்.", dashboard()) + "\n" + \
-           fig("Ask your data in plain language", "எளிய மொழியில் தரவைக் கேளுங்கள்",
+    figs = fig("Owner's dashboard on the phone", "கைபேசியில் உரிமையாளர் Dashboard",
+               "Demo data. Updates automatically from billing and Tally.", "மாதிரித் Data. பில்லிங் மற்றும் Tally-லிருந்து தானாகப் புதுப்பிக்கப்படும்.", dashboard()) + "\n" + \
+           fig("Ask your data in plain language", "எளிய மொழியில் Data-வை கேளுங்கள்",
                "Type a question; get an answer from your own records.", "கேள்வியைத் தட்டச்சு செய்யுங்கள்; உங்கள் சொந்தப் பதிவுகளிலிருந்து பதில் பெறுங்கள்.", askdata())
-    return shell("What a business dashboard looks like", "வணிக டாஷ்போர்டு எப்படி இருக்கும்",
+    return shell("What a business dashboard looks like", "வணிக Dashboard எப்படி இருக்கும்",
                  "A hardware distributor in Coimbatore with 2 branches. Sales are in the billing software, accounts in Tally and stock in Excel. The owner gets a report once a month, prepared by hand.",
-                 "கோயம்புத்தூரில் 2 கிளைகள் கொண்ட ஒரு ஹார்டுவேர் விநியோகஸ்தர். விற்பனை பில்லிங் மென்பொருளில், கணக்குகள் Tally-ல், சரக்கு Excel-ல். உரிமையாளருக்கு மாதம் ஒருமுறை கைமுறையாகத் தயாரித்த அறிக்கை கிடைக்கிறது.",
+                 "கோயம்புத்தூரில் 2 கிளைகள் கொண்ட ஒரு ஹார்டுவேர் விநியோகஸ்தர். விற்பனை பில்லிங் மென்பொருளில், கணக்குகள் Tally-ல், சரக்கு Excel-ல். உரிமையாளருக்கு மாதம் ஒருமுறை கைமுறையாகத் தயாரித்த Report கிடைக்கிறது.",
                  "\"I want to see how the business is doing every day, without waiting for the accountant.\"", "\"கணக்காளருக்காகக் காத்திருக்காமல், தொழில் எப்படி நடக்கிறது என்று தினமும் பார்க்க விரும்புகிறேன்.\"",
                  figs,
                  [("Daily sales, dues and stock on one screen, on the phone", "தினசரி விற்பனை, நிலுவை, சரக்கு ஒரே திரையில், கைபேசியில்"),
                   ("Overdue payments and low stock flagged automatically", "தாமதக் கட்டணங்களும் குறைந்த சரக்கும் தானாகச் சுட்டிக்காட்டப்படும்"),
-                  ("Monthly report ready on day 1 instead of day 10", "10-ஆம் நாளுக்குப் பதிலாக 1-ஆம் நாளே மாதாந்திர அறிக்கை தயார்"),
+                  ("Monthly report ready on day 1 instead of day 10", "10-ஆம் நாளுக்குப் பதிலாக 1-ஆம் நாளே மாதாந்திர Report தயார்"),
                   ("Questions answered in seconds instead of asking staff", "பணியாளர்களைக் கேட்பதற்குப் பதிலாக நொடிகளில் பதில்")])
 
 # ---------------------------------------------------------------- custom AI
@@ -140,7 +140,7 @@ def chatbot():
     return f'''<div class="chat phone-chat">
           <div class="chat-top">{bi("Service Centre Assistant", "சர்வீஸ் சென்டர் உதவியாளர்")} · <small>{bi("AI, replies instantly", "AI, உடனடிப் பதில்")}</small></div>
           <div class="msg me">{bi("How much is a general service for a Splendor bike?", "ஸ்பிளெண்டர் பைக்கிற்கு ஜெனரல் சர்வீஸ் எவ்வளவு?")}</div>
-          <div class="msg bot">{bi("A general service for the Splendor is ₹650 including oil change. Parts, if needed, are extra. Would you like to book a slot?", "ஸ்பிளெண்டருக்கு ஜெனரல் சர்வீஸ் ஆயில் மாற்றம் உட்பட ₹650. தேவைப்பட்டால் உதிரிபாகங்கள் தனி. ஸ்லாட் முன்பதிவு செய்யலாமா?")}</div>
+          <div class="msg bot">{bi("A general service for the Splendor is ₹650 including oil change. Parts, if needed, are extra. Would you like to book a slot?", "ஸ்பிளெண்டருக்கு ஜெனரல் சர்வீஸ் ஆயில் மாற்றம் உட்பட ₹650. தேவைப்பட்டால் உதிரிபாகங்கள் தனி. Slot முன்பதிவு செய்யலாமா?")}</div>
           <div class="msg me">{bi("Yes, tomorrow morning.", "ஆம், நாளை காலை.")}</div>
           <div class="msg bot">{bi("Booked for tomorrow at 10:00 am. Pick-up from home is available for ₹50. Shall I add it?", "நாளை காலை 10:00 மணிக்கு முன்பதிவு செய்யப்பட்டது. வீட்டிலிருந்து எடுத்துச் செல்ல ₹50. சேர்க்கட்டுமா?")}</div>
           <div class="msg me">{bi("My bike is making a strange noise from the engine.", "என் பைக் இன்ஜினில் விசித்திரமான சத்தம் வருகிறது.")}</div>
@@ -150,25 +150,25 @@ def chatbot():
 
 def how_bot():
     rows = [("Learns from", "கற்றுக்கொள்வது", "Price list, service menu, timings, FAQs", "விலைப் பட்டியல், சர்வீஸ் மெனு, நேரம், அடிக்கடி கேட்கப்படும் கேள்விகள்"),
-            ("Connected to", "இணைக்கப்பட்டது", "Booking calendar and job-card system", "முன்பதிவு நாட்காட்டி மற்றும் ஜாப்-கார்டு அமைப்பு"),
+            ("Connected to", "இணைக்கப்பட்டது", "Booking calendar and job-card system", "முன்பதிவு Calendar மற்றும் ஜாப்-கார்டு அமைப்பு"),
             ("Answers in", "பதில் மொழி", "Tamil and English, 24/7", "தமிழ் மற்றும் ஆங்கிலம், 24/7"),
             ("Hands over when", "ஒப்படைப்பது எப்போது", "Repairs, complaints or anything unsure", "பழுதுகள், புகார்கள் அல்லது உறுதியில்லாத எதுவும்"),
-            ("Never does", "ஒருபோதும் செய்யாதது", "Guess prices or share other customers' data", "விலையை ஊகிப்பது அல்லது பிற வாடிக்கையாளர் தரவைப் பகிர்வது")]
+            ("Never does", "ஒருபோதும் செய்யாதது", "Guess prices or share other customers' data", "விலையை ஊகிப்பது அல்லது பிற வாடிக்கையாளர் Data-வை பகிர்வது")]
     trs = "".join(f"<tr><th>{bi(a, b)}</th><td>{bi(c, d)}</td></tr>" for a, b, c, d in rows)
     return f'<table class="spec">{trs}</table>'
 
 def custom_ai():
-    figs = fig("A WhatsApp chatbot conversation", "ஒரு WhatsApp சாட்பாட் உரையாடல்",
-               "Shown in the page language; the bot replies in whichever language the customer uses.", "பக்க மொழியில் காட்டப்படுகிறது; வாடிக்கையாளர் பயன்படுத்தும் மொழியிலேயே பாட் பதிலளிக்கும்.", chatbot()) + "\n" + \
+    figs = fig("A WhatsApp chatbot conversation", "ஒரு WhatsApp Chatbot உரையாடல்",
+               "Shown in the page language; the bot replies in whichever language the customer uses.", "பக்க மொழியில் காட்டப்படுகிறது; வாடிக்கையாளர் பயன்படுத்தும் மொழியிலேயே Bot பதிலளிக்கும்.", chatbot()) + "\n" + \
            fig("How the assistant is set up", "உதவியாளர் எப்படி அமைக்கப்படுகிறது",
-               "Clear rules decide what the bot may answer and when a person takes over.", "பாட் எதற்குப் பதிலளிக்கலாம், எப்போது மனிதர் பொறுப்பேற்க வேண்டும் என்பதைத் தெளிவான விதிகள் தீர்மானிக்கின்றன.", how_bot())
+               "Clear rules decide what the bot may answer and when a person takes over.", "Bot எதற்குப் பதிலளிக்கலாம், எப்போது மனிதர் பொறுப்பேற்க வேண்டும் என்பதைத் தெளிவான விதிகள் தீர்மானிக்கின்றன.", how_bot())
     return shell("What a custom AI assistant looks like", "தனிப்பயன் AI உதவியாளர் எப்படி இருக்கும்",
                  "A two-wheeler service centre in Tirunelveli. Customers call and message all day about prices, bookings and bike status, and staff struggle to answer while working on bikes.",
                  "திருநெல்வேலியில் ஒரு இருசக்கர வாகன சர்வீஸ் சென்டர். விலை, முன்பதிவு, வாகன நிலை பற்றி வாடிக்கையாளர்கள் நாள் முழுவதும் அழைக்கின்றனர், செய்தி அனுப்புகின்றனர்; வேலை செய்துகொண்டே பதிலளிக்கப் பணியாளர்கள் சிரமப்படுகின்றனர்.",
                  "\"Can something answer the common questions so my mechanics can keep working?\"", "\"என் மெக்கானிக்குகள் தொடர்ந்து வேலை செய்ய, பொதுவான கேள்விகளுக்கு ஏதாவது பதிலளிக்க முடியுமா?\"",
                  figs,
                  [("Common questions answered instantly, day and night", "பொதுவான கேள்விகளுக்கு இரவும் பகலும் உடனடிப் பதில்"),
-                  ("Bookings made directly into the calendar", "முன்பதிவுகள் நேரடியாக நாட்காட்டியில் பதிவாகும்"),
+                  ("Bookings made directly into the calendar", "முன்பதிவுகள் நேரடியாக Calendar-ல் பதிவாகும்"),
                   ("Fewer phone interruptions for the mechanics", "மெக்கானிக்குகளுக்குக் குறைவான தொலைபேசி இடையூறுகள்"),
                   ("Complex issues reach the right person quickly", "சிக்கலான பிரச்சினைகள் விரைவாகச் சரியான நபரைச் சென்றடையும்")])
 
@@ -182,7 +182,7 @@ def flow():
     after = [("Bill arrives by email or WhatsApp", "பில் மின்னஞ்சல் அல்லது WhatsApp-ல் வருகிறது"),
              ("AI reads the supplier, items and amounts", "சப்ளையர், பொருட்கள், தொகைகளை AI படிக்கிறது"),
              ("Matched to the purchase order automatically", "கொள்முதல் ஆர்டருடன் தானாகப் பொருத்தப்படுகிறது"),
-             ("Manager approves on the phone with one tap", "மேலாளர் கைபேசியில் ஒரே தட்டில் ஒப்புதல்"),
+             ("Manager approves on the phone with one tap", "மேலாளர் கைபேசியில் ஒரே தட்டில் Approval"),
              ("Entry posted to Tally, copy filed", "Tally-ல் பதிவு, நகல் சேமிப்பு")]
     def col(items, cls, h_en, h_ta, t_en, t_ta):
         lis = "".join(f'<li>{bi(e, t)}</li>' for e, t in items)
@@ -205,27 +205,27 @@ def hours():
 
 def workflow():
     figs = fig("Supplier bill processing: before and after", "சப்ளையர் பில் செயலாக்கம்: முன்பும் பின்பும்",
-               "The same five steps; people only check and approve.", "அதே ஐந்து படிகள்; மனிதர்கள் சரிபார்த்து ஒப்புதல் மட்டும் அளிக்கின்றனர்.", flow()) + "\n" + \
+               "The same five steps; people only check and approve.", "அதே ஐந்து படிகள்; மனிதர்கள் சரிபார்த்து Approval மட்டும் அளிக்கின்றனர்.", flow()) + "\n" + \
            fig("Staff hours per month for 300 bills", "300 பில்களுக்கு மாதாந்திரப் பணியாளர் நேரம்",
                "Illustrative estimate based on the times shown alongside.", "அருகில் காட்டப்பட்ட நேரங்களின் அடிப்படையிலான மாதிரி மதிப்பீடு.", hours() +
                f'<p class="fig-note">{bi("The time saved goes to supplier follow-up and month-end closing.", "மிச்சமான நேரம் சப்ளையர் பின்தொடர்தலுக்கும் மாத இறுதிக் கணக்கு முடிப்புக்கும் செல்கிறது.")}</p>')
-    return shell("What workflow automation looks like", "பணிச்சுழற்சி தானியக்கம் எப்படி இருக்கும்",
+    return shell("What workflow automation looks like", "Workflow Automation எப்படி இருக்கும்",
                  "An automobile spare-parts distributor that receives about 300 supplier bills a month. Two accounts staff download, check and type each bill into Tally.",
                  "மாதம் சுமார் 300 சப்ளையர் பில்களைப் பெறும் ஒரு ஆட்டோமொபைல் உதிரிபாக விநியோகஸ்தர். இரண்டு கணக்குப் பணியாளர்கள் ஒவ்வொரு பில்லையும் பதிவிறக்கி, சரிபார்த்து, Tally-ல் தட்டச்சு செய்கின்றனர்.",
                  "\"My accounts team is always behind. Can bills be entered without so much typing?\"", "\"என் கணக்குக் குழு எப்போதும் பின்தங்கியுள்ளது. இவ்வளவு தட்டச்சு இல்லாமல் பில்களைப் பதிய முடியுமா?\"",
                  figs,
                  [("Bills entered the same day instead of piling up", "பில்கள் குவியாமல் அதே நாளில் பதிவாகும்"),
                   ("Fewer typing errors and duplicate entries", "குறைவான தட்டச்சுப் பிழைகள் மற்றும் இரட்டைப் பதிவுகள்"),
-                  ("Approvals on the phone, with a full record", "முழுப் பதிவுடன் கைபேசியில் ஒப்புதல்கள்"),
+                  ("Approvals on the phone, with a full record", "முழுப் பதிவுடன் கைபேசியில் Approvals"),
                   ("Accounts staff freed for checking and follow-up work", "சரிபார்ப்பு மற்றும் பின்தொடர் வேலைக்குக் கணக்குப் பணியாளர்கள் விடுவிக்கப்படுவர்")])
 
 # ---------------------------------------------------------------- training
 def agenda():
     rows = [("9:30", "Why AI matters for your work", "உங்கள் வேலைக்கு AI ஏன் முக்கியம்"),
             ("10:15", "Hands-on: ChatGPT, Claude and Gemini basics", "நேரடிப் பயிற்சி: ChatGPT, Claude, Gemini அடிப்படைகள்"),
-            ("11:30", "Writing good prompts (with templates)", "நல்ல ப்ராம்ப்ட்கள் எழுதுதல் (மாதிரிகளுடன்)"),
+            ("11:30", "Writing good prompts (with templates)", "நல்ல Prompts எழுதுதல் (மாதிரிகளுடன்)"),
             ("12:30", "Lunch", "மதிய உணவு"),
-            ("1:30", "Practice: emails, letters, reports in English and Tamil", "பயிற்சி: ஆங்கிலம், தமிழில் மின்னஞ்சல், கடிதங்கள், அறிக்கைகள்"),
+            ("1:30", "Practice: emails, letters, reports in English and Tamil", "பயிற்சி: ஆங்கிலம், தமிழில் மின்னஞ்சல், கடிதங்கள், Reports"),
             ("2:45", "Safe use: what never to share with AI", "பாதுகாப்பான பயன்பாடு: AI-யுடன் ஒருபோதும் பகிரக்கூடாதவை"),
             ("3:30", "Your own task: bring real work and solve it with AI", "உங்கள் சொந்தப் பணி: உண்மையான வேலையைக் கொண்டு வந்து AI-ல் தீர்க்கவும்"),
             ("4:30", "Q&A and certificates", "கேள்வி-பதில் & சான்றிதழ்கள்")]
@@ -234,25 +234,25 @@ def agenda():
 
 def prompt_card():
     return f'''<div class="prompt-card">
-          <p class="pc-h">{bi("Prompt card: reply to a customer complaint", "ப்ராம்ப்ட் அட்டை: வாடிக்கையாளர் புகாருக்குப் பதில்")}</p>
+          <p class="pc-h">{bi("Prompt card: reply to a customer complaint", "Prompt அட்டை: வாடிக்கையாளர் புகாருக்குப் பதில்")}</p>
           <pre>{bi("You are a polite customer-service officer at [company].\nA customer wrote: \"[paste message]\".\nWrite a short reply that:\n• apologises once\n• explains the next step and the date\n• gives our phone number [number]\nTone: warm, professional. Language: Tamil.",
-                   "நீங்கள் [நிறுவனம்]-ல் பணிவான வாடிக்கையாளர் சேவை அலுவலர்.\nஒரு வாடிக்கையாளர் எழுதியது: \"[செய்தியை ஒட்டவும்]\".\nஒரு சிறிய பதில் எழுதவும்:\n• ஒருமுறை மன்னிப்பு கேட்கவும்\n• அடுத்த நடவடிக்கையையும் தேதியையும் விளக்கவும்\n• எங்கள் தொலைபேசி எண் [எண்] தரவும்\nதொனி: அன்பான, தொழில்முறை. மொழி: தமிழ்.")}</pre>
+                   "நீங்கள் [நிறுவனம்]-ல் பணிவான வாடிக்கையாளர் சேவை அலுவலர்.\nஒரு வாடிக்கையாளர் எழுதியது: \"[செய்தியை ஒட்டவும்]\".\nஒரு சிறிய பதில் எழுதவும்:\n• ஒருமுறை மன்னிப்பு கேட்கவும்\n• அடுத்த நடவடிக்கையையும் தேதியையும் விளக்கவும்\n• எங்கள் தொலைபேசி எண் [எண்] Data-வும்\nதொனி: அன்பான, தொழில்முறை. மொழி: தமிழ்.")}</pre>
           <p class="fig-note">{bi("Participants take home 25+ cards like this for daily tasks.", "தினசரிப் பணிகளுக்கு இதுபோன்ற 25+ அட்டைகளைப் பங்கேற்பாளர்கள் எடுத்துச் செல்வர்.")}</p>
         </div>'''
 
 def training():
-    figs = fig("Sample one-day workshop agenda", "மாதிரி ஒரு நாள் பட்டறை நிகழ்ச்சிநிரல்",
+    figs = fig("Sample one-day workshop agenda", "மாதிரி ஒரு நாள் Workshop நிகழ்ச்சிநிரல்",
                "Adjusted to each group's work and level.", "ஒவ்வொரு குழுவின் வேலை மற்றும் நிலைக்கு ஏற்ப மாற்றப்படும்.", agenda()) + "\n" + \
-           fig("Sample take-home prompt card", "மாதிரி ப்ராம்ப்ட் அட்டை",
+           fig("Sample take-home prompt card", "மாதிரி Prompt அட்டை",
                "Fill in the brackets and paste into any AI assistant.", "அடைப்புக்குறிகளை நிரப்பி எந்த AI உதவியாளரிலும் ஒட்டவும்.", prompt_card())
-    return shell("What an AI workshop looks like", "AI பட்டறை எப்படி இருக்கும்",
+    return shell("What an AI workshop looks like", "AI Workshop எப்படி இருக்கும்",
                  "An engineering college in Tirunelveli wants its 60 faculty members to use AI for teaching material, letters and reports, safely and confidently.",
-                 "திருநெல்வேலியில் ஒரு பொறியியல் கல்லூரி, தன் 60 ஆசிரியர்களும் பாடப் பொருள், கடிதங்கள், அறிக்கைகளுக்கு AI-ஐப் பாதுகாப்பாகவும் நம்பிக்கையுடனும் பயன்படுத்த விரும்புகிறது.",
+                 "திருநெல்வேலியில் ஒரு பொறியியல் கல்லூரி, தன் 60 ஆசிரியர்களும் பாடப் பொருள், கடிதங்கள், Reports-க்கு AI-ஐப் பாதுகாப்பாகவும் நம்பிக்கையுடனும் பயன்படுத்த விரும்புகிறது.",
                  "\"Our staff have heard of ChatGPT but don't know how to use it properly. Can you train them in one day?\"", "\"எங்கள் ஆசிரியர்கள் ChatGPT பற்றிக் கேள்விப்பட்டுள்ளனர், ஆனால் சரியாகப் பயன்படுத்தத் தெரியவில்லை. ஒரே நாளில் பயிற்சி அளிக்க முடியுமா?\"",
                  figs,
                  [("Every participant completes real tasks with AI during the day", "ஒவ்வொரு பங்கேற்பாளரும் அன்றே AI மூலம் உண்மையான பணிகளை முடிப்பர்"),
-                  ("Clear rules on what not to share with AI tools", "AI கருவிகளுடன் எதைப் பகிரக்கூடாது என்பதற்கான தெளிவான விதிகள்"),
-                  ("Prompt cards and notes to keep using AI after the session", "அமர்வுக்குப் பிறகும் AI-ஐத் தொடர்ந்து பயன்படுத்த ப்ராம்ப்ட் அட்டைகளும் குறிப்புகளும்"),
+                  ("Clear rules on what not to share with AI tools", "AI Tools-உடன் எதைப் பகிரக்கூடாது என்பதற்கான தெளிவான விதிகள்"),
+                  ("Prompt cards and notes to keep using AI after the session", "அமர்வுக்குப் பிறகும் AI-ஐத் தொடர்ந்து பயன்படுத்த Prompt அட்டைகளும் குறிப்புகளும்"),
                   ("A follow-up session to answer questions from real use", "உண்மையான பயன்பாட்டிலிருந்து எழும் கேள்விகளுக்குப் பின்தொடர் அமர்வு")],
                  "Agenda and duration are adjusted for each organisation.", "நிகழ்ச்சிநிரலும் காலமும் ஒவ்வொரு நிறுவனத்துக்கும் ஏற்ப மாற்றப்படும்.")
 

@@ -1,52 +1,23 @@
 # -*- coding: utf-8 -*-
-SLUG="ai-strategy"
-SERVICE="AI Strategy & Roadmap"
-ICON="strategy.jpg"
-TITLE_EN="AI Strategy &amp; Roadmap"; TITLE_TA="AI உத்தி &amp; வழிவரைபடம்"
-TAG_EN="Strategy"; TAG_TA="உத்தி"
-LEAD_EN="Find out where AI will save your business the most time and money, and get a clear, step-by-step plan to adopt it, sized to your budget and your team."
-LEAD_TA="உங்கள் தொழிலில் AI எங்கே அதிக நேரத்தையும் பணத்தையும் மிச்சப்படுத்தும் என்பதைக் கண்டறிந்து, உங்கள் பட்ஜெட் மற்றும் குழுவுக்கு ஏற்ற தெளிவான, படிப்படியான செயல்திட்டத்தைப் பெறுங்கள்."
-FOR_EN=["Owners of small and mid-sized businesses who know AI matters but don't know where to start","Leadership teams who want one clear plan instead of scattered AI experiments","Companies that tried a few AI tools and saw little result"]
-FOR_TA=["AI முக்கியம் என்று தெரிந்தும் எங்கே தொடங்குவது என்று தெரியாத சிறு, நடுத்தர நிறுவன உரிமையாளர்கள்","சிதறிய AI முயற்சிகளுக்குப் பதிலாக ஒரே தெளிவான திட்டம் விரும்பும் தலைமைக் குழுக்கள்","சில AI கருவிகளை முயன்றும் பெரிய பலன் காணாத நிறுவனங்கள்"]
-PROB_EN=["Where do I begin with AI?","What will it cost, and when will it pay back?","Which tools are right for us, and which are hype?","Will my team accept it and use it?"]
-PROB_TA=["AI-ல் எங்கே தொடங்குவது?","எவ்வளவு செலவாகும், எப்போது பலன் திரும்பும்?","எந்தக் கருவிகள் எங்களுக்கு ஏற்றவை, எவை வெறும் விளம்பரம்?","எங்கள் குழு இதை ஏற்றுப் பயன்படுத்துமா?"]
-SOL=[
-("AI Readiness Assessment","AI தயார்நிலை மதிப்பீடு",
- "We review your processes, data, software and team skills, and give you a clear readiness score with the gaps to close first.",
- "உங்கள் நடைமுறைகள், தரவு, மென்பொருள், குழுத் திறன்களை ஆய்வு செய்து, முதலில் சரிசெய்ய வேண்டிய இடைவெளிகளுடன் தெளிவான தயார்நிலை மதிப்பெண் வழங்குகிறோம்."),
-("AI Opportunity Mapping","AI வாய்ப்பு வரைபடம்",
- "We list every task where AI can save time or money, from sales follow-ups to invoices, and score each one by impact and effort.",
- "விற்பனைப் பின்தொடர்தல் முதல் இன்வாய்ஸ் வரை, AI நேரத்தையோ பணத்தையோ மிச்சப்படுத்தக்கூடிய ஒவ்வொரு பணியையும் பட்டியலிட்டு, பலன் மற்றும் முயற்சியின் அடிப்படையில் மதிப்பிடுகிறோம்."),
-("6–12 Month AI Roadmap","6–12 மாத AI வழிவரைபடம்",
- "A phased plan: quick wins in the first weeks, then bigger projects, with timelines, owners and budget for each step.",
- "கட்டம் கட்டமான திட்டம்: முதல் வாரங்களில் விரைவான வெற்றிகள், பின்னர் பெரிய திட்டங்கள்; ஒவ்வொரு படிக்கும் காலக்கெடு, பொறுப்பாளர், பட்ஜெட்."),
-("Tool & Vendor Selection","கருவி & விற்பனையாளர் தேர்வு",
- "We recommend the right tools for your needs and budget (for example ChatGPT, Claude, Gemini, Microsoft Copilot or Zoho) and help you avoid paying for what you don't need.",
- "உங்கள் தேவை மற்றும் பட்ஜெட்டுக்கு ஏற்ற கருவிகளைப் பரிந்துரைக்கிறோம் (எ.கா. ChatGPT, Claude, Gemini, Microsoft Copilot, Zoho); தேவையற்றவற்றுக்குப் பணம் செலவிடாமல் தவிர்க்க உதவுகிறோம்."),
-("ROI & Budget Planning","லாபம் & பட்ஜெட் திட்டமிடல்",
- "A plain cost-versus-savings estimate for each initiative, so you know what to spend and when it pays back.",
- "ஒவ்வொரு முயற்சிக்கும் செலவு மற்றும் சேமிப்பு மதிப்பீடு; எவ்வளவு செலவிட வேண்டும், எப்போது பலன் திரும்பும் என்பது தெளிவாகத் தெரியும்."),
-("AI Policy & Data Safety","AI கொள்கை & தரவுப் பாதுகாப்பு",
- "Simple rules for how your staff may use AI: what data can be shared, what needs approval, and how customer information stays protected.",
- "உங்கள் பணியாளர்கள் AI-ஐ எப்படிப் பயன்படுத்தலாம் என்பதற்கான எளிய விதிகள்: எந்தத் தரவைப் பகிரலாம், எதற்கு ஒப்புதல் தேவை, வாடிக்கையாளர் தகவல் எப்படிப் பாதுகாக்கப்படும்."),
-("Team Readiness & Adoption","குழுத் தயார்நிலை & ஏற்பு",
- "We plan how to introduce AI to your team, who to train first, and how to measure that the new tools are actually used.",
- "AI-ஐ உங்கள் குழுவுக்கு எப்படி அறிமுகப்படுத்துவது, யாருக்கு முதலில் பயிற்சி அளிப்பது, புதிய கருவிகள் உண்மையில் பயன்படுத்தப்படுகிறதா என்பதை எப்படி அளவிடுவது என்று திட்டமிடுகிறோம்."),
-("Quick-Win Pilot","விரைவு வெற்றி முன்னோட்டம்",
- "We pick one high-value task and run a small pilot, so you see real results before committing to a larger investment.",
- "அதிக மதிப்புள்ள ஒரு பணியைத் தேர்ந்தெடுத்து சிறிய முன்னோட்டம் நடத்துகிறோம்; பெரிய முதலீட்டுக்கு முன் உண்மையான பலனைக் காண்பீர்கள்."),
-]
-STEPS=[
-("Discovery","கண்டறிதல்","Conversations with you and key staff; review of current processes, software and costs.","உங்களுடனும் முக்கியப் பணியாளர்களுடனும் உரையாடல்; தற்போதைய நடைமுறைகள், மென்பொருள், செலவுகள் ஆய்வு."),
-("Opportunity map","வாய்ப்பு வரைபடம்","Every AI opportunity listed and ranked by impact and effort.","ஒவ்வொரு AI வாய்ப்பும் பலன் மற்றும் முயற்சியின் அடிப்படையில் வரிசைப்படுத்தப்படுகிறது."),
-("Roadmap","வழிவரைபடம்","A phased plan with tools, budget, timelines and owners.","கருவிகள், பட்ஜெட், காலக்கெடு, பொறுப்பாளர்களுடன் கட்டம் கட்டமான திட்டம்."),
-("Presentation","விளக்கக்காட்சி","We walk you and your team through the plan and answer every question.","திட்டத்தை உங்களுக்கும் உங்கள் குழுவுக்கும் விளக்கி, எல்லாக் கேள்விகளுக்கும் பதிலளிக்கிறோம்."),
-]
-GET_EN=["AI readiness report","Prioritised list of AI opportunities","6–12 month roadmap with budget","Recommended tools and vendors","Cost and savings estimate","AI usage policy for your staff"]
-GET_TA=["AI தயார்நிலை அறிக்கை","முன்னுரிமைப்படுத்தப்பட்ட AI வாய்ப்புகள் பட்டியல்","பட்ஜெட்டுடன் 6–12 மாத வழிவரைபடம்","பரிந்துரைக்கப்பட்ட கருவிகள் & விற்பனையாளர்கள்","செலவு மற்றும் சேமிப்பு மதிப்பீடு","பணியாளர்களுக்கான AI பயன்பாட்டுக் கொள்கை"]
-DUR_EN="Typically 2–4 weeks, depending on the size of your business."
-DUR_TA="பொதுவாக 2–4 வாரங்கள்; உங்கள் தொழிலின் அளவைப் பொறுத்தது."
-NEXT_EN="After the roadmap, we can implement it with you, or support your own team while they carry it out."
-NEXT_TA="வழிவரைபடத்துக்குப் பிறகு, அதை உங்களுடன் இணைந்து செயல்படுத்தலாம், அல்லது உங்கள் குழு செயல்படுத்தும்போது ஆதரவு அளிக்கலாம்."
-RELATED=["workflow-automation","data-analytics","ai-training"]
-EXAMPLE_FILE="example_ai_strategy.html"
+DUR_EN='Typically 2–4 weeks, depending on the size of your business.'
+DUR_TA='பொதுவாக 2–4 வாரங்கள்; உங்கள் தொழிலின் அளவைப் பொறுத்தது.'
+FOR_EN=["Owners of small and mid-sized businesses who know AI matters but don't know where to start", 'Leadership teams who want one clear plan instead of scattered AI experiments', 'Companies that tried a few AI tools and saw little result']
+FOR_TA=['AI முக்கியம் என்று தெரிந்தும் எங்கே தொடங்குவது என்று தெரியாத சிறு, நடுத்தர நிறுவன உரிமையாளர்கள்', 'சிதறிய AI முயற்சிகளுக்குப் பதிலாக ஒரே தெளிவான திட்டம் விரும்பும் தலைமைக் குழுக்கள்', 'சில AI Tools-ஐ முயன்றும் பெரிய பலன் காணாத நிறுவனங்கள்']
+GET_EN=['AI readiness report', 'Prioritised list of AI opportunities', '6–12 month roadmap with budget', 'Recommended tools and vendors', 'Cost and savings estimate', 'AI usage policy for your staff']
+GET_TA=['AI தயார்நிலை Report', 'முன்னுரிமைப்படுத்தப்பட்ட AI வாய்ப்புகள் பட்டியல்', 'பட்ஜெட்டுடன் 6–12 மாத Roadmap', 'பரிந்துரைக்கப்பட்ட Tools & Vendors', 'செலவு மற்றும் சேமிப்பு மதிப்பீடு', 'பணியாளர்களுக்கான AI பயன்பாட்டுக் கொள்கை']
+ICON='strategy.jpg'
+LEAD_EN='Find out where AI will save your business the most time and money, and get a clear, step-by-step plan to adopt it, sized to your budget and your team.'
+LEAD_TA='உங்கள் தொழிலில் AI எங்கே அதிக நேரத்தையும் பணத்தையும் மிச்சப்படுத்தும் என்பதைக் கண்டறிந்து, உங்கள் பட்ஜெட் மற்றும் குழுவுக்கு ஏற்ற தெளிவான, படிப்படியான செயல்திட்டத்தைப் பெறுங்கள்.'
+NEXT_EN='After the roadmap, we can implement it with you, or support your own team while they carry it out.'
+NEXT_TA='Roadmap-க்கு பிறகு, அதை உங்களுடன் இணைந்து செயல்படுத்தலாம், அல்லது உங்கள் குழு செயல்படுத்தும்போது ஆதரவு அளிக்கலாம்.'
+PROB_EN=['Where do I begin with AI?', 'What will it cost, and when will it pay back?', 'Which tools are right for us, and which are hype?', 'Will my team accept it and use it?']
+PROB_TA=['AI-ல் எங்கே தொடங்குவது?', 'எவ்வளவு செலவாகும், எப்போது பலன் திரும்பும்?', 'எந்தக் Tools எங்களுக்கு ஏற்றவை, எவை வெறும் விளம்பரம்?', 'எங்கள் குழு இதை ஏற்றுப் பயன்படுத்துமா?']
+RELATED=['workflow-automation', 'data-analytics', 'ai-training']
+SERVICE='AI Strategy & Roadmap'
+SOL=[('AI Readiness Assessment', 'AI Readiness Assessment (AI தயார்நிலை மதிப்பீடு)', 'We review your processes, data, software and team skills, and give you a clear readiness score with the gaps to close first.', 'உங்கள் நடைமுறைகள், Data, Software, குழுத் திறன்களை ஆய்வு செய்து, முதலில் சரிசெய்ய வேண்டிய இடைவெளிகளுடன் தெளிவான தயார்நிலை மதிப்பெண் வழங்குகிறோம்.'), ('AI Opportunity Mapping', 'AI Opportunity Mapping (AI வாய்ப்பு வரைபடம்)', 'We list every task where AI can save time or money, from sales follow-ups to invoices, and score each one by impact and effort.', 'விற்பனைப் பின்தொடர்தல் முதல் Invoice வரை, AI நேரத்தையோ பணத்தையோ மிச்சப்படுத்தக்கூடிய ஒவ்வொரு பணியையும் பட்டியலிட்டு, பலன் மற்றும் முயற்சியின் அடிப்படையில் மதிப்பிடுகிறோம்.'), ('6–12 Month AI Roadmap', '6–12 Month AI Roadmap (6–12 மாத AI வழிவரைபடம்)', 'A phased plan: quick wins in the first weeks, then bigger projects, with timelines, owners and budget for each step.', 'கட்டம் கட்டமான திட்டம்: முதல் வாரங்களில் விரைவான வெற்றிகள், பின்னர் பெரிய திட்டங்கள்; ஒவ்வொரு படிக்கும் காலக்கெடு, பொறுப்பாளர், பட்ஜெட்.'), ('Tool & Vendor Selection', 'Tool & Vendor Selection (கருவி & விற்பனையாளர் தேர்வு)', "We recommend the right tools for your needs and budget (for example ChatGPT, Claude, Gemini, Microsoft Copilot or Zoho) and help you avoid paying for what you don't need.", 'உங்கள் தேவை மற்றும் பட்ஜெட்டுக்கு ஏற்ற Tools-ஐ பரிந்துரைக்கிறோம் (எ.கா. ChatGPT, Claude, Gemini, Microsoft Copilot, Zoho); தேவையற்றவற்றுக்குப் பணம் செலவிடாமல் தவிர்க்க உதவுகிறோம்.'), ('ROI & Budget Planning', 'ROI & Budget Planning (லாபம் & பட்ஜெட் திட்டமிடல்)', 'A plain cost-versus-savings estimate for each initiative, so you know what to spend and when it pays back.', 'ஒவ்வொரு முயற்சிக்கும் செலவு மற்றும் சேமிப்பு மதிப்பீடு; எவ்வளவு செலவிட வேண்டும், எப்போது பலன் திரும்பும் என்பது தெளிவாகத் தெரியும்.'), ('AI Policy & Data Safety', 'AI Policy & Data Safety (AI கொள்கை & தரவுப் பாதுகாப்பு)', 'Simple rules for how your staff may use AI: what data can be shared, what needs approval, and how customer information stays protected.', 'உங்கள் பணியாளர்கள் AI-ஐ எப்படிப் பயன்படுத்தலாம் என்பதற்கான எளிய விதிகள்: எந்தத் Data-வை பகிரலாம், எதற்கு Approval தேவை, வாடிக்கையாளர் தகவல் எப்படிப் பாதுகாக்கப்படும்.'), ('Team Readiness & Adoption', 'Team Readiness & Adoption (குழுத் தயார்நிலை & ஏற்பு)', 'We plan how to introduce AI to your team, who to train first, and how to measure that the new tools are actually used.', 'AI-ஐ உங்கள் குழுவுக்கு எப்படி அறிமுகப்படுத்துவது, யாருக்கு முதலில் பயிற்சி அளிப்பது, புதிய Tools உண்மையில் பயன்படுத்தப்படுகிறதா என்பதை எப்படி அளவிடுவது என்று திட்டமிடுகிறோம்.'), ('Quick-Win Pilot', 'Quick-Win Pilot (விரைவு வெற்றி முன்னோட்டம்)', 'We pick one high-value task and run a small pilot, so you see real results before committing to a larger investment.', 'அதிக மதிப்புள்ள ஒரு பணியைத் தேர்ந்தெடுத்து சிறிய Pilot நடத்துகிறோம்; பெரிய முதலீட்டுக்கு முன் உண்மையான பலனைக் காண்பீர்கள்.')]
+STEPS=[('Discovery', 'கண்டறிதல்', 'Conversations with you and key staff; review of current processes, software and costs.', 'உங்களுடனும் முக்கியப் பணியாளர்களுடனும் உரையாடல்; தற்போதைய நடைமுறைகள், Software, செலவுகள் ஆய்வு.'), ('Opportunity map', 'வாய்ப்பு வரைபடம்', 'Every AI opportunity listed and ranked by impact and effort.', 'ஒவ்வொரு AI வாய்ப்பும் பலன் மற்றும் முயற்சியின் அடிப்படையில் வரிசைப்படுத்தப்படுகிறது.'), ('Roadmap', 'Roadmap', 'A phased plan with tools, budget, timelines and owners.', 'Tools, பட்ஜெட், காலக்கெடு, பொறுப்பாளர்களுடன் கட்டம் கட்டமான திட்டம்.'), ('Presentation', 'விளக்கக்காட்சி', 'We walk you and your team through the plan and answer every question.', 'திட்டத்தை உங்களுக்கும் உங்கள் குழுவுக்கும் விளக்கி, எல்லாக் கேள்விகளுக்கும் பதிலளிக்கிறோம்.')]
+TAG_EN='Strategy'
+TAG_TA='Strategy'
+TITLE_EN='AI Strategy &amp; Roadmap'
+TITLE_TA='AI Strategy &amp; Roadmap (AI உத்தி &amp; வழிவரைபடம்)'
+EXAMPLE_FILE='example_ai_strategy.html'
